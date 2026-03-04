@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Blog | Kanoz Bio Energy - Biomass Pellet Insights</title>
+  <meta name="description" content="Expert insights on biomass pellets, sustainable energy, industry case studies, and India's biomass energy policy from Kanoz Bio Energy.">
+  <meta name="keywords" content="biomass pellets blog, biomass vs coal, biomass energy India, sustainable fuel, pellet manufacturer insights">
+  <meta property="og:title" content="Blog | Kanoz Bio Energy">
+  <meta property="og:description" content="Expert insights on biomass pellets, sustainable energy, and industry trends.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kanoz.in/blog.html">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#2d6a4f">
+  <link rel="canonical" href="https://kanoz.in/blog.html">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green: #2d6a4f;
+      --green-dark: #1b4332;
+      --green-light: #40916c;
+      --gold: #d4a373;
+      --gold-light: #e9c46a;
+      --cream: #fefae0;
+      --cream-dark: #f5edd6;
+      --white: #ffffff;
+      --text: #2c2c2c;
+      --text-light: #595c4a;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.7;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    /* === HEADER === */
+    .blog-header {
+      background: var(--green-dark);
+      padding: 1rem 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .blog-header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .blog-header a {
+      color: var(--white);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .blog-header img { width: 32px; height: 32px; }
+    .blog-header nav { display: flex; gap: 1.5rem; }
+    .blog-header nav a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      opacity: 0.85;
+      transition: opacity 0.2s;
+    }
+    .blog-header nav a:hover { opacity: 1; }
+
+    /* === HERO BANNER === */
+    .blog-hero {
+      background: linear-gradient(135deg, var(--green-dark), var(--green));
+      padding: 5rem 1.5rem 4rem;
+      text-align: center;
+      color: var(--white);
+    }
+    .blog-hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .blog-hero p {
+      font-size: 1.1rem;
+      opacity: 0.85;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* === ARTICLE LIST === */
+    .blog-list {
+      max-width: 900px;
+      margin: -2rem auto 4rem;
+      padding: 0 1.5rem;
+    }
+    .blog-list-card {
+      background: var(--white);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .blog-list-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+    }
+    .blog-list-card-banner {
+      height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .blog-list-card-banner svg { width: 80px; height: 80px; }
+    .banner-pellet { background: linear-gradient(135deg, var(--green-dark), var(--green-light)); }
+    .banner-factory { background: linear-gradient(135deg, #334155, #475569); }
+    .banner-globe { background: linear-gradient(135deg, #1e3a5f, #2d6a4f); }
+    .blog-list-card-body {
+      padding: 2rem;
+    }
+    .blog-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      font-size: 0.85rem;
+      color: var(--text-light);
+    }
+    .blog-meta-tag {
+      display: inline-block;
+      background: rgba(45,106,79,0.08);
+      color: var(--green);
+      padding: 0.2rem 0.75rem;
+      border-radius: 100px;
+      font-weight: 600;
+      font-size: 0.75rem;
+    }
+    .blog-list-card-body h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.6rem;
+      color: var(--green-dark);
+      margin-bottom: 0.75rem;
+      line-height: 1.3;
+    }
+    .blog-list-card-body h2 a:hover { color: var(--green); }
+    .blog-list-card-body .blog-excerpt {
+      color: var(--text-light);
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+    .read-full {
+      color: var(--green);
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    .read-full:hover { text-decoration: underline; }
+
+    /* === FULL ARTICLE === */
+    .article-full {
+      display: none;
+      max-width: 800px;
+      margin: 0 auto 4rem;
+      padding: 0 1.5rem;
+    }
+    .article-full.active { display: block; }
+    .article-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--green);
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+      padding: 0.5rem 0;
+    }
+    .article-back:hover { text-decoration: underline; }
+    .article-banner {
+      height: 300px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 6rem;
+      margin-bottom: 2rem;
+      overflow: hidden;
+    }
+    .article-banner svg { width: 100px; height: 100px; }
+    .article-content {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 3rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+    .article-content .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.85rem;
+      color: var(--text-light);
+    }
+    .article-content h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2.2rem;
+      color: var(--green-dark);
+      margin-bottom: 1.5rem;
+      line-height: 1.3;
+    }
+    .article-content h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.5rem;
+      color: var(--green-dark);
+      margin: 2.5rem 0 1rem;
+    }
+    .article-content h3 {
+      font-size: 1.15rem;
+      color: var(--green-dark);
+      margin: 2rem 0 0.75rem;
+    }
+    .article-content p {
+      color: var(--text);
+      font-size: 1.05rem;
+      line-height: 1.9;
+      margin-bottom: 1.25rem;
+    }
+    .article-content ul, .article-content ol {
+      margin: 1rem 0 1.5rem 1.5rem;
+      color: var(--text);
+      font-size: 1.05rem;
+      line-height: 1.9;
+    }
+    .article-content li { margin-bottom: 0.5rem; }
+    .article-content blockquote {
+      border-left: 4px solid var(--green);
+      background: rgba(45,106,79,0.04);
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+      font-style: italic;
+      color: var(--text-light);
+    }
+    .article-content .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+    }
+    .comparison-table th {
+      background: var(--green);
+      color: var(--white);
+      padding: 0.75rem 1rem;
+      text-align: left;
+      font-weight: 600;
+    }
+    .comparison-table td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--cream-dark);
+    }
+    .comparison-table tr:nth-child(even) { background: var(--cream); }
+    .highlight-box {
+      background: linear-gradient(135deg, var(--green-dark), var(--green));
+      color: var(--white);
+      padding: 2rem;
+      border-radius: 12px;
+      margin: 2rem 0;
+    }
+    .highlight-box h3 { color: var(--gold-light); margin-top: 0; }
+    .highlight-box p { color: rgba(255,255,255,0.9); }
+    .highlight-box ul { color: rgba(255,255,255,0.9); }
+    .article-cta {
+      background: var(--cream);
+      border: 2px solid var(--green);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      margin-top: 2.5rem;
+    }
+    .article-cta h3 {
+      color: var(--green-dark);
+      margin-bottom: 0.75rem;
+    }
+    .article-cta p {
+      color: var(--text-light);
+      margin-bottom: 1rem;
+    }
+    .article-cta .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background: var(--green);
+      color: var(--white);
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .article-cta .btn:hover { background: var(--green-dark); transform: translateY(-2px); }
+
+    /* === FOOTER === */
+    .blog-footer {
+      background: var(--green-dark);
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: 0.9rem;
+    }
+    .blog-footer a { color: var(--gold-light); }
+    .blog-footer a:hover { text-decoration: underline; }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 768px) {
+      .blog-hero h1 { font-size: 2rem; }
+      .blog-list-card-banner { height: 180px; font-size: 3.5rem; }
+      .article-banner { height: 200px; font-size: 4rem; }
+      .article-content { padding: 1.5rem; }
+      .article-content h1 { font-size: 1.6rem; }
+      .blog-header nav { gap: 0.75rem; }
+      .blog-header nav a { font-size: 0.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SVG Sprite -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none;position:absolute;width:0;height:0;overflow:hidden">
+    <symbol id="icon-pellet" viewBox="0 0 64 64">
+      <ellipse cx="32" cy="14" rx="20" ry="10" fill="#d4a373"/>
+      <rect x="12" y="14" width="40" height="30" fill="#c4956a"/>
+      <ellipse cx="32" cy="44" rx="20" ry="10" fill="#b8875c"/>
+      <ellipse cx="32" cy="14" rx="20" ry="10" fill="#d4a373"/>
+      <ellipse cx="32" cy="14" rx="14" ry="6" fill="#e0b48a" opacity="0.6"/>
+      <line x1="12" y1="14" x2="12" y2="44" stroke="#a67a50" stroke-width="1"/>
+      <line x1="52" y1="14" x2="52" y2="44" stroke="#a67a50" stroke-width="1"/>
+    </symbol>
+  </svg>
+
+  <!-- HEADER -->
+  <header class="blog-header">
+    <div class="blog-header-inner">
+      <a href="index.html">
+        <img src="logo.png" alt="Kanoz Bio Energy" width="32" height="32">
+        Kanoz Bio Energy
+      </a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html#products">Products</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="index.html#calculator">Pricing</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="blog-hero">
+    <h1>Kanoz Blog</h1>
+    <p>Expert insights on biomass energy, industry trends, case studies, and sustainable fuel solutions for Indian industry.</p>
+  </section>
+
+  <!-- ARTICLE LIST VIEW -->
+  <div class="blog-list" id="blogList">
+
+    <!-- Article 1 Card -->
+    <div class="blog-list-card" id="card-biomass-vs-coal">
+      <div class="blog-list-card-banner banner-pellet">
+        <svg width="80" height="80" viewBox="0 0 64 64"><use href="#icon-pellet"/></svg>
+      </div>
+      <div class="blog-list-card-body">
+        <div class="blog-meta">
+          <span class="blog-meta-tag">Guide</span>
+          <span>March 1, 2026</span>
+          <span>8 min read</span>
+        </div>
+        <h2><a href="#biomass-vs-coal" onclick="showArticle('biomass-vs-coal')">Biomass Pellets vs Coal: A Complete Comparison</a></h2>
+        <p class="blog-excerpt">The shift from coal to biomass pellets isn't just an environmental decision — it's an economic one. With tightening emission norms, rising coal prices, and government incentives for clean energy, Indian industries are rapidly adopting biomass as their primary fuel source. Here's a detailed comparison to help you make the switch.</p>
+        <a href="#biomass-vs-coal" class="read-full" onclick="showArticle('biomass-vs-coal')">Read Full Article &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Article 2 Card -->
+    <div class="blog-list-card" id="card-textile-case-study">
+      <div class="blog-list-card-banner banner-factory">&#x1F3ED;</div>
+      <div class="blog-list-card-body">
+        <div class="blog-meta">
+          <span class="blog-meta-tag">Case Study</span>
+          <span>February 15, 2026</span>
+          <span>6 min read</span>
+        </div>
+        <h2><a href="#textile-case-study" onclick="showArticle('textile-case-study')">How a Textile Unit Cut Fuel Costs by 35%</a></h2>
+        <p class="blog-excerpt">When a mid-sized textile manufacturer in Gujarat was struggling with rising coal costs and stricter emission requirements, they turned to biomass pellets. Within six months, they had reduced fuel expenditure by 35% while achieving full compliance with pollution control board norms. Here's their story.</p>
+        <a href="#textile-case-study" class="read-full" onclick="showArticle('textile-case-study')">Read Full Article &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Article 3 Card -->
+    <div class="blog-list-card" id="card-biomass-energy-policy">
+      <div class="blog-list-card-banner banner-globe">&#x1F30D;</div>
+      <div class="blog-list-card-body">
+        <div class="blog-meta">
+          <span class="blog-meta-tag">Industry Insight</span>
+          <span>February 1, 2026</span>
+          <span>7 min read</span>
+        </div>
+        <h2><a href="#biomass-energy-policy" onclick="showArticle('biomass-energy-policy')">India's Biomass Energy Policy: What You Need to Know</a></h2>
+        <p class="blog-excerpt">India's regulatory landscape for biomass energy has evolved significantly in recent years. From mandatory co-firing in thermal power plants to carbon credit opportunities and state-level subsidies, the policy environment strongly favors biomass adoption. Here's a comprehensive overview for industrial decision-makers.</p>
+        <a href="#biomass-energy-policy" class="read-full" onclick="showArticle('biomass-energy-policy')">Read Full Article &rarr;</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FULL ARTICLE 1: Biomass Pellets vs Coal -->
+  <div class="article-full" id="biomass-vs-coal">
+    <a href="#" class="article-back" onclick="showList()">&larr; Back to All Articles</a>
+    <div class="article-banner banner-pellet">
+      <svg width="100" height="100" viewBox="0 0 64 64"><use href="#icon-pellet"/></svg>
+    </div>
+    <div class="article-content">
+      <div class="article-meta">
+        <span class="blog-meta-tag">Guide</span>
+        <span>March 1, 2026</span>
+        <span>8 min read</span>
+      </div>
+      <h1>Biomass Pellets vs Coal: A Complete Comparison</h1>
+
+      <p>For decades, coal has been the backbone of industrial heating in India. From boilers in textile mills to kilns in brick factories, coal powered it all. But the landscape is shifting — fast. Tightening emission norms, volatile coal pricing, and a growing global demand for sustainable practices are pushing industries to rethink their fuel choices.</p>
+
+      <p>Biomass pellets have emerged as the leading alternative. Made from compressed agricultural waste, these cylindrical pellets pack a surprising amount of energy per kilogram. But how do they really stack up against coal? Let's break it down across every parameter that matters to an industrial buyer.</p>
+
+      <h2>Calorific Value: How Much Energy Per Kilogram?</h2>
+
+      <p>Coal typically delivers a GCV (Gross Calorific Value) of 3,500–5,500 Kcal/kg depending on the grade. Higher-grade coal is more expensive and harder to source consistently. Indian coal, which is what most industries use, averages around 3,500–4,000 Kcal/kg due to high ash content.</p>
+
+      <p>Biomass pellets deliver a GCV of 3,200–3,800 Kcal/kg. While this is slightly lower than premium coal, it's comparable to the Indian coal that most factories actually use. The key difference? Pellet quality is far more consistent batch to batch, because the manufacturing process controls moisture, density, and composition precisely.</p>
+
+      <h2>Cost Comparison: The Numbers That Matter</h2>
+
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Parameter</th>
+            <th>Coal</th>
+            <th>Biomass Pellets</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Price per ton</td>
+            <td>&#8377;10,000 – &#8377;14,000</td>
+            <td>&#8377;7,500 – &#8377;9,000</td>
+          </tr>
+          <tr>
+            <td>GCV (Kcal/kg)</td>
+            <td>3,500 – 5,500</td>
+            <td>3,200 – 3,800</td>
+          </tr>
+          <tr>
+            <td>Ash content</td>
+            <td>25% – 45%</td>
+            <td>3% – 8%</td>
+          </tr>
+          <tr>
+            <td>Moisture</td>
+            <td>10% – 15%</td>
+            <td>8% – 12%</td>
+          </tr>
+          <tr>
+            <td>Sulphur content</td>
+            <td>0.5% – 1.5%</td>
+            <td>Negligible</td>
+          </tr>
+          <tr>
+            <td>Maintenance cost</td>
+            <td>High (soot, corrosion)</td>
+            <td>Low (clean burning)</td>
+          </tr>
+          <tr>
+            <td>Carbon credits eligible</td>
+            <td>No</td>
+            <td>Yes</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>When you factor in lower ash disposal costs, reduced boiler maintenance, and potential carbon credit revenue, biomass pellets can save industries <strong>30–40% on total fuel expenditure</strong>.</p>
+
+      <h2>Environmental Impact</h2>
+
+      <p>This is where biomass pellets have an unassailable advantage. Coal combustion releases carbon that has been locked underground for millions of years, adding to atmospheric CO2. Biomass pellets, on the other hand, are <strong>carbon-neutral</strong> — the CO2 released during combustion equals the CO2 absorbed by the plants during their growth cycle.</p>
+
+      <p>Beyond carbon, biomass pellets produce virtually no sulphur dioxide (SO2), dramatically less particulate matter, and zero toxic heavy metals. For industries facing CPCB (Central Pollution Control Board) compliance requirements, switching to biomass can be the difference between operating freely and facing shutdown notices.</p>
+
+      <h2>Ash Content: The Hidden Cost of Coal</h2>
+
+      <p>Indian coal is notorious for its high ash content — often 30–45%. This means for every ton of coal burned, you're left with 300–450 kg of ash that needs disposal. Ash disposal isn't just an inconvenience; it's an expense. Transport, dumping fees, and environmental compliance add up quickly.</p>
+
+      <p>Biomass pellets produce just 3–8% ash. That's roughly one-tenth the waste of coal. Less ash means less maintenance downtime, less wear on grates and tubes, and dramatically lower disposal costs.</p>
+
+      <h2>Supply Reliability</h2>
+
+      <p>One legitimate concern about biomass is supply consistency. Coal, despite its drawbacks, has an established supply chain. Biomass pellet supply depends on agricultural cycles and local manufacturing capacity.</p>
+
+      <p>At Kanoz Bio Energy, we address this with 24/7 production capability, strategic raw material stockpiling, and contracts with farming communities across multiple states. This ensures year-round supply regardless of harvest cycles.</p>
+
+      <div class="highlight-box">
+        <h3>Key Takeaways</h3>
+        <ul>
+          <li>Biomass pellets match Indian coal on calorific value at 20–30% lower cost</li>
+          <li>Ash content is 5–10x lower, saving on disposal and maintenance</li>
+          <li>Carbon-neutral fuel that qualifies for carbon credits</li>
+          <li>Compliant with CPCB norms — no SO2, minimal particulates</li>
+          <li>Consistent quality through controlled manufacturing</li>
+        </ul>
+      </div>
+
+      <h2>Who Should Switch?</h2>
+
+      <p>Biomass pellets are ideal for:</p>
+      <ul>
+        <li><strong>Textile mills</strong> with steam boilers (the largest adopter segment)</li>
+        <li><strong>Food processing units</strong> requiring clean heat</li>
+        <li><strong>Brick kilns</strong> seeking emission compliance</li>
+        <li><strong>Chemical plants</strong> with process heating needs</li>
+        <li><strong>Power plants</strong> mandated to co-fire biomass (5–10% blending)</li>
+        <li><strong>Any industry</strong> using coal boilers rated at 1 TPH or above</li>
+      </ul>
+
+      <p>The switch doesn't require new equipment in most cases. Existing coal-fired boilers can burn biomass pellets with minor modifications (primarily grate adjustments and feed mechanism changes).</p>
+
+      <div class="article-cta">
+        <h3>Ready to Make the Switch?</h3>
+        <p>Get a free cost-benefit analysis for your specific operation. Our team will calculate your exact savings.</p>
+        <a href="index.html#contact" class="btn">Get a Free Quote &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FULL ARTICLE 2: Textile Case Study -->
+  <div class="article-full" id="textile-case-study">
+    <a href="#" class="article-back" onclick="showList()">&larr; Back to All Articles</a>
+    <div class="article-banner banner-factory">&#x1F3ED;</div>
+    <div class="article-content">
+      <div class="article-meta">
+        <span class="blog-meta-tag">Case Study</span>
+        <span>February 15, 2026</span>
+        <span>6 min read</span>
+      </div>
+      <h1>How a Textile Unit Cut Fuel Costs by 35%</h1>
+
+      <p>In mid-2025, a textile manufacturing unit in Surat, Gujarat — one of India's busiest textile hubs — was facing a familiar challenge. Coal prices had risen 22% over the previous year. Their aging boiler was running inefficiently due to heavy soot and ash buildup. And a recent inspection by the Gujarat Pollution Control Board (GPCB) had resulted in a warning notice for excessive particulate emissions.</p>
+
+      <p>The management had two options: invest heavily in emission control equipment for their coal-based system, or switch to a cleaner fuel. They chose to explore biomass pellets.</p>
+
+      <h2>The Challenge</h2>
+
+      <p>The unit operated two 4-TPH (tons per hour) coal-fired boilers running 20 hours a day, consuming approximately 180 tons of coal per month. Their key challenges were:</p>
+
+      <ul>
+        <li><strong>Rising fuel costs:</strong> Coal procurement cost had reached &#8377;12,500/ton, up from &#8377;10,200 the previous year</li>
+        <li><strong>High maintenance frequency:</strong> Boiler tubes needed cleaning every 10 days due to soot and clinker formation</li>
+        <li><strong>Ash disposal costs:</strong> Approximately 60 tons of ash per month requiring transport and disposal</li>
+        <li><strong>Emission compliance:</strong> GPCB warning notice with a 90-day deadline to comply</li>
+        <li><strong>Production losses:</strong> Unplanned downtime of 8–10 hours per month due to boiler maintenance</li>
+      </ul>
+
+      <h2>The Solution</h2>
+
+      <p>After evaluating multiple biomass pellet suppliers, the unit selected Kanoz Bio Energy based on three factors: consistent pellet quality (GCV of 3,400+ Kcal/kg in every batch tested), reliable supply commitment with monthly contracts, and end-to-end delivery logistics.</p>
+
+      <p>The transition involved:</p>
+
+      <ol>
+        <li><strong>Boiler assessment:</strong> Our technical team inspected both boilers and recommended minor grate modifications (completed in 2 days, costing &#8377;45,000 per boiler)</li>
+        <li><strong>Trial run:</strong> A 2-week pilot with 20 tons of pellets to validate performance</li>
+        <li><strong>Full conversion:</strong> Complete switch to biomass pellets across both boilers</li>
+        <li><strong>Supply contract:</strong> Monthly delivery of 160 tons with weekly dispatch schedule</li>
+      </ol>
+
+      <h2>The Results</h2>
+
+      <p>After six months of operation on biomass pellets, here's what changed:</p>
+
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>Before (Coal)</th>
+            <th>After (Biomass Pellets)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Monthly fuel cost</td>
+            <td>&#8377;22,50,000</td>
+            <td>&#8377;14,40,000</td>
+          </tr>
+          <tr>
+            <td>Ash generated per month</td>
+            <td>~60 tons</td>
+            <td>~8 tons</td>
+          </tr>
+          <tr>
+            <td>Boiler cleaning frequency</td>
+            <td>Every 10 days</td>
+            <td>Every 30 days</td>
+          </tr>
+          <tr>
+            <td>Unplanned downtime</td>
+            <td>8–10 hours/month</td>
+            <td>&lt;2 hours/month</td>
+          </tr>
+          <tr>
+            <td>GPCB compliance</td>
+            <td>Warning issued</td>
+            <td>Fully compliant</td>
+          </tr>
+          <tr>
+            <td>Annual savings</td>
+            <td colspan="2" style="text-align:center;font-weight:700;color:#2d6a4f;">&#8377;97,20,000 per year</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <blockquote>
+        "We were skeptical at first — we'd been burning coal for 15 years. But the numbers spoke for themselves. Our boilers run cleaner, our costs are down, and we haven't had a single compliance issue since the switch. Kanoz's supply consistency is what convinced us to commit long-term."
+        <br><br>— Operations Manager, Surat Textile Unit
+      </blockquote>
+
+      <h2>Breaking Down the Savings</h2>
+
+      <h3>Direct Fuel Cost Savings: &#8377;8,10,000/month</h3>
+      <p>Even though the unit consumed a similar tonnage of pellets (160 tons vs 180 tons of coal — pellets have slightly higher efficiency due to lower ash), the per-ton cost dropped from &#8377;12,500 to &#8377;9,000. Over 12 months, this alone saves &#8377;97.2 lakh.</p>
+
+      <h3>Maintenance Savings: &#8377;2,40,000/year</h3>
+      <p>With cleaning intervals extending from 10 days to 30 days and reduced tube replacement frequency, annual maintenance costs dropped significantly.</p>
+
+      <h3>Ash Disposal Savings: &#8377;1,80,000/year</h3>
+      <p>Going from 60 tons of ash to 8 tons per month eliminated most disposal logistics and costs.</p>
+
+      <h3>Production Uptime Gains</h3>
+      <p>Reducing unplanned downtime from 10 hours to under 2 hours per month translated to approximately 96 additional production hours per year — worth an estimated &#8377;4-5 lakh in additional output capacity.</p>
+
+      <div class="highlight-box">
+        <h3>Total Annual Benefit</h3>
+        <p>Direct fuel savings: &#8377;97.2 lakh<br>
+        Maintenance savings: &#8377;2.4 lakh<br>
+        Ash disposal savings: &#8377;1.8 lakh<br>
+        Production uptime value: &#8377;4-5 lakh<br><br>
+        <strong>Total: Over &#8377;1 crore per year in combined savings and gains</strong></p>
+      </div>
+
+      <h2>Lessons for Other Industries</h2>
+
+      <ol>
+        <li><strong>Start with a trial.</strong> A 2-week pilot run eliminates risk and builds confidence in the switch.</li>
+        <li><strong>Boiler modifications are minimal.</strong> Most coal boilers need only minor grate adjustments — not a full overhaul.</li>
+        <li><strong>Supply reliability matters more than price.</strong> Choose a supplier who can guarantee consistent monthly volume. A missed delivery disrupts production far more than a few hundred rupees per ton difference.</li>
+        <li><strong>Document your emissions before and after.</strong> This data is valuable for CPCB compliance and can support carbon credit applications.</li>
+      </ol>
+
+      <div class="article-cta">
+        <h3>Want Similar Results for Your Factory?</h3>
+        <p>We'll assess your boilers, calculate your savings, and provide a trial shipment — all free of charge.</p>
+        <a href="index.html#contact" class="btn">Request a Free Assessment &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FULL ARTICLE 3: India's Biomass Energy Policy -->
+  <div class="article-full" id="biomass-energy-policy">
+    <a href="#" class="article-back" onclick="showList()">&larr; Back to All Articles</a>
+    <div class="article-banner banner-globe">&#x1F30D;</div>
+    <div class="article-content">
+      <div class="article-meta">
+        <span class="blog-meta-tag">Industry Insight</span>
+        <span>February 1, 2026</span>
+        <span>7 min read</span>
+      </div>
+      <h1>India's Biomass Energy Policy: What You Need to Know</h1>
+
+      <p>India's biomass energy sector has undergone a policy transformation over the past five years. What was once a niche segment dominated by small-scale operations has become a strategic priority in India's energy transition. For industrial buyers, understanding these policies isn't just about compliance — it's about capturing significant financial incentives.</p>
+
+      <p>Here's a comprehensive overview of the policies, incentives, and regulations that every industrial buyer and biomass manufacturer should know.</p>
+
+      <h2>1. Mandatory Biomass Co-firing in Thermal Power Plants</h2>
+
+      <p>In one of the most significant policy moves, the Ministry of Power issued directives for all thermal power plants to co-fire 5–10% biomass pellets alongside coal. This policy serves a dual purpose: reducing the carbon footprint of electricity generation and creating guaranteed demand for biomass pellets.</p>
+
+      <p>For pellet manufacturers, this translates to massive institutional demand. NTPC alone, India's largest power producer, has been actively procuring biomass pellets through its subsidiaries. This has brought stability and scale to the biomass pellet market that didn't exist five years ago.</p>
+
+      <h2>2. National Bioenergy Programme (NBP)</h2>
+
+      <p>The Ministry of New and Renewable Energy (MNRE) operates the National Bioenergy Programme, which provides:</p>
+
+      <ul>
+        <li><strong>Capital subsidies</strong> of up to 50% for setting up biomass power projects (up to 20 MW)</li>
+        <li><strong>Financial assistance</strong> for biomass pellet/briquette manufacturing units</li>
+        <li><strong>Research and development grants</strong> for improving biomass conversion technologies</li>
+        <li><strong>State-level top-up subsidies</strong> varying by state (Uttar Pradesh, Punjab, Haryana, and Madhya Pradesh are particularly generous)</li>
+      </ul>
+
+      <p>For industries looking to set up captive biomass-based power or heating, this programme can reduce capital investment by nearly half.</p>
+
+      <h2>3. Carbon Credit Opportunities</h2>
+
+      <p>India is one of the largest participants in global carbon credit markets. Industries that switch from coal to biomass can earn Certified Emission Reductions (CERs) or Voluntary Carbon Units (VCUs), which can be sold on international exchanges.</p>
+
+      <p>Here's how the economics work:</p>
+
+      <ul>
+        <li>Every ton of coal replaced by biomass pellets avoids approximately <strong>2.4 tons of CO2 emissions</strong></li>
+        <li>Current carbon credit prices range from <strong>$5–$15 per ton of CO2</strong> in voluntary markets</li>
+        <li>A factory using 100 tons of pellets per month can generate approximately <strong>2,880 carbon credits annually</strong></li>
+        <li>At $10/credit, that's an additional revenue of <strong>&#8377;24 lakh per year</strong></li>
+      </ul>
+
+      <blockquote>
+        Carbon credits are often overlooked by small and mid-sized industries, but for companies consuming 50+ tons of biomass per month, the revenue can be substantial — and it's essentially "free money" on top of your existing fuel cost savings.
+      </blockquote>
+
+      <h2>4. CPCB Emission Standards</h2>
+
+      <p>The Central Pollution Control Board has progressively tightened emission standards for industrial boilers. Key regulations include:</p>
+
+      <ul>
+        <li><strong>Particulate matter (PM):</strong> Maximum 100 mg/Nm³ for boilers above 2 TPH</li>
+        <li><strong>SO2 emissions:</strong> Increasingly strict limits, especially in industrial clusters</li>
+        <li><strong>NOx emissions:</strong> New limits being introduced for larger installations</li>
+      </ul>
+
+      <p>Biomass pellets produce significantly lower PM, virtually zero SO2, and lower NOx compared to coal. For many industries, switching to biomass is the simplest path to emission compliance — far cheaper than installing electrostatic precipitators or scrubbers for coal combustion.</p>
+
+      <h2>5. State-Level Incentives</h2>
+
+      <p>Several states offer additional incentives beyond central government programmes:</p>
+
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>State</th>
+            <th>Key Incentive</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Punjab</td>
+            <td>Subsidies for crop residue-based pellet plants; stubble burning penalty exemptions for farmers supplying to pellet units</td>
+          </tr>
+          <tr>
+            <td>Uttar Pradesh</td>
+            <td>Capital subsidies under UP Bioenergy Policy; expedited industrial clearances for biomass projects</td>
+          </tr>
+          <tr>
+            <td>Haryana</td>
+            <td>Land allocation support; electricity duty exemptions for biomass power projects</td>
+          </tr>
+          <tr>
+            <td>Madhya Pradesh</td>
+            <td>Interest subsidies on loans for biomass manufacturing; reduced GST registration requirements</td>
+          </tr>
+          <tr>
+            <td>Gujarat</td>
+            <td>Industrial promotion subsidies applicable to biomass pellet units; favorable power purchase agreements</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>6. GST and Tax Benefits</h2>
+
+      <p>Biomass pellets are currently taxed at <strong>5% GST</strong>, one of the lowest rates for any industrial fuel. By comparison, coal attracts a GST of 5% plus an additional GST compensation cess. This makes biomass pellets more tax-efficient for industrial procurement.</p>
+
+      <p>Additionally, industries investing in biomass-based boilers or conversion equipment can claim <strong>accelerated depreciation</strong> of up to 80% in the first year — a significant tax benefit that effectively reduces the conversion cost by nearly half.</p>
+
+      <h2>7. National Clean Air Programme (NCAP)</h2>
+
+      <p>Under NCAP, over 130 cities have been identified for intensive air quality improvement. Industries in these cities face heightened scrutiny and stricter enforcement. Coal-burning units in NCAP cities are increasingly being directed to switch to cleaner fuels or face operational restrictions.</p>
+
+      <p>Biomass pellets qualify as a "clean fuel" under NCAP guidelines, making them an approved alternative for industries in affected zones.</p>
+
+      <div class="highlight-box">
+        <h3>The Bottom Line for Industrial Buyers</h3>
+        <ul>
+          <li>Government policies are actively pushing coal-to-biomass conversion</li>
+          <li>Financial incentives (subsidies, tax benefits, carbon credits) can recover conversion costs within 6–12 months</li>
+          <li>Emission compliance becomes automatic with biomass — no expensive pollution control equipment needed</li>
+          <li>NTPC co-firing mandate ensures long-term demand stability for the pellet market</li>
+          <li>First movers gain maximum benefit from carbon credits before market saturation</li>
+        </ul>
+      </div>
+
+      <h2>What Should You Do Next?</h2>
+
+      <ol>
+        <li><strong>Audit your current fuel costs and emissions.</strong> This baseline data is essential for calculating savings and applying for carbon credits.</li>
+        <li><strong>Check state-specific incentives.</strong> Many subsidies require application before project implementation, so early planning is crucial.</li>
+        <li><strong>Start with a trial.</strong> Most boiler conversions can be piloted in 2 weeks with minimal investment.</li>
+        <li><strong>Partner with a reliable supplier.</strong> Policy incentives are only valuable if you have consistent pellet supply. Choose manufacturers with proven production capacity and logistics networks.</li>
+      </ol>
+
+      <div class="article-cta">
+        <h3>Need Help Navigating Biomass Policy?</h3>
+        <p>Our team can guide you through incentive applications, carbon credit registration, and the transition from coal to biomass.</p>
+        <a href="index.html#contact" class="btn">Talk to Our Team &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="blog-footer">
+    <p>&copy; 2026 Kanoz Bio Energy. All rights reserved. | <a href="index.html">Back to Home</a></p>
+  </footer>
+
+  <script>
+  (function() {
+    function showArticle(id) {
+      document.getElementById('blogList').style.display = 'none';
+      document.querySelectorAll('.article-full').forEach(function(el) {
+        el.classList.remove('active');
+      });
+      var article = document.getElementById(id);
+      if (article) {
+        article.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    function showList() {
+      document.querySelectorAll('.article-full').forEach(function(el) {
+        el.classList.remove('active');
+      });
+      document.getElementById('blogList').style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Make functions global for onclick handlers
+    window.showArticle = showArticle;
+    window.showList = showList;
+
+    // Handle direct hash links (from index.html)
+    function handleHash() {
+      var hash = window.location.hash.replace('#', '');
+      if (hash && document.getElementById(hash)) {
+        showArticle(hash);
+      }
+    }
+
+    handleHash();
+    window.addEventListener('hashchange', handleHash);
+  })();
+  </script>
+
+</body>
+</html>
