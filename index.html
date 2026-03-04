@@ -1184,6 +1184,84 @@
       color: var(--white);
     }
 
+    /* === PELLETOPS BANNER === */
+    .pelletops-banner {
+      padding: 4rem 1.5rem;
+      background: linear-gradient(135deg, #0f1f17 0%, #1b4332 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .pelletops-banner::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(233,196,106,0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .pelletops-banner-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+    .pelletops-banner-text {
+      flex: 1;
+    }
+    .pelletops-badge {
+      display: inline-block;
+      background: rgba(233,196,106,0.15);
+      color: #e9c46a;
+      padding: 0.3rem 0.75rem;
+      border-radius: 100px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.75rem;
+    }
+    .pelletops-banner-text h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.5rem;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+    .pelletops-banner-text p {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+    .pelletops-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background: #d4a373;
+      color: #1b4332;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      white-space: nowrap;
+      transition: background 0.2s, transform 0.2s;
+      flex-shrink: 0;
+    }
+    .pelletops-cta:hover {
+      background: #e9c46a;
+      transform: translateY(-2px);
+    }
+    @media (max-width: 768px) {
+      .pelletops-banner-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
     /* === FAQ SECTION === */
     .faq {
       padding: 6rem 1.5rem;
@@ -1572,7 +1650,7 @@
         <li><a href="#faq">FAQ</a></li>
         <li><a href="blog.html" data-i18n="nav_blog">Blog</a></li>
         <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
-        <li><a href="portal.html" data-i18n="nav_portal">Portal</a></li>
+        <li><a href="portal.html" data-i18n="nav_portal">PelletOps</a></li>
         <li><a href="#contact" class="nav-cta" data-i18n="nav_quote">Get a Quote</a></li>
       </ul>
       <div style="display:flex;align-items:center;gap:0.5rem;">
@@ -1854,6 +1932,18 @@
     </div>
   </section>
 
+  <!-- PELLETOPS BANNER -->
+  <div class="pelletops-banner">
+    <div class="pelletops-banner-inner">
+      <div class="pelletops-banner-text">
+        <div class="pelletops-badge">Coming Soon</div>
+        <h3>Are You a Pellet Manufacturer?</h3>
+        <p>PelletOps is India's first operating system for biomass pellet plants. Weighbridge, production, quality, dispatch — all in one dashboard.</p>
+      </div>
+      <a href="portal.html" class="pelletops-cta">Learn More &rarr;</a>
+    </div>
+  </div>
+
   <!-- BLOG / RESOURCES -->
   <section class="blog" id="blog">
     <div class="section-header">
@@ -2113,7 +2203,7 @@
           <li><a href="tel:+919839788886">+91 98397 88886</a></li>
           <li><a href="mailto:info@kanoz.in">info@kanoz.in</a></li>
           <li><a href="#contact">Request a Quote</a></li>
-          <li><a href="portal.html">Customer Portal</a></li>
+          <li><a href="portal.html">PelletOps</a></li>
           <li><a href="https://wa.me/919839788886" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
         </ul>
       </div>

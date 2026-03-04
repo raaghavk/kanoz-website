@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biomass Pellet Freight Calculator | Free Tool — Kanoz Bio Energy</title>
+  <meta name="description" content="Free freight cost estimator for biomass pellet deliveries across India. Calculate transport costs based on distance, tonnage, and truck type.">
+  <meta name="keywords" content="biomass pellet freight cost, pellet transport calculator, biomass delivery cost India">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://kanoz.in/tools/freight-calculator.html">
+  <link rel="icon" type="image/png" href="../logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green: #2d6a4f; --green-dark: #1b4332; --green-light: #40916c;
+      --gold: #d4a373; --gold-light: #e9c46a;
+      --cream: #fefae0; --cream-dark: #f5edd6;
+      --white: #ffffff; --text: #2c2c2c; --text-light: #595c4a;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; color: var(--text); background: var(--cream); line-height: 1.7; }
+    a { text-decoration: none; color: inherit; }
+
+    .tool-header {
+      background: var(--green-dark);
+      padding: 1rem 1.5rem;
+    }
+    .tool-header-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .tool-header a { color: var(--white); font-weight: 600; display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; }
+    .tool-header img { width: 28px; height: 28px; }
+    .tool-header nav { display: flex; gap: 1.5rem; }
+    .tool-header nav a { font-weight: 500; opacity: 0.8; }
+    .tool-header nav a:hover { opacity: 1; }
+
+    .tool-hero {
+      background: linear-gradient(135deg, #334155, #1b4332);
+      padding: 4rem 1.5rem 3rem;
+      text-align: center;
+      color: var(--white);
+    }
+    .tool-hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2.2rem;
+      margin-bottom: 0.75rem;
+    }
+    .tool-hero p { opacity: 0.8; max-width: 550px; margin: 0 auto; }
+
+    .tool-main {
+      max-width: 700px;
+      margin: -2rem auto 4rem;
+      padding: 0 1.5rem;
+    }
+    .tool-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 2.5rem;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    }
+    .tool-form-group {
+      margin-bottom: 1.5rem;
+    }
+    .tool-form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+    .tool-form-group .hint {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      margin-bottom: 0.4rem;
+    }
+    .tool-form-group input, .tool-form-group select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1.5px solid var(--cream-dark);
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 1rem;
+      background: var(--cream);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .tool-form-group input:focus, .tool-form-group select:focus {
+      border-color: var(--green);
+      box-shadow: 0 0 0 3px rgba(45,106,79,0.1);
+    }
+
+    .tool-results {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 2px solid var(--cream);
+    }
+    .tool-results h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.3rem;
+      color: var(--green-dark);
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    .result-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    .result-card {
+      background: var(--cream);
+      border-radius: 12px;
+      padding: 1.25rem;
+      text-align: center;
+    }
+    .result-card.highlight {
+      background: linear-gradient(135deg, #334155, #1b4332);
+      color: var(--white);
+      grid-column: 1 / -1;
+    }
+    .result-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-light);
+      margin-bottom: 0.3rem;
+    }
+    .result-card.highlight .result-label { color: rgba(255,255,255,0.7); }
+    .result-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--green-dark);
+    }
+    .result-card.highlight .result-value {
+      color: var(--gold-light);
+      font-size: 2rem;
+    }
+
+    .tool-cta {
+      text-align: center;
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background: var(--cream);
+      border-radius: 12px;
+    }
+    .tool-cta p { color: var(--text-light); font-size: 0.9rem; margin-bottom: 0.75rem; }
+    .tool-cta a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.5rem;
+      background: var(--green);
+      color: var(--white);
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    .tool-cta a:hover { background: var(--green-dark); }
+
+    .tool-info {
+      max-width: 700px;
+      margin: 0 auto 4rem;
+      padding: 0 1.5rem;
+    }
+    .tool-info h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.5rem;
+      color: var(--green-dark);
+      margin-bottom: 1rem;
+    }
+    .tool-info p {
+      color: var(--text-light);
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+    .rate-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+    }
+    .rate-table th {
+      background: var(--green);
+      color: var(--white);
+      padding: 0.6rem 1rem;
+      text-align: left;
+      font-weight: 600;
+    }
+    .rate-table td {
+      padding: 0.6rem 1rem;
+      border-bottom: 1px solid var(--cream-dark);
+    }
+    .rate-table tr:nth-child(even) { background: var(--cream); }
+
+    .tool-footer {
+      background: var(--green-dark);
+      color: rgba(255,255,255,0.6);
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.85rem;
+    }
+    .tool-footer a { color: var(--gold-light); }
+
+    @media (max-width: 600px) {
+      .tool-hero h1 { font-size: 1.6rem; }
+      .result-grid { grid-template-columns: 1fr; }
+      .result-card.highlight { grid-column: auto; }
+      .tool-card { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="tool-header">
+    <div class="tool-header-inner">
+      <a href="../index.html">
+        <img src="../logo.png" alt="Kanoz" width="28" height="28">
+        Kanoz Bio Energy
+      </a>
+      <nav>
+        <a href="../index.html#contact">Get Quote</a>
+        <a href="../portal.html">PelletOps</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="tool-hero">
+    <h1>Freight Calculator</h1>
+    <p>Estimate transport costs for biomass pellet deliveries based on distance, tonnage, and vehicle type.</p>
+  </section>
+
+  <main class="tool-main">
+    <div class="tool-card">
+      <div class="tool-form-group">
+        <label for="distance">Distance (km)</label>
+        <div class="hint">Approximate road distance from pellet plant to your facility</div>
+        <input type="number" id="distance" value="500" min="10" max="5000" placeholder="e.g. 500">
+      </div>
+      <div class="tool-form-group">
+        <label for="tonnage">Tonnage per Trip</label>
+        <div class="hint">How many tons per truck load</div>
+        <select id="tonnage">
+          <option value="9">9 Ton (Mini Truck / Eicher)</option>
+          <option value="16">16 Ton (10-Wheeler)</option>
+          <option value="21">21 Ton (12-Wheeler)</option>
+          <option value="25" selected>25 Ton (Trailer)</option>
+          <option value="30">30 Ton (Multi-Axle)</option>
+        </select>
+      </div>
+      <div class="tool-form-group">
+        <label for="monthlyTons">Monthly Requirement (Tons)</label>
+        <div class="hint">Total tons you need delivered per month</div>
+        <input type="number" id="monthlyTons" value="100" min="1" max="50000" placeholder="e.g. 100">
+      </div>
+
+      <div class="tool-results">
+        <h3>Estimated Freight Costs</h3>
+        <div class="result-grid">
+          <div class="result-card highlight">
+            <div class="result-label">Freight Cost per Ton</div>
+            <div class="result-value" id="resCostPerTon">&#8377;0</div>
+          </div>
+          <div class="result-card">
+            <div class="result-label">Cost per Trip</div>
+            <div class="result-value" id="resCostPerTrip">&#8377;0</div>
+          </div>
+          <div class="result-card">
+            <div class="result-label">Trips per Month</div>
+            <div class="result-value" id="resTrips">0</div>
+          </div>
+          <div class="result-card">
+            <div class="result-label">Monthly Freight Cost</div>
+            <div class="result-value" id="resMonthlyCost">&#8377;0</div>
+          </div>
+          <div class="result-card">
+            <div class="result-label">Delivered Price per Ton</div>
+            <div class="result-value" id="resDeliveredPrice">&#8377;0</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tool-cta">
+        <p>Kanoz handles logistics end-to-end. Get a quote with delivery included.</p>
+        <a href="../index.html#contact">Get Delivered Quote &rarr;</a>
+      </div>
+    </div>
+  </main>
+
+  <section class="tool-info">
+    <h2>How Freight Rates Work</h2>
+    <p>Biomass pellet transport costs in India are primarily driven by distance and vehicle capacity. Rates are typically quoted per ton-km or per trip. Larger vehicles (trailers, multi-axle) offer significantly lower per-ton costs for distances above 300 km.</p>
+
+    <table class="rate-table">
+      <thead>
+        <tr>
+          <th>Distance Range</th>
+          <th>Approx. Rate (per ton-km)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>0 – 200 km</td><td>&#8377;3.5 – &#8377;4.5</td></tr>
+        <tr><td>200 – 500 km</td><td>&#8377;2.8 – &#8377;3.5</td></tr>
+        <tr><td>500 – 1000 km</td><td>&#8377;2.2 – &#8377;2.8</td></tr>
+        <tr><td>1000+ km</td><td>&#8377;1.8 – &#8377;2.2</td></tr>
+      </tbody>
+    </table>
+
+    <p>These are indicative rates. Actual costs vary based on route, diesel prices, toll charges, loading/unloading conditions, and seasonal demand. For distances over 1,000 km, rail transport may be more economical for large volumes.</p>
+    <p>At Kanoz Bio Energy, we include freight in our delivered pricing for most locations, so you don't need to arrange separate transport.</p>
+  </section>
+
+  <footer class="tool-footer">
+    <p>Free tool by <a href="../index.html">Kanoz Bio Energy</a> &middot; <a href="../portal.html">PelletOps</a> &middot; <a href="coal-to-pellet.html">Coal to Pellet Converter</a></p>
+  </footer>
+
+  <script>
+  (function() {
+    var PELLET_BASE_PRICE = 8500;
+
+    function getRate(distance) {
+      if (distance <= 200) return 4.0;
+      if (distance <= 500) return 3.2;
+      if (distance <= 1000) return 2.5;
+      return 2.0;
+    }
+
+    function calculate() {
+      var distance = parseFloat(document.getElementById('distance').value) || 0;
+      var tonnage = parseFloat(document.getElementById('tonnage').value) || 25;
+      var monthlyTons = parseFloat(document.getElementById('monthlyTons').value) || 0;
+
+      var rate = getRate(distance);
+      var costPerTon = Math.round(rate * distance);
+      var costPerTrip = Math.round(costPerTon * tonnage);
+      var tripsPerMonth = Math.ceil(monthlyTons / tonnage);
+      var monthlyCost = costPerTrip * tripsPerMonth;
+      var deliveredPrice = PELLET_BASE_PRICE + costPerTon;
+
+      document.getElementById('resCostPerTon').textContent = '\u20B9' + costPerTon.toLocaleString('en-IN');
+      document.getElementById('resCostPerTrip').textContent = '\u20B9' + costPerTrip.toLocaleString('en-IN');
+      document.getElementById('resTrips').textContent = tripsPerMonth;
+      document.getElementById('resMonthlyCost').textContent = '\u20B9' + monthlyCost.toLocaleString('en-IN');
+      document.getElementById('resDeliveredPrice').textContent = '\u20B9' + deliveredPrice.toLocaleString('en-IN') + '/T';
+    }
+
+    ['distance', 'tonnage', 'monthlyTons'].forEach(function(id) {
+      document.getElementById(id).addEventListener('input', calculate);
+      document.getElementById(id).addEventListener('change', calculate);
+    });
+
+    calculate();
+  })();
+  </script>
+
+</body>
+</html>
