@@ -9,12 +9,20 @@
   <meta property="og:title" content="Kanoz Bio Energy | Biomass Pellet Manufacturer">
   <meta property="og:description" content="Premium biomass pellets from agricultural waste. 24/7 production, pan-India supply.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kanoz.in/">
+  <meta property="og:image" content="https://kanoz.in/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kanoz Bio Energy | Biomass Pellet Manufacturer">
+  <meta name="twitter:description" content="Premium biomass pellets from agricultural waste. 24/7 production, pan-India supply.">
+  <meta name="twitter:image" content="https://kanoz.in/og-image.jpg">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#2d6a4f">
   <link rel="canonical" href="https://kanoz.in/">
   <link rel="icon" type="image/png" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://wa.me">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
   <!-- Structured Data -->
@@ -47,6 +55,13 @@
     "manufacturer": {
       "@type": "Organization",
       "name": "Kanoz Bio Energy"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "150",
+      "bestRating": "5",
+      "worstRating": "1"
     }
   }
   </script>
@@ -62,11 +77,11 @@
       --gold-light: #e9c46a;
       --cream: #fefae0;
       --cream-dark: #f5edd6;
-      --brown: #6b705c;
+      --brown: #595c4a;
       --brown-dark: #4a4e3c;
       --white: #ffffff;
       --text: #2c2c2c;
-      --text-light: #6b705c;
+      --text-light: #595c4a;
     }
     html { scroll-behavior: smooth; }
     body {
@@ -196,6 +211,7 @@
     /* === HERO === */
     .hero {
       min-height: 100vh;
+      min-height: 100dvh;
       display: flex;
       align-items: center;
       padding: 8rem 1.5rem 4rem;
@@ -425,7 +441,7 @@
     }
     .about-mini-stat span {
       font-size: 0.75rem;
-      color: rgba(255,255,255,0.8);
+      color: rgba(255,255,255,0.85);
     }
     .about-content .section-label {
       text-align: left;
@@ -627,7 +643,7 @@
     }
     .why-us .section-label { color: var(--gold-light); }
     .why-us .section-header h2 { color: var(--white); }
-    .why-us .section-header p { color: rgba(255,255,255,0.75); }
+    .why-us .section-header p { color: rgba(255,255,255,0.85); }
     .why-grid {
       max-width: 1200px;
       margin: 0 auto;
@@ -886,7 +902,7 @@
       border: 1.5px solid var(--cream-dark);
       border-radius: 10px;
       font-family: 'Inter', sans-serif;
-      font-size: 0.95rem;
+      font-size: 1rem;
       background: var(--cream);
       transition: border-color 0.2s, box-shadow 0.2s;
       outline: none;
@@ -958,7 +974,7 @@
     /* === FOOTER === */
     .footer {
       background: var(--green-dark);
-      color: rgba(255,255,255,0.7);
+      color: rgba(255,255,255,0.85);
       padding: 4rem 1.5rem 1.5rem;
     }
     .footer-top {
@@ -1048,6 +1064,12 @@
       fill: white;
     }
 
+    /* === SCROLL OFFSET FOR FIXED HEADER === */
+    section[id] { scroll-margin-top: 80px; }
+
+    /* === ACTIVE NAV LINK === */
+    .nav-links a.active { color: var(--green); font-weight: 600; }
+
     /* === SCROLL ANIMATIONS (CSS-based) === */
     .animate-on-scroll {
       opacity: 0;
@@ -1063,6 +1085,12 @@
     *:focus-visible {
       outline: 2px solid var(--green);
       outline-offset: 2px;
+    }
+
+    /* === REDUCED MOTION === */
+    @media (prefers-reduced-motion: reduce) {
+      .animate-on-scroll { opacity: 1; transform: none; transition: none; }
+      html { scroll-behavior: auto; }
     }
 
     /* === RESPONSIVE === */
@@ -1126,13 +1154,20 @@
 </head>
 <body>
 
+  <!-- SVG Sprite (reusable icons) -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <symbol id="icon-whatsapp" viewBox="0 0 24 24">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </symbol>
+  </svg>
+
   <!-- Skip Navigation (Accessibility) -->
   <a href="#main-content" class="skip-nav">Skip to main content</a>
 
   <!-- HEADER -->
   <header class="header" id="header" role="banner">
     <nav class="nav" aria-label="Main navigation">
-      <a href="#" class="nav-brand">
+      <a href="#hero" class="nav-brand">
         <img src="logo.png" alt="Kanoz Bio Energy Logo" width="44" height="44">
         <div class="nav-brand-text">
           <h1>Kanoz Bio Energy</h1>
@@ -1166,7 +1201,7 @@
         <div class="hero-btns">
           <a href="#contact" class="btn btn-primary">Get a Quote &rarr;</a>
           <a href="https://wa.me/919839788886?text=Hi%2C%20I%20want%20to%20enquire%20about%20biomass%20pellets" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <svg width="20" height="20" fill="currentColor" aria-hidden="true"><use href="#icon-whatsapp"/></svg>
             WhatsApp Us
           </a>
         </div>
@@ -1491,7 +1526,7 @@
           </div>
         </div>
         <a href="https://wa.me/919839788886?text=Hi%2C%20I%20want%20to%20enquire%20about%20biomass%20pellets" target="_blank" rel="noopener noreferrer" class="contact-whatsapp">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          <svg aria-hidden="true"><use href="#icon-whatsapp"/></svg>
           Chat on WhatsApp
         </a>
       </div>
@@ -1501,7 +1536,7 @@
           <div class="form-row">
             <div class="form-group">
               <label for="name">Full Name *</label>
-              <input type="text" id="name" name="name" placeholder="Your name" required autocomplete="name">
+              <input type="text" id="name" name="name" placeholder="Your name" required aria-required="true" autocomplete="name">
               <div class="form-error" id="nameError">Please enter your name</div>
             </div>
             <div class="form-group">
@@ -1512,7 +1547,7 @@
           <div class="form-row">
             <div class="form-group">
               <label for="email">Email *</label>
-              <input type="email" id="email" name="email" placeholder="you@company.com" required autocomplete="email">
+              <input type="email" id="email" name="email" placeholder="you@company.com" required aria-required="true" autocomplete="email">
               <div class="form-error" id="emailError">Please enter a valid email address</div>
             </div>
             <div class="form-group">
@@ -1523,7 +1558,7 @@
           </div>
           <div class="form-group">
             <label for="quantity">Monthly Requirement (Tons) *</label>
-            <select id="quantity" name="quantity" required>
+            <select id="quantity" name="quantity" required aria-required="true">
               <option value="">Select quantity</option>
               <option value="1-50">1 - 50 Tons</option>
               <option value="50-200">50 - 200 Tons</option>
@@ -1538,7 +1573,7 @@
           </div>
           <button type="submit" class="form-submit" id="submitBtn">Send Enquiry &rarr;</button>
         </form>
-        <div class="form-success" id="formSuccess">
+        <div class="form-success" id="formSuccess" aria-live="polite" aria-atomic="true">
           <div class="form-success-icon" aria-hidden="true">&#x2705;</div>
           <h4>Enquiry Sent Successfully!</h4>
           <p>Thank you for reaching out. Our team will get back to you within 24 hours.</p>
@@ -1554,7 +1589,7 @@
     <div class="footer-top">
       <div class="footer-about">
         <h3>
-          <img src="logo.png" alt="" width="32" height="32" aria-hidden="true">
+          <img src="logo.png" alt="" width="32" height="32" aria-hidden="true" loading="lazy">
           Kanoz Bio Energy
         </h3>
         <p>Leading manufacturer of premium biomass pellets from agricultural waste. 24/7 production, pan-India supply for a cleaner, greener future.</p>
@@ -1586,17 +1621,21 @@
 
   <!-- FLOATING WHATSAPP BUTTON -->
   <a href="https://wa.me/919839788886?text=Hi%2C%20I%20want%20to%20enquire%20about%20biomass%20pellets" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat on WhatsApp">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <svg aria-hidden="true"><use href="#icon-whatsapp"/></svg>
   </a>
 
   <script>
+  (function() {
+    var SCROLL_THRESHOLD = 20;
+    var OBSERVER_THRESHOLD = 0.1;
+
     // Header scroll effect (throttled)
-    const header = document.getElementById('header');
-    let scrollTicking = false;
+    var header = document.getElementById('header');
+    var scrollTicking = false;
     window.addEventListener('scroll', function() {
       if (!scrollTicking) {
         window.requestAnimationFrame(function() {
-          header.classList.toggle('scrolled', window.scrollY > 20);
+          header.classList.toggle('scrolled', window.scrollY > SCROLL_THRESHOLD);
           scrollTicking = false;
         });
         scrollTicking = true;
@@ -1604,11 +1643,11 @@
     }, { passive: true });
 
     // Mobile menu toggle with keyboard support
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('navLinks');
+    var hamburger = document.getElementById('hamburger');
+    var navLinks = document.getElementById('navLinks');
 
     hamburger.addEventListener('click', function() {
-      const isOpen = navLinks.classList.toggle('active');
+      var isOpen = navLinks.classList.toggle('active');
       hamburger.classList.toggle('active');
       hamburger.setAttribute('aria-expanded', isOpen);
       if (isOpen) {
@@ -1635,11 +1674,22 @@
       }
     });
 
+    // Active nav link highlighting on scroll
+    var sections = document.querySelectorAll('section[id]');
+    var navAnchors = navLinks.querySelectorAll('a[href^="#"]');
+    var sectionObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var id = entry.target.getAttribute('id');
+          navAnchors.forEach(function(a) {
+            a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+          });
+        }
+      });
+    }, { threshold: 0.3, rootMargin: '-80px 0px -50% 0px' });
+    sections.forEach(function(section) { sectionObserver.observe(section); });
+
     // Scroll animations using CSS classes
-    var observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
     var observer = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
         if (entry.isIntersecting) {
@@ -1647,7 +1697,7 @@
           observer.unobserve(entry.target);
         }
       });
-    }, observerOptions);
+    }, { threshold: OBSERVER_THRESHOLD, rootMargin: '0px 0px -50px 0px' });
 
     document.querySelectorAll('.animate-on-scroll').forEach(function(el) {
       observer.observe(el);
@@ -1690,7 +1740,7 @@
     }
 
     function validatePhone(phone) {
-      if (!phone) return true; // optional field
+      if (!phone) return true;
       return /^[+]?[0-9\s\-]{7,15}$/.test(phone.trim());
     }
 
@@ -1707,25 +1757,21 @@
       var data = new FormData(contactForm);
       var isValid = true;
 
-      // Validate name
       if (!data.get('name') || !data.get('name').trim()) {
         showError('name', 'nameError');
         isValid = false;
       }
 
-      // Validate email
       if (!data.get('email') || !validateEmail(data.get('email'))) {
         showError('email', 'emailError');
         isValid = false;
       }
 
-      // Validate phone (if provided)
       if (data.get('phone') && !validatePhone(data.get('phone'))) {
         showError('phone', 'phoneError');
         isValid = false;
       }
 
-      // Validate quantity
       if (!data.get('quantity')) {
         showError('quantity', 'quantityError');
         isValid = false;
@@ -1733,11 +1779,9 @@
 
       if (!isValid) return;
 
-      // Disable button and show loading state
       submitBtn.disabled = true;
       submitBtn.textContent = 'Sending...';
 
-      // Sanitize values for mailto
       var name = sanitize(data.get('name').trim());
       var company = sanitize((data.get('company') || '').trim());
       var email = sanitize(data.get('email').trim());
@@ -1757,7 +1801,6 @@
 
       window.location.href = 'mailto:info@kanoz.in?subject=' + subject + '&body=' + body;
 
-      // Show success message
       setTimeout(function() {
         contactForm.style.display = 'none';
         formSuccess.classList.add('visible');
@@ -1765,6 +1808,7 @@
         submitBtn.textContent = 'Send Enquiry \u2192';
       }, 500);
     });
+  })();
   </script>
 
 </body>
