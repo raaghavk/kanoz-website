@@ -301,17 +301,20 @@
       color: var(--white);
     }
     .btn-primary:hover { background: var(--green-dark); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(45,106,79,0.25); }
+    .btn-primary:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
     .btn-outline {
       background: transparent;
       color: var(--green);
       border: 2px solid var(--green);
     }
     .btn-outline:hover { background: var(--green); color: var(--white); }
+    .btn-outline:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
     .btn-whatsapp {
       background: var(--whatsapp);
       color: var(--white);
     }
     .btn-whatsapp:hover { background: #1da851; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(37,211,102,0.3); }
+    .btn-whatsapp:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
     .hero-visual {
       display: flex;
       justify-content: center;
@@ -675,6 +678,7 @@
       font-size: 1rem;
       font-weight: 600;
       margin-bottom: 0.5rem;
+      color: var(--white);
     }
     .why-item p {
       font-size: 0.85rem;
@@ -1043,8 +1047,8 @@
     /* === WHATSAPP FLOATING BUTTON === */
     .whatsapp-float {
       position: fixed;
-      bottom: 24px;
-      right: 24px;
+      bottom: max(24px, env(safe-area-inset-bottom));
+      right: max(24px, env(safe-area-inset-right));
       z-index: 99;
       width: 60px;
       height: 60px;
@@ -1060,6 +1064,11 @@
     .whatsapp-float:hover {
       transform: scale(1.1);
       box-shadow: 0 6px 30px rgba(37,211,102,0.5);
+    }
+    .whatsapp-float:focus-visible {
+      transform: scale(1.1);
+      outline: 2px solid var(--gold);
+      outline-offset: 2px;
     }
     .whatsapp-float svg {
       width: 32px;
@@ -1540,7 +1549,7 @@
             <div class="form-group">
               <label for="name">Full Name *</label>
               <input type="text" id="name" name="name" placeholder="Your name" required aria-required="true" autocomplete="name">
-              <div class="form-error" id="nameError">Please enter your name</div>
+              <div class="form-error" id="nameError" aria-live="polite" aria-atomic="true">Please enter your name</div>
             </div>
             <div class="form-group">
               <label for="company">Company Name</label>
@@ -1551,7 +1560,7 @@
             <div class="form-group">
               <label for="email">Email *</label>
               <input type="email" id="email" name="email" placeholder="you@company.com" required aria-required="true" autocomplete="email">
-              <div class="form-error" id="emailError">Please enter a valid email address</div>
+              <div class="form-error" id="emailError" aria-live="polite" aria-atomic="true">Please enter a valid email address</div>
             </div>
             <div class="form-group">
               <label for="phone">Phone</label>
@@ -1568,7 +1577,7 @@
               <option value="200-500">200 - 500 Tons</option>
               <option value="500+">500+ Tons</option>
             </select>
-            <div class="form-error" id="quantityError">Please select a quantity range</div>
+            <div class="form-error" id="quantityError" aria-live="polite" aria-atomic="true">Please select a quantity range</div>
           </div>
           <div class="form-group">
             <label for="message">Message</label>
@@ -1624,7 +1633,7 @@
 
   <!-- FLOATING WHATSAPP BUTTON -->
   <a href="https://wa.me/919839788886?text=Hi%2C%20I%20want%20to%20enquire%20about%20biomass%20pellets" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat on WhatsApp">
-    <svg aria-hidden="true"><use href="#icon-whatsapp"/></svg>
+    <svg width="32" height="32" aria-hidden="true"><use href="#icon-whatsapp"/></svg>
   </a>
 
   <script>
