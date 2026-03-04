@@ -9,8 +9,48 @@
   <meta property="og:title" content="Kanoz Bio Energy | Biomass Pellet Manufacturer">
   <meta property="og:description" content="Premium biomass pellets from agricultural waste. 24/7 production, pan-India supply.">
   <meta property="og:type" content="website">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#2d6a4f">
+  <link rel="canonical" href="https://kanoz.in/">
   <link rel="icon" type="image/png" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Kanoz Bio Energy",
+    "description": "Leading manufacturer of premium biomass pellets from agricultural waste in India.",
+    "url": "https://kanoz.in",
+    "telephone": "+919839788886",
+    "email": "info@kanoz.in",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "IN"
+    },
+    "sameAs": []
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Biomass Pellets",
+    "description": "High-calorific, low-ash biomass pellets made from sustainable agricultural residues.",
+    "brand": {
+      "@type": "Brand",
+      "name": "Kanoz Bio Energy"
+    },
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Kanoz Bio Energy"
+    }
+  }
+  </script>
+
   <style>
     /* === RESET & BASE === */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -38,6 +78,23 @@
     }
     img { max-width: 100%; display: block; }
     a { text-decoration: none; color: inherit; }
+
+    /* === SKIP NAV (Accessibility) === */
+    .skip-nav {
+      position: absolute;
+      top: -100%;
+      left: 1rem;
+      padding: 0.75rem 1.5rem;
+      background: var(--green-dark);
+      color: var(--white);
+      border-radius: 0 0 8px 8px;
+      font-weight: 600;
+      z-index: 200;
+      transition: top 0.2s;
+    }
+    .skip-nav:focus {
+      top: 0;
+    }
 
     /* === HEADER / NAV === */
     .header {
@@ -67,7 +124,7 @@
     }
     .nav-brand img {
       height: 44px;
-      width: auto;
+      width: 44px;
       border-radius: 8px;
     }
     .nav-brand-text h1 {
@@ -96,7 +153,8 @@
       color: var(--brown);
       transition: color 0.2s;
     }
-    .nav-links a:hover { color: var(--green); }
+    .nav-links a:hover,
+    .nav-links a:focus-visible { color: var(--green); }
     .nav-cta {
       background: var(--green);
       color: var(--white) !important;
@@ -111,7 +169,11 @@
       background: none;
       border: none;
       cursor: pointer;
-      padding: 0.5rem;
+      padding: 0.625rem;
+      min-width: 44px;
+      min-height: 44px;
+      align-items: center;
+      justify-content: center;
     }
     .hamburger span {
       display: block;
@@ -119,7 +181,16 @@
       height: 2px;
       background: var(--green-dark);
       margin: 6px 0;
-      transition: all 0.3s;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+    .hamburger.active span:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active span:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
     }
 
     /* === HERO === */
@@ -163,40 +234,30 @@
       z-index: 1;
     }
     .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
+      display: inline-block;
       background: rgba(45,106,79,0.08);
       color: var(--green);
       padding: 0.4rem 1rem;
-      border-radius: 50px;
+      border-radius: 100px;
       font-size: 0.8rem;
       font-weight: 600;
+      letter-spacing: 0.5px;
       margin-bottom: 1.5rem;
-    }
-    .hero-badge::before {
-      content: '';
-      width: 8px;
-      height: 8px;
-      background: var(--green-light);
-      border-radius: 50%;
     }
     .hero h2 {
       font-family: 'Playfair Display', serif;
       font-size: 3.2rem;
-      font-weight: 700;
       color: var(--green-dark);
       line-height: 1.2;
       margin-bottom: 1.5rem;
     }
     .hero h2 em {
       font-style: normal;
-      color: var(--gold);
+      color: var(--green-light);
     }
     .hero p {
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       color: var(--text-light);
-      margin-bottom: 2rem;
       max-width: 500px;
       line-height: 1.8;
     }
@@ -213,7 +274,7 @@
       border-radius: 10px;
       font-weight: 600;
       font-size: 1rem;
-      transition: all 0.2s;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s, color 0.2s;
       border: none;
       cursor: pointer;
     }
@@ -341,7 +402,7 @@
     }
     .about-card p {
       font-size: 0.95rem;
-      color: rgba(255,255,255,0.8);
+      color: rgba(255,255,255,0.85);
       line-height: 1.8;
     }
     .about-mini-stats {
@@ -364,7 +425,7 @@
     }
     .about-mini-stat span {
       font-size: 0.75rem;
-      color: rgba(255,255,255,0.7);
+      color: rgba(255,255,255,0.8);
     }
     .about-content .section-label {
       text-align: left;
@@ -599,14 +660,77 @@
     }
     .why-item p {
       font-size: 0.85rem;
-      color: rgba(255,255,255,0.7);
+      color: rgba(255,255,255,0.8);
       line-height: 1.6;
+    }
+
+    /* === TESTIMONIALS === */
+    .testimonials {
+      padding: 6rem 1.5rem;
+      background: var(--cream);
+    }
+    .testimonials-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .testimonial-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 2rem;
+      border: 1px solid rgba(45,106,79,0.05);
+      display: flex;
+      flex-direction: column;
+    }
+    .testimonial-stars {
+      color: var(--gold);
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      letter-spacing: 2px;
+    }
+    .testimonial-card blockquote {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      flex: 1;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      border-top: 1px solid var(--cream-dark);
+      padding-top: 1rem;
+    }
+    .testimonial-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--green), var(--green-light));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-weight: 700;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .testimonial-author-info strong {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--green-dark);
+    }
+    .testimonial-author-info span {
+      font-size: 0.8rem;
+      color: var(--text-light);
     }
 
     /* === SUSTAINABILITY === */
     .sustainability {
       padding: 6rem 1.5rem;
-      background: var(--cream);
+      background: var(--white);
     }
     .sustainability-inner {
       max-width: 1200px;
@@ -634,7 +758,7 @@
       gap: 1rem;
     }
     .impact-card {
-      background: var(--white);
+      background: var(--cream);
       border-radius: 14px;
       padding: 1.5rem;
       text-align: center;
@@ -659,7 +783,7 @@
     /* === CONTACT === */
     .contact {
       padding: 6rem 1.5rem;
-      background: var(--white);
+      background: var(--cream);
     }
     .contact-inner {
       max-width: 1200px;
@@ -721,7 +845,7 @@
       border-radius: 12px;
       font-weight: 600;
       font-size: 1rem;
-      transition: all 0.2s;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
     }
     .contact-whatsapp:hover { background: #1da851; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(37,211,102,0.3); }
     .contact-whatsapp svg {
@@ -730,7 +854,7 @@
       fill: currentColor;
     }
     .contact-form {
-      background: var(--cream);
+      background: var(--white);
       border-radius: 16px;
       padding: 2.5rem;
       box-shadow: 0 10px 40px rgba(0,0,0,0.05);
@@ -740,6 +864,11 @@
       font-size: 1.5rem;
       color: var(--green-dark);
       margin-bottom: 1.5rem;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
     }
     .form-group {
       margin-bottom: 1.25rem;
@@ -758,13 +887,23 @@
       border-radius: 10px;
       font-family: 'Inter', sans-serif;
       font-size: 0.95rem;
-      background: var(--white);
+      background: var(--cream);
       transition: border-color 0.2s, box-shadow 0.2s;
       outline: none;
     }
     .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
       border-color: var(--green);
       box-shadow: 0 0 0 3px rgba(45,106,79,0.1);
+    }
+    .form-group input.invalid, .form-group select.invalid {
+      border-color: #d32f2f;
+      box-shadow: 0 0 0 3px rgba(211,47,47,0.1);
+    }
+    .form-error {
+      font-size: 0.75rem;
+      color: #d32f2f;
+      margin-top: 0.25rem;
+      display: none;
     }
     .form-group textarea { resize: vertical; min-height: 100px; }
     .form-submit {
@@ -779,8 +918,42 @@
       font-weight: 600;
       cursor: pointer;
       transition: background 0.2s, transform 0.2s;
+      position: relative;
     }
-    .form-submit:hover { background: var(--green-dark); transform: translateY(-1px); }
+    .form-submit:hover:not(:disabled) { background: var(--green-dark); transform: translateY(-1px); }
+    .form-submit:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 2rem;
+    }
+    .form-success.visible {
+      display: block;
+    }
+    .form-success-icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 1rem;
+      background: rgba(45,106,79,0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.75rem;
+    }
+    .form-success h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      color: var(--green-dark);
+      margin-bottom: 0.5rem;
+    }
+    .form-success p {
+      font-size: 0.95rem;
+      color: var(--text-light);
+    }
 
     /* === FOOTER === */
     .footer {
@@ -809,6 +982,7 @@
     }
     .footer-about h3 img {
       height: 32px;
+      width: 32px;
       border-radius: 6px;
     }
     .footer-about p {
@@ -874,6 +1048,23 @@
       fill: white;
     }
 
+    /* === SCROLL ANIMATIONS (CSS-based) === */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* === FOCUS VISIBLE (Accessibility) === */
+    *:focus-visible {
+      outline: 2px solid var(--green);
+      outline-offset: 2px;
+    }
+
     /* === RESPONSIVE === */
     @media (max-width: 992px) {
       .hero-inner { grid-template-columns: 1fr; text-align: center; }
@@ -893,6 +1084,7 @@
       .sustainability-inner { grid-template-columns: 1fr; }
       .contact-inner { grid-template-columns: 1fr; }
       .footer-top { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 768px) {
       .nav-links { display: none; }
@@ -908,7 +1100,7 @@
         border-bottom: 1px solid rgba(45,106,79,0.1);
         box-shadow: 0 10px 30px rgba(0,0,0,0.05);
       }
-      .hamburger { display: block; }
+      .hamburger { display: flex; }
       .hero h2 { font-size: 2.2rem; }
       .hero { padding-top: 6rem; min-height: auto; padding-bottom: 3rem; }
       .products-grid { grid-template-columns: 1fr; }
@@ -918,6 +1110,8 @@
       .about-content h2 { font-size: 2rem; }
       .sustainability-content h2 { font-size: 2rem; }
       .contact-info h2 { font-size: 2rem; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
     }
     @media (max-width: 480px) {
       .hero h2 { font-size: 1.8rem; }
@@ -926,34 +1120,41 @@
       .process-grid { grid-template-columns: 1fr; }
       .why-grid { grid-template-columns: 1fr; }
       .impact-cards { grid-template-columns: 1fr; }
+      .hero { padding: 6rem 1rem 3rem; }
     }
   </style>
 </head>
 <body>
 
+  <!-- Skip Navigation (Accessibility) -->
+  <a href="#main-content" class="skip-nav">Skip to main content</a>
+
   <!-- HEADER -->
-  <header class="header" id="header">
-    <nav class="nav">
+  <header class="header" id="header" role="banner">
+    <nav class="nav" aria-label="Main navigation">
       <a href="#" class="nav-brand">
-        <img src="logo.png" alt="Kanoz Bio Energy Logo">
+        <img src="logo.png" alt="Kanoz Bio Energy Logo" width="44" height="44">
         <div class="nav-brand-text">
           <h1>Kanoz Bio Energy</h1>
           <span>Sustainable Fuel Solutions</span>
         </div>
       </a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#about">About</a></li>
-        <li><a href="#products">Products</a></li>
-        <li><a href="#process">Process</a></li>
-        <li><a href="#why-us">Why Us</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
+      <ul class="nav-links" id="navLinks" role="menubar">
+        <li role="none"><a href="#about" role="menuitem">About</a></li>
+        <li role="none"><a href="#products" role="menuitem">Products</a></li>
+        <li role="none"><a href="#process" role="menuitem">Process</a></li>
+        <li role="none"><a href="#why-us" role="menuitem">Why Us</a></li>
+        <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
+        <li role="none"><a href="#contact" class="nav-cta" role="menuitem">Get a Quote</a></li>
       </ul>
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
         <span></span><span></span><span></span>
       </button>
     </nav>
   </header>
+
+  <!-- MAIN CONTENT -->
+  <main id="main-content">
 
   <!-- HERO -->
   <section class="hero" id="hero">
@@ -964,15 +1165,15 @@
         <p>We manufacture premium biomass pellets from agricultural waste, providing eco-friendly fuel alternatives for industries, power plants, and commercial heating across India.</p>
         <div class="hero-btns">
           <a href="#contact" class="btn btn-primary">Get a Quote &rarr;</a>
-          <a href="https://wa.me/919839788886?text=Hi%2C%20I%20want%20to%20enquire%20about%20biomass%20pellets" target="_blank" class="btn btn-whatsapp">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          <a href="https://wa.me/919839788886?text=Hi%2C%20I%20want%20to%20enquire%20about%20biomass%20pellets" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             WhatsApp Us
           </a>
         </div>
       </div>
       <div class="hero-visual">
         <div class="hero-card">
-          <div class="hero-icon">&#x1F33F;</div>
+          <div class="hero-icon" aria-hidden="true">&#x1F33F;</div>
           <h3>Biomass Pellets</h3>
           <p>High-calorific, low-ash pellets made from sustainable agricultural residues</p>
           <div class="hero-stats">
@@ -999,7 +1200,7 @@
     <div class="about-inner">
       <div class="about-visual">
         <div class="about-card">
-          <div class="about-card-icon">&#x1F331;</div>
+          <div class="about-card-icon" aria-hidden="true">&#x1F331;</div>
           <h3>From Farm Waste to Clean Fuel</h3>
           <p>We transform agricultural residues that would otherwise be burned in fields into high-quality biomass pellets, creating value for farmers and clean energy for industries.</p>
           <div class="about-mini-stats">
@@ -1028,22 +1229,22 @@
         <p>Kanoz Bio Energy is a biomass pellet manufacturing company based in India. We source agricultural waste directly from farmers, converting crop residues into compressed biomass pellets that serve as an eco-friendly alternative to coal and other fossil fuels.</p>
         <p>Our production ensures consistent supply and quality, monitored through rigorous daily reporting and quality checks at every stage.</p>
         <div class="about-highlights">
-          <div class="about-highlight">
-            <div class="about-highlight-icon">&#x1F33E;</div>
+          <div class="about-highlight animate-on-scroll">
+            <div class="about-highlight-icon" aria-hidden="true">&#x1F33E;</div>
             <div>
               <h4>Direct Farmer Sourcing</h4>
               <p>Raw materials sourced directly from local farmers, supporting rural livelihoods.</p>
             </div>
           </div>
-          <div class="about-highlight">
-            <div class="about-highlight-icon">&#x2699;</div>
+          <div class="about-highlight animate-on-scroll">
+            <div class="about-highlight-icon" aria-hidden="true">&#x2699;</div>
             <div>
               <h4>Modern Manufacturing</h4>
               <p>State-of-the-art pellet mills with automated quality control systems.</p>
             </div>
           </div>
-          <div class="about-highlight">
-            <div class="about-highlight-icon">&#x1F69A;</div>
+          <div class="about-highlight animate-on-scroll">
+            <div class="about-highlight-icon" aria-hidden="true">&#x1F69A;</div>
             <div>
               <h4>Reliable Supply Chain</h4>
               <p>Own fleet and logistics network for on-time delivery across India.</p>
@@ -1062,8 +1263,8 @@
       <p>Manufactured with precision from carefully sourced agricultural waste, our pellets deliver consistent quality and high energy output.</p>
     </div>
     <div class="products-grid">
-      <div class="product-card">
-        <div class="product-icon">&#x1F525;</div>
+      <div class="product-card animate-on-scroll">
+        <div class="product-icon" aria-hidden="true">&#x1F525;</div>
         <h3>Industrial Pellets</h3>
         <p>High-calorific biomass pellets for boilers and furnaces. Ideal for replacing coal in manufacturing with a cleaner, cost-effective fuel source.</p>
         <div class="product-specs">
@@ -1081,8 +1282,8 @@
           </div>
         </div>
       </div>
-      <div class="product-card">
-        <div class="product-icon">&#x26A1;</div>
+      <div class="product-card animate-on-scroll">
+        <div class="product-icon" aria-hidden="true">&#x26A1;</div>
         <h3>Power Plant Grade</h3>
         <p>Bulk supply of biomass pellets for co-firing in power plants. Consistent size and moisture content for reliable energy generation.</p>
         <div class="product-specs">
@@ -1100,8 +1301,8 @@
           </div>
         </div>
       </div>
-      <div class="product-card">
-        <div class="product-icon">&#x1F3E0;</div>
+      <div class="product-card animate-on-scroll">
+        <div class="product-icon" aria-hidden="true">&#x1F3E0;</div>
         <h3>Commercial Heating</h3>
         <p>Clean-burning pellets for commercial heating systems. Low ash content means less maintenance and cleaner operations.</p>
         <div class="product-specs">
@@ -1130,22 +1331,22 @@
       <p>A streamlined manufacturing process that ensures quality at every step, from raw material collection to final delivery.</p>
     </div>
     <div class="process-grid">
-      <div class="process-step">
+      <div class="process-step animate-on-scroll">
         <div class="process-number">1</div>
         <h4>Raw Material Collection</h4>
         <p>Agricultural residues sourced directly from local farmers &mdash; crop stalks, husks, and other biomass waste.</p>
       </div>
-      <div class="process-step">
+      <div class="process-step animate-on-scroll">
         <div class="process-number">2</div>
         <h4>Processing &amp; Drying</h4>
         <p>Raw materials are cleaned, shredded, and dried to optimal moisture levels for pellet formation.</p>
       </div>
-      <div class="process-step">
+      <div class="process-step animate-on-scroll">
         <div class="process-number">3</div>
         <h4>Pelletization</h4>
         <p>High-pressure pellet mills compress the biomass into uniform, dense pellets with consistent calorific value.</p>
       </div>
-      <div class="process-step">
+      <div class="process-step animate-on-scroll">
         <div class="process-number">4</div>
         <h4>Quality &amp; Dispatch</h4>
         <p>Every batch is tested for moisture, ash content, and calorific value before dispatch to customers.</p>
@@ -1161,25 +1362,69 @@
       <p>Consistent supply and quality for our customers across India.</p>
     </div>
     <div class="why-grid">
-      <div class="why-item">
+      <div class="why-item animate-on-scroll">
         <div class="why-number">3400+</div>
         <h4>GCV Kcal/kg</h4>
         <p>High calorific value ensuring maximum energy from every kilogram</p>
       </div>
-      <div class="why-item">
+      <div class="why-item animate-on-scroll">
         <div class="why-number">&lt;5%</div>
         <h4>Low Ash Content</h4>
         <p>Cleaner burning with minimal residue for efficient operations</p>
       </div>
-      <div class="why-item">
+      <div class="why-item animate-on-scroll">
         <div class="why-number">100%</div>
         <h4>Agricultural Waste</h4>
         <p>Pellets made entirely from farm residues, reducing stubble burning</p>
       </div>
-      <div class="why-item">
+      <div class="why-item animate-on-scroll">
         <div class="why-number">24/7</div>
         <h4>Production</h4>
         <p>Round-the-clock manufacturing with daily quality monitoring</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="testimonials">
+    <div class="section-header">
+      <div class="section-label">Testimonials</div>
+      <h2>Trusted by Industry Leaders</h2>
+      <p>Hear from businesses that have switched to Kanoz biomass pellets for cleaner, more cost-effective energy.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card animate-on-scroll">
+        <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"Switching to Kanoz pellets cut our fuel costs by 35% while helping us meet our sustainability targets. The consistent quality and reliable supply have been exceptional."</blockquote>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar" aria-hidden="true">RK</div>
+          <div class="testimonial-author-info">
+            <strong>Rajesh Kumar</strong>
+            <span>Operations Head, Textile Manufacturing</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card animate-on-scroll">
+        <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"The low ash content means significantly less downtime for cleaning. Kanoz delivers on time, every time &mdash; critical for our 24/7 operations."</blockquote>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar" aria-hidden="true">SP</div>
+          <div class="testimonial-author-info">
+            <strong>Suresh Patel</strong>
+            <span>Plant Manager, Ceramic Industries</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card animate-on-scroll">
+        <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"We needed a reliable biomass supplier for our co-firing setup. Kanoz's pellets have consistent GCV and the team is always responsive to our requirements."</blockquote>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar" aria-hidden="true">AM</div>
+          <div class="testimonial-author-info">
+            <strong>Anita Mehta</strong>
+            <span>Procurement, Power Generation</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -1194,23 +1439,23 @@
         <p>Our pellets offer a cost-effective, carbon-neutral energy source that helps industries meet sustainability goals while reducing fuel costs.</p>
       </div>
       <div class="impact-cards">
-        <div class="impact-card">
-          <div class="impact-card-icon">&#x1F30D;</div>
+        <div class="impact-card animate-on-scroll">
+          <div class="impact-card-icon" aria-hidden="true">&#x1F30D;</div>
           <h4>Carbon Neutral</h4>
           <p>Biomass pellets release only the CO2 absorbed during plant growth</p>
         </div>
-        <div class="impact-card">
-          <div class="impact-card-icon">&#x1F33E;</div>
+        <div class="impact-card animate-on-scroll">
+          <div class="impact-card-icon" aria-hidden="true">&#x1F33E;</div>
           <h4>Zero Stubble</h4>
           <p>Reduces crop residue burning in fields</p>
         </div>
-        <div class="impact-card">
-          <div class="impact-card-icon">&#x1F4B0;</div>
+        <div class="impact-card animate-on-scroll">
+          <div class="impact-card-icon" aria-hidden="true">&#x1F4B0;</div>
           <h4>Cost Effective</h4>
           <p>30-40% cheaper than conventional fuels</p>
         </div>
-        <div class="impact-card">
-          <div class="impact-card-icon">&#x1F91D;</div>
+        <div class="impact-card animate-on-scroll">
+          <div class="impact-card-icon" aria-hidden="true">&#x1F91D;</div>
           <h4>Farmer Income</h4>
           <p>Creates additional revenue for farming communities</p>
         </div>
@@ -1225,76 +1470,91 @@
         <h2>Let's Talk Energy</h2>
         <p>Whether you need bulk biomass pellets or want to explore sustainable fuel options, we're here to help. Reach out and our team will get back to you within 24 hours.</p>
         <div class="contact-detail">
-          <div class="contact-detail-icon">&#x1F4DE;</div>
+          <div class="contact-detail-icon" aria-hidden="true">&#x1F4DE;</div>
           <div>
             <h4>Phone</h4>
             <a href="tel:+919839788886">+91 98397 88886</a>
           </div>
         </div>
         <div class="contact-detail">
-          <div class="contact-detail-icon">&#x2709;</div>
+          <div class="contact-detail-icon" aria-hidden="true">&#x2709;</div>
           <div>
             <h4>Email</h4>
             <a href="mailto:info@kanoz.in">info@kanoz.in</a>
           </div>
         </div>
         <div class="contact-detail">
-          <div class="contact-detail-icon">&#x1F4CD;</div>
+          <div class="contact-detail-icon" aria-hidden="true">&#x1F4CD;</div>
           <div>
             <h4>Location</h4>
             <p>India</p>
           </div>
         </div>
-        <a href="https://wa.me/919839788886?text=Hi%2C%20I%20want%20to%20enquire%20about%20biomass%20pellets" target="_blank" class="contact-whatsapp">
-          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <a href="https://wa.me/919839788886?text=Hi%2C%20I%20want%20to%20enquire%20about%20biomass%20pellets" target="_blank" rel="noopener noreferrer" class="contact-whatsapp">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           Chat on WhatsApp
         </a>
       </div>
       <div class="contact-form">
         <h3>Request a Quote</h3>
-        <form id="contactForm" onsubmit="handleSubmit(event)">
-          <div class="form-group">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" placeholder="Your name" required>
+        <form id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required autocomplete="name">
+              <div class="form-error" id="nameError">Please enter your name</div>
+            </div>
+            <div class="form-group">
+              <label for="company">Company Name</label>
+              <input type="text" id="company" name="company" placeholder="Your company" autocomplete="organization">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" placeholder="you@company.com" required autocomplete="email">
+              <div class="form-error" id="emailError">Please enter a valid email address</div>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" autocomplete="tel" pattern="[+]?[0-9\s\-]{7,15}">
+              <div class="form-error" id="phoneError">Please enter a valid phone number</div>
+            </div>
           </div>
           <div class="form-group">
-            <label for="company">Company Name</label>
-            <input type="text" id="company" name="company" placeholder="Your company">
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="you@company.com" required>
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone</label>
-            <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX">
-          </div>
-          <div class="form-group">
-            <label for="quantity">Monthly Requirement (Tons)</label>
-            <select id="quantity" name="quantity">
+            <label for="quantity">Monthly Requirement (Tons) *</label>
+            <select id="quantity" name="quantity" required>
               <option value="">Select quantity</option>
               <option value="1-50">1 - 50 Tons</option>
               <option value="50-200">50 - 200 Tons</option>
               <option value="200-500">200 - 500 Tons</option>
               <option value="500+">500+ Tons</option>
             </select>
+            <div class="form-error" id="quantityError">Please select a quantity range</div>
           </div>
           <div class="form-group">
             <label for="message">Message</label>
             <textarea id="message" name="message" placeholder="Tell us about your requirements..."></textarea>
           </div>
-          <button type="submit" class="form-submit">Send Enquiry &rarr;</button>
+          <button type="submit" class="form-submit" id="submitBtn">Send Enquiry &rarr;</button>
         </form>
+        <div class="form-success" id="formSuccess">
+          <div class="form-success-icon" aria-hidden="true">&#x2705;</div>
+          <h4>Enquiry Sent Successfully!</h4>
+          <p>Thank you for reaching out. Our team will get back to you within 24 hours.</p>
+        </div>
       </div>
     </div>
   </section>
 
+  </main>
+
   <!-- FOOTER -->
-  <footer class="footer">
+  <footer class="footer" role="contentinfo">
     <div class="footer-top">
       <div class="footer-about">
         <h3>
-          <img src="logo.png" alt="Kanoz">
+          <img src="logo.png" alt="" width="32" height="32" aria-hidden="true">
           Kanoz Bio Energy
         </h3>
         <p>Leading manufacturer of premium biomass pellets from agricultural waste. 24/7 production, pan-India supply for a cleaner, greener future.</p>
@@ -1314,7 +1574,7 @@
           <li><a href="tel:+919839788886">+91 98397 88886</a></li>
           <li><a href="mailto:info@kanoz.in">info@kanoz.in</a></li>
           <li><a href="#contact">Request a Quote</a></li>
-          <li><a href="https://wa.me/919839788886" target="_blank">WhatsApp</a></li>
+          <li><a href="https://wa.me/919839788886" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
         </ul>
       </div>
     </div>
@@ -1325,69 +1585,186 @@
   </footer>
 
   <!-- FLOATING WHATSAPP BUTTON -->
-  <a href="https://wa.me/919839788886?text=Hi%2C%20I%20want%20to%20enquire%20about%20biomass%20pellets" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
-    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <a href="https://wa.me/919839788886?text=Hi%2C%20I%20want%20to%20enquire%20about%20biomass%20pellets" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   </a>
 
   <script>
-    // Header scroll effect
+    // Header scroll effect (throttled)
     const header = document.getElementById('header');
-    window.addEventListener('scroll', () => {
-      header.classList.toggle('scrolled', window.scrollY > 20);
-    });
+    let scrollTicking = false;
+    window.addEventListener('scroll', function() {
+      if (!scrollTicking) {
+        window.requestAnimationFrame(function() {
+          header.classList.toggle('scrolled', window.scrollY > 20);
+          scrollTicking = false;
+        });
+        scrollTicking = true;
+      }
+    }, { passive: true });
 
-    // Mobile menu toggle
+    // Mobile menu toggle with keyboard support
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => navLinks.classList.remove('active'));
+
+    hamburger.addEventListener('click', function() {
+      const isOpen = navLinks.classList.toggle('active');
+      hamburger.classList.toggle('active');
+      hamburger.setAttribute('aria-expanded', isOpen);
+      if (isOpen) {
+        navLinks.querySelector('a').focus();
+      }
     });
 
-    // Scroll animations
-    const observerOptions = {
+    // Close menu on link click
+    navLinks.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        navLinks.classList.remove('active');
+        hamburger.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Close menu on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+        hamburger.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.focus();
+      }
+    });
+
+    // Scroll animations using CSS classes
+    var observerOptions = {
       threshold: 0.1,
       rootMargin: '0px 0px -50px 0px'
     };
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
         if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
         }
       });
     }, observerOptions);
-    document.querySelectorAll('.product-card, .why-item, .process-step, .impact-card, .about-highlight').forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(20px)';
-      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+
+    document.querySelectorAll('.animate-on-scroll').forEach(function(el) {
       observer.observe(el);
     });
 
-    // Simple form handler
-    function handleSubmit(e) {
-      e.preventDefault();
-      const form = e.target;
-      const data = new FormData(form);
-      const name = data.get('name');
+    // Form validation and submission
+    var contactForm = document.getElementById('contactForm');
+    var submitBtn = document.getElementById('submitBtn');
+    var formSuccess = document.getElementById('formSuccess');
 
-      // Build mailto link as simple fallback
-      const subject = encodeURIComponent('Biomass Pellet Enquiry from ' + name + (data.get('company') ? ' (' + data.get('company') + ')' : ''));
-      const body = encodeURIComponent(
-        'Name: ' + data.get('name') + '\n' +
-        'Company: ' + (data.get('company') || 'N/A') + '\n' +
-        'Email: ' + data.get('email') + '\n' +
-        'Phone: ' + data.get('phone') + '\n' +
-        'Monthly Requirement: ' + data.get('quantity') + '\n\n' +
-        'Message:\n' + data.get('message')
+    function showError(inputId, errorId) {
+      var input = document.getElementById(inputId);
+      var error = document.getElementById(errorId);
+      input.classList.add('invalid');
+      error.style.display = 'block';
+    }
+
+    function clearError(inputId, errorId) {
+      var input = document.getElementById(inputId);
+      var error = document.getElementById(errorId);
+      input.classList.remove('invalid');
+      error.style.display = 'none';
+    }
+
+    // Clear errors on input
+    ['name', 'email', 'phone', 'quantity'].forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el) {
+        el.addEventListener('input', function() {
+          clearError(id, id + 'Error');
+        });
+        el.addEventListener('change', function() {
+          clearError(id, id + 'Error');
+        });
+      }
+    });
+
+    function validateEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    function validatePhone(phone) {
+      if (!phone) return true; // optional field
+      return /^[+]?[0-9\s\-]{7,15}$/.test(phone.trim());
+    }
+
+    function sanitize(str) {
+      if (!str) return '';
+      var div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    }
+
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      var data = new FormData(contactForm);
+      var isValid = true;
+
+      // Validate name
+      if (!data.get('name') || !data.get('name').trim()) {
+        showError('name', 'nameError');
+        isValid = false;
+      }
+
+      // Validate email
+      if (!data.get('email') || !validateEmail(data.get('email'))) {
+        showError('email', 'emailError');
+        isValid = false;
+      }
+
+      // Validate phone (if provided)
+      if (data.get('phone') && !validatePhone(data.get('phone'))) {
+        showError('phone', 'phoneError');
+        isValid = false;
+      }
+
+      // Validate quantity
+      if (!data.get('quantity')) {
+        showError('quantity', 'quantityError');
+        isValid = false;
+      }
+
+      if (!isValid) return;
+
+      // Disable button and show loading state
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+
+      // Sanitize values for mailto
+      var name = sanitize(data.get('name').trim());
+      var company = sanitize((data.get('company') || '').trim());
+      var email = sanitize(data.get('email').trim());
+      var phone = sanitize((data.get('phone') || '').trim());
+      var quantity = sanitize(data.get('quantity'));
+      var message = sanitize((data.get('message') || '').trim());
+
+      var subject = encodeURIComponent('Biomass Pellet Enquiry from ' + name + (company ? ' (' + company + ')' : ''));
+      var body = encodeURIComponent(
+        'Name: ' + name + '\n' +
+        'Company: ' + (company || 'N/A') + '\n' +
+        'Email: ' + email + '\n' +
+        'Phone: ' + (phone || 'N/A') + '\n' +
+        'Monthly Requirement: ' + quantity + '\n\n' +
+        'Message:\n' + (message || 'N/A')
       );
+
       window.location.href = 'mailto:info@kanoz.in?subject=' + subject + '&body=' + body;
 
-      form.reset();
-      alert('Thank you, ' + name + '! Your email client will open with your enquiry.');
-    }
+      // Show success message
+      setTimeout(function() {
+        contactForm.style.display = 'none';
+        formSuccess.classList.add('visible');
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Enquiry \u2192';
+      }, 500);
+    });
   </script>
 
 </body>
