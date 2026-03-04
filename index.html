@@ -86,32 +86,6 @@
       --whatsapp: #25D366;
       --error: #d32f2f;
     }
-    /* === DARK MODE === */
-    [data-theme="dark"] {
-      --cream: #1a1a2e;
-      --cream-dark: #16213e;
-      --white: #1e1e3a;
-      --text: #e0e0e0;
-      --text-light: #b0b0c0;
-      --brown: #c0c0d0;
-      --brown-dark: #a0a0b0;
-    }
-    [data-theme="dark"] .header {
-      background: rgba(26, 26, 46, 0.95);
-      border-bottom-color: rgba(45, 106, 79, 0.2);
-    }
-    [data-theme="dark"] .nav-brand-text h1 { color: var(--gold-light); }
-    [data-theme="dark"] .hero-card { box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
-    [data-theme="dark"] .hero-card::before { background: linear-gradient(135deg, var(--green), var(--gold)); }
-    [data-theme="dark"] .product-card,
-    [data-theme="dark"] .testimonial-card,
-    [data-theme="dark"] .contact-form,
-    [data-theme="dark"] .blog-card { box-shadow: 0 4px 20px rgba(0,0,0,0.2); border-color: rgba(255,255,255,0.05); }
-    [data-theme="dark"] .impact-card { background: var(--cream-dark); border-color: rgba(255,255,255,0.05); }
-    [data-theme="dark"] .form-group input,
-    [data-theme="dark"] .form-group textarea,
-    [data-theme="dark"] .form-group select { background: var(--cream-dark); border-color: rgba(255,255,255,0.1); color: var(--text); }
-    [data-theme="dark"] .footer { background: #0d1117; }
 
     html { scroll-behavior: smooth; }
     body {
@@ -714,62 +688,6 @@
       line-height: 1.6;
     }
 
-    /* === TESTIMONIALS === */
-    .testimonials {
-      padding: 6rem 1.5rem;
-      background: var(--cream);
-    }
-    /* testimonials-grid replaced by carousel-wrapper */
-    .testimonial-card {
-      background: var(--white);
-      border-radius: 16px;
-      padding: 2rem;
-      border: 1px solid rgba(45,106,79,0.05);
-      display: flex;
-      flex-direction: column;
-    }
-    .testimonial-stars {
-      color: var(--gold);
-      font-size: 1.1rem;
-      margin-bottom: 1rem;
-      letter-spacing: 2px;
-    }
-    .testimonial-card blockquote {
-      font-size: 0.95rem;
-      color: var(--text-light);
-      line-height: 1.7;
-      margin-bottom: 1.5rem;
-      flex: 1;
-    }
-    .testimonial-author {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      border-top: 1px solid var(--cream-dark);
-      padding-top: 1rem;
-    }
-    .testimonial-avatar {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--green), var(--green-light));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--white);
-      font-weight: 700;
-      font-size: 1rem;
-      flex-shrink: 0;
-    }
-    .testimonial-author-info strong {
-      display: block;
-      font-size: 0.9rem;
-      color: var(--green-dark);
-    }
-    .testimonial-author-info span {
-      font-size: 0.8rem;
-      color: var(--text-light);
-    }
 
     /* === SUSTAINABILITY === */
     .sustainability {
@@ -1146,7 +1064,6 @@
       .sustainability-inner { grid-template-columns: 1fr; }
       .contact-inner { grid-template-columns: 1fr; }
       .footer-top { grid-template-columns: 1fr; }
-      /* carousel handles responsive via JS */
     }
     @media (max-width: 768px) {
       .nav-links { display: none; }
@@ -1172,7 +1089,6 @@
       .about-content h2 { font-size: 2rem; }
       .sustainability-content h2 { font-size: 2rem; }
       .contact-info h2 { font-size: 2rem; }
-      /* carousel handles responsive via JS */
       .form-row { grid-template-columns: 1fr; }
     }
     @media (max-width: 480px) {
@@ -1184,23 +1100,6 @@
       .impact-cards { grid-template-columns: 1fr; }
       .hero { padding: 6rem 1rem 3rem; }
     }
-    /* === DARK MODE TOGGLE === */
-    .theme-toggle {
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-size: 1.25rem;
-      padding: 0.5rem;
-      min-width: 44px;
-      min-height: 44px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 8px;
-      transition: background 0.2s;
-    }
-    .theme-toggle:hover { background: rgba(45,106,79,0.08); }
-    [data-theme="dark"] .theme-toggle:hover { background: rgba(255,255,255,0.1); }
 
     /* === LANGUAGE SWITCHER === */
     .lang-switch {
@@ -1285,7 +1184,6 @@
       margin-bottom: 0.5rem;
       line-height: 1.4;
     }
-    [data-theme="dark"] .blog-body h3 { color: var(--gold-light); }
     .blog-body p {
       font-size: 0.9rem;
       color: var(--text-light);
@@ -1396,63 +1294,6 @@
       color: var(--text-light);
     }
 
-    /* === TESTIMONIAL CAROUSEL === */
-    .carousel-wrapper {
-      max-width: 1200px;
-      margin: 0 auto;
-      position: relative;
-      overflow: hidden;
-    }
-    .carousel-track {
-      display: flex;
-      transition: transform 0.5s ease;
-    }
-    .carousel-track .testimonial-card {
-      min-width: calc(33.333% - 1.33rem);
-      margin-right: 2rem;
-      flex-shrink: 0;
-    }
-    .carousel-controls {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-    .carousel-btn {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      border: 2px solid var(--green);
-      background: var(--white);
-      color: var(--green);
-      font-size: 1.25rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.2s;
-    }
-    .carousel-btn:hover { background: var(--green); color: var(--white); }
-    .carousel-btn:disabled { opacity: 0.3; cursor: not-allowed; }
-    .carousel-dots {
-      display: flex;
-      gap: 0.5rem;
-    }
-    .carousel-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--cream-dark);
-      border: none;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.2s;
-      padding: 0;
-    }
-    .carousel-dot.active {
-      background: var(--green);
-      transform: scale(1.3);
-    }
 
     /* === COOKIE CONSENT === */
     .cookie-banner {
@@ -1524,13 +1365,11 @@
     @media (max-width: 992px) {
       .blog-grid { grid-template-columns: repeat(2, 1fr); }
       .calc-inputs { grid-template-columns: 1fr; }
-      .carousel-track .testimonial-card { min-width: calc(50% - 1rem); }
     }
     @media (max-width: 768px) {
       .blog-grid { grid-template-columns: 1fr; }
       .calc-card { padding: 2rem; }
       .calc-result-details { grid-template-columns: 1fr; gap: 0.75rem; }
-      .carousel-track .testimonial-card { min-width: 100%; margin-right: 0; }
       .cookie-inner { flex-direction: column; text-align: center; }
       .lang-switch { display: none; }
     }
@@ -1572,8 +1411,7 @@
           <button class="lang-btn active" data-lang="en" aria-label="English">EN</button>
           <button class="lang-btn" data-lang="hi" aria-label="Hindi">HI</button>
         </div>
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">&#x1F319;</button>
-        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+<button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -1587,22 +1425,22 @@
   <section class="hero" id="hero">
     <div class="hero-inner">
       <div class="hero-content">
-        <div class="hero-badge">Sustainable Energy Solutions</div>
-        <h2>Powering Industry with <em>Clean Biomass</em> Energy</h2>
-        <p>We manufacture premium biomass pellets from agricultural waste, providing eco-friendly fuel alternatives for industries, power plants, and commercial heating across India.</p>
+        <div class="hero-badge" data-i18n="hero_badge">Sustainable Energy Solutions</div>
+        <h2 data-i18n="hero_title">Powering Industry with <em>Clean Biomass</em> Energy</h2>
+        <p data-i18n="hero_desc">We manufacture premium biomass pellets from agricultural waste, providing eco-friendly fuel alternatives for industries, power plants, and commercial heating across India.</p>
         <div class="hero-btns">
-          <a href="#contact" class="btn btn-primary">Get a Quote &rarr;</a>
+          <a href="#contact" class="btn btn-primary" data-i18n="hero_cta">Get a Quote &rarr;</a>
           <a href="https://wa.me/919839788886?text=Hi%2C%20I%20want%20to%20enquire%20about%20biomass%20pellets" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
             <svg width="20" height="20" fill="currentColor" aria-hidden="true"><use href="#icon-whatsapp"/></svg>
-            WhatsApp Us
+            <span data-i18n="hero_whatsapp">WhatsApp Us</span>
           </a>
         </div>
       </div>
       <div class="hero-visual">
         <div class="hero-card">
           <div class="hero-icon" aria-hidden="true">&#x1F33F;</div>
-          <h3>Biomass Pellets</h3>
-          <p>High-calorific, low-ash pellets made from sustainable agricultural residues</p>
+          <h3 data-i18n="hero_card_title">Biomass Pellets</h3>
+          <p data-i18n="hero_card_desc">High-calorific, low-ash pellets made from sustainable agricultural residues</p>
           <div class="hero-stats">
             <div class="hero-stat">
               <strong>3400+</strong>
@@ -1628,8 +1466,8 @@
       <div class="about-visual">
         <div class="about-card">
           <div class="about-card-icon" aria-hidden="true">&#x1F331;</div>
-          <h3>From Farm Waste to Clean Fuel</h3>
-          <p>We transform agricultural residues that would otherwise be burned in fields into high-quality biomass pellets, creating value for farmers and clean energy for industries.</p>
+          <h3 data-i18n="about_card_title">From Farm Waste to Clean Fuel</h3>
+          <p data-i18n="about_card_desc">We transform agricultural residues that would otherwise be burned in fields into high-quality biomass pellets, creating value for farmers and clean energy for industries.</p>
           <div class="about-mini-stats">
             <div class="about-mini-stat">
               <strong>3400+</strong>
@@ -1651,30 +1489,30 @@
         </div>
       </div>
       <div class="about-content">
-        <div class="section-label">About Kanoz Bio Energy</div>
-        <h2>Building India's Clean Energy Future</h2>
-        <p>Kanoz Bio Energy is a biomass pellet manufacturing company based in India. We source agricultural waste directly from farmers, converting crop residues into compressed biomass pellets that serve as an eco-friendly alternative to coal and other fossil fuels.</p>
-        <p>Our production ensures consistent supply and quality, monitored through rigorous daily reporting and quality checks at every stage.</p>
+        <div class="section-label" data-i18n="about_label">About Kanoz Bio Energy</div>
+        <h2 data-i18n="about_title">Building India's Clean Energy Future</h2>
+        <p data-i18n="about_desc1">Kanoz Bio Energy is a biomass pellet manufacturing company based in India. We source agricultural waste directly from farmers, converting crop residues into compressed biomass pellets that serve as an eco-friendly alternative to coal and other fossil fuels.</p>
+        <p data-i18n="about_desc2">Our production ensures consistent supply and quality, monitored through rigorous daily reporting and quality checks at every stage.</p>
         <div class="about-highlights">
           <div class="about-highlight animate-on-scroll">
             <div class="about-highlight-icon" aria-hidden="true">&#x1F33E;</div>
             <div>
-              <h3>Direct Farmer Sourcing</h3>
-              <p>Raw materials sourced directly from local farmers, supporting rural livelihoods.</p>
+              <h3 data-i18n="about_h1">Direct Farmer Sourcing</h3>
+              <p data-i18n="about_h1_desc">Raw materials sourced directly from local farmers, supporting rural livelihoods.</p>
             </div>
           </div>
           <div class="about-highlight animate-on-scroll">
             <div class="about-highlight-icon" aria-hidden="true">&#x2699;</div>
             <div>
-              <h3>Modern Manufacturing</h3>
-              <p>State-of-the-art pellet mills with automated quality control systems.</p>
+              <h3 data-i18n="about_h2">Modern Manufacturing</h3>
+              <p data-i18n="about_h2_desc">State-of-the-art pellet mills with automated quality control systems.</p>
             </div>
           </div>
           <div class="about-highlight animate-on-scroll">
             <div class="about-highlight-icon" aria-hidden="true">&#x1F69A;</div>
             <div>
-              <h3>Reliable Supply Chain</h3>
-              <p>Own fleet and logistics network for on-time delivery across India.</p>
+              <h3 data-i18n="about_h3">Reliable Supply Chain</h3>
+              <p data-i18n="about_h3_desc">Own fleet and logistics network for on-time delivery across India.</p>
             </div>
           </div>
         </div>
@@ -1685,15 +1523,15 @@
   <!-- PRODUCTS -->
   <section class="products" id="products">
     <div class="section-header">
-      <div class="section-label">Our Products</div>
-      <h2>Premium Biomass Pellets</h2>
-      <p>Manufactured with precision from carefully sourced agricultural waste, our pellets deliver consistent quality and high energy output.</p>
+      <div class="section-label" data-i18n="products_label">Our Products</div>
+      <h2 data-i18n="products_title">Premium Biomass Pellets</h2>
+      <p data-i18n="products_desc">Manufactured with precision from carefully sourced agricultural waste, our pellets deliver consistent quality and high energy output.</p>
     </div>
     <div class="products-grid">
       <div class="product-card animate-on-scroll">
         <div class="product-icon" aria-hidden="true">&#x1F525;</div>
-        <h3>Industrial Pellets</h3>
-        <p>High-calorific biomass pellets for boilers and furnaces. Ideal for replacing coal in manufacturing with a cleaner, cost-effective fuel source.</p>
+        <h3 data-i18n="prod1_title">Industrial Pellets</h3>
+        <p data-i18n="prod1_desc">High-calorific biomass pellets for boilers and furnaces. Ideal for replacing coal in manufacturing with a cleaner, cost-effective fuel source.</p>
         <div class="product-specs">
           <div class="product-spec">
             <strong>3400+</strong>
@@ -1711,8 +1549,8 @@
       </div>
       <div class="product-card animate-on-scroll">
         <div class="product-icon" aria-hidden="true">&#x26A1;</div>
-        <h3>Power Plant Grade</h3>
-        <p>Bulk supply of biomass pellets for co-firing in power plants. Consistent size and moisture content for reliable energy generation.</p>
+        <h3 data-i18n="prod2_title">Power Plant Grade</h3>
+        <p data-i18n="prod2_desc">Bulk supply of biomass pellets for co-firing in power plants. Consistent size and moisture content for reliable energy generation.</p>
         <div class="product-specs">
           <div class="product-spec">
             <strong>8mm</strong>
@@ -1730,8 +1568,8 @@
       </div>
       <div class="product-card animate-on-scroll">
         <div class="product-icon" aria-hidden="true">&#x1F3E0;</div>
-        <h3>Commercial Heating</h3>
-        <p>Clean-burning pellets for commercial heating systems. Low ash content means less maintenance and cleaner operations.</p>
+        <h3 data-i18n="prod3_title">Commercial Heating</h3>
+        <p data-i18n="prod3_desc">Clean-burning pellets for commercial heating systems. Low ash content means less maintenance and cleaner operations.</p>
         <div class="product-specs">
           <div class="product-spec">
             <strong>Low</strong>
@@ -1753,30 +1591,30 @@
   <!-- PROCESS -->
   <section class="process" id="process">
     <div class="section-header">
-      <div class="section-label">Our Process</div>
-      <h2>From Field to Fuel</h2>
-      <p>A streamlined manufacturing process that ensures quality at every step, from raw material collection to final delivery.</p>
+      <div class="section-label" data-i18n="process_label">Our Process</div>
+      <h2 data-i18n="process_title">From Field to Fuel</h2>
+      <p data-i18n="process_desc">A streamlined manufacturing process that ensures quality at every step, from raw material collection to final delivery.</p>
     </div>
     <div class="process-grid">
       <div class="process-step animate-on-scroll">
         <div class="process-number">1</div>
-        <h3>Raw Material Collection</h3>
-        <p>Agricultural residues sourced directly from local farmers &mdash; crop stalks, husks, and other biomass waste.</p>
+        <h3 data-i18n="step1_title">Raw Material Collection</h3>
+        <p data-i18n="step1_desc">Agricultural residues sourced directly from local farmers &mdash; crop stalks, husks, and other biomass waste.</p>
       </div>
       <div class="process-step animate-on-scroll">
         <div class="process-number">2</div>
-        <h3>Processing &amp; Drying</h3>
-        <p>Raw materials are cleaned, shredded, and dried to optimal moisture levels for pellet formation.</p>
+        <h3 data-i18n="step2_title">Processing &amp; Drying</h3>
+        <p data-i18n="step2_desc">Raw materials are cleaned, shredded, and dried to optimal moisture levels for pellet formation.</p>
       </div>
       <div class="process-step animate-on-scroll">
         <div class="process-number">3</div>
-        <h3>Pelletization</h3>
-        <p>High-pressure pellet mills compress the biomass into uniform, dense pellets with consistent calorific value.</p>
+        <h3 data-i18n="step3_title">Pelletization</h3>
+        <p data-i18n="step3_desc">High-pressure pellet mills compress the biomass into uniform, dense pellets with consistent calorific value.</p>
       </div>
       <div class="process-step animate-on-scroll">
         <div class="process-number">4</div>
-        <h3>Quality &amp; Dispatch</h3>
-        <p>Every batch is tested for moisture, ash content, and calorific value before dispatch to customers.</p>
+        <h3 data-i18n="step4_title">Quality &amp; Dispatch</h3>
+        <p data-i18n="step4_desc">Every batch is tested for moisture, ash content, and calorific value before dispatch to customers.</p>
       </div>
     </div>
   </section>
@@ -1784,115 +1622,43 @@
   <!-- WHY US -->
   <section class="why-us" id="why-us">
     <div class="section-header">
-      <div class="section-label">Why Kanoz</div>
-      <h2>Built for Reliability</h2>
-      <p>Consistent supply and quality for our customers across India.</p>
+      <div class="section-label" data-i18n="why_label">Why Kanoz</div>
+      <h2 data-i18n="why_title">Built for Reliability</h2>
+      <p data-i18n="why_desc">Consistent supply and quality for our customers across India.</p>
     </div>
     <div class="why-grid">
       <div class="why-item animate-on-scroll">
         <div class="why-number">3400+</div>
-        <h3>GCV Kcal/kg</h3>
-        <p>High calorific value ensuring maximum energy from every kilogram</p>
+        <h3 data-i18n="why1_title">GCV Kcal/kg</h3>
+        <p data-i18n="why1_desc">High calorific value ensuring maximum energy from every kilogram</p>
       </div>
       <div class="why-item animate-on-scroll">
         <div class="why-number">&lt;5%</div>
-        <h3>Low Ash Content</h3>
-        <p>Cleaner burning with minimal residue for efficient operations</p>
+        <h3 data-i18n="why2_title">Low Ash Content</h3>
+        <p data-i18n="why2_desc">Cleaner burning with minimal residue for efficient operations</p>
       </div>
       <div class="why-item animate-on-scroll">
         <div class="why-number">100%</div>
-        <h3>Agricultural Waste</h3>
-        <p>Pellets made entirely from farm residues, reducing stubble burning</p>
+        <h3 data-i18n="why3_title">Agricultural Waste</h3>
+        <p data-i18n="why3_desc">Pellets made entirely from farm residues, reducing stubble burning</p>
       </div>
       <div class="why-item animate-on-scroll">
         <div class="why-number">24/7</div>
-        <h3>Production</h3>
-        <p>Round-the-clock manufacturing with daily quality monitoring</p>
+        <h3 data-i18n="why4_title">Production</h3>
+        <p data-i18n="why4_desc">Round-the-clock manufacturing with daily quality monitoring</p>
       </div>
     </div>
   </section>
 
-  <!-- TESTIMONIALS -->
-  <section class="testimonials" id="testimonials">
-    <div class="section-header">
-      <div class="section-label">Testimonials</div>
-      <h2>Trusted by Industry Leaders</h2>
-      <p>Hear from businesses that have switched to Kanoz biomass pellets for cleaner, more cost-effective energy.</p>
-    </div>
-    <div class="carousel-wrapper" aria-label="Customer testimonials">
-      <div class="carousel-track" id="carouselTrack">
-        <div class="testimonial-card">
-          <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <blockquote data-i18n="testimonial1">"Switching to Kanoz pellets cut our fuel costs by 35% while helping us meet our sustainability targets. The consistent quality and reliable supply have been exceptional."</blockquote>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar" aria-hidden="true">RK</div>
-            <div class="testimonial-author-info">
-              <strong>Rajesh Kumar</strong>
-              <span>Operations Head, Textile Manufacturing</span>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <blockquote data-i18n="testimonial2">"The low ash content means significantly less downtime for cleaning. Kanoz delivers on time, every time &mdash; critical for our 24/7 operations."</blockquote>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar" aria-hidden="true">SP</div>
-            <div class="testimonial-author-info">
-              <strong>Suresh Patel</strong>
-              <span>Plant Manager, Ceramic Industries</span>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <blockquote data-i18n="testimonial3">"We needed a reliable biomass supplier for our co-firing setup. Kanoz's pellets have consistent GCV and the team is always responsive to our requirements."</blockquote>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar" aria-hidden="true">AM</div>
-            <div class="testimonial-author-info">
-              <strong>Anita Mehta</strong>
-              <span>Procurement, Power Generation</span>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <blockquote data-i18n="testimonial4">"The biomass pellets from Kanoz have transformed our boiler efficiency. We've seen a 40% reduction in fuel expenses and the quality has been consistently outstanding."</blockquote>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar" aria-hidden="true">VG</div>
-            <div class="testimonial-author-info">
-              <strong>Vikram Gupta</strong>
-              <span>Director, Food Processing Plant</span>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <blockquote data-i18n="testimonial5">"As a sustainability-focused brand, finding Kanoz was a game-changer. Their pellets help us achieve carbon neutrality goals while being incredibly cost-effective."</blockquote>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar" aria-hidden="true">PS</div>
-            <div class="testimonial-author-info">
-              <strong>Priya Sharma</strong>
-              <span>Sustainability Lead, Pharma Corp</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-controls">
-        <button class="carousel-btn" id="carouselPrev" aria-label="Previous testimonial">&#8249;</button>
-        <div class="carousel-dots" id="carouselDots"></div>
-        <button class="carousel-btn" id="carouselNext" aria-label="Next testimonial">&#8250;</button>
-      </div>
-    </div>
-  </section>
 
   <!-- SUSTAINABILITY -->
   <section class="sustainability" id="sustainability">
     <div class="sustainability-inner">
       <div class="sustainability-content">
-        <div class="section-label">Sustainability</div>
-        <h2>Good for Business, Better for the Planet</h2>
-        <p>Every ton of biomass pellets used instead of coal reduces carbon emissions significantly. By converting agricultural waste into fuel, we also help reduce crop stubble burning &mdash; one of India's major pollution contributors.</p>
-        <p>Our pellets offer a cost-effective, carbon-neutral energy source that helps industries meet sustainability goals while reducing fuel costs.</p>
+        <div class="section-label" data-i18n="sustain_label">Sustainability</div>
+        <h2 data-i18n="sustain_title">Good for Business, Better for the Planet</h2>
+        <p data-i18n="sustain_desc1">Every ton of biomass pellets used instead of coal reduces carbon emissions significantly. By converting agricultural waste into fuel, we also help reduce crop stubble burning &mdash; one of India's major pollution contributors.</p>
+        <p data-i18n="sustain_desc2">Our pellets offer a cost-effective, carbon-neutral energy source that helps industries meet sustainability goals while reducing fuel costs.</p>
       </div>
       <div class="impact-cards">
         <div class="impact-card animate-on-scroll">
@@ -2003,8 +1769,8 @@
   <section class="contact" id="contact">
     <div class="contact-inner">
       <div class="contact-info">
-        <h2>Let's Talk Energy</h2>
-        <p>Whether you need bulk biomass pellets or want to explore sustainable fuel options, we're here to help. Reach out and our team will get back to you within 24 hours.</p>
+        <h2 data-i18n="contact_title">Let's Talk Energy</h2>
+        <p data-i18n="contact_desc">Whether you need bulk biomass pellets or want to explore sustainable fuel options, we're here to help. Reach out and our team will get back to you within 24 hours.</p>
         <div class="contact-detail">
           <div class="contact-detail-icon" aria-hidden="true">&#x1F4DE;</div>
           <div>
@@ -2028,37 +1794,37 @@
         </div>
         <a href="https://wa.me/919839788886?text=Hi%2C%20I%20want%20to%20enquire%20about%20biomass%20pellets" target="_blank" rel="noopener noreferrer" class="contact-whatsapp">
           <svg width="20" height="20" aria-hidden="true"><use href="#icon-whatsapp"/></svg>
-          Chat on WhatsApp
+          <span data-i18n="contact_whatsapp">Chat on WhatsApp</span>
         </a>
       </div>
       <div class="contact-form">
-        <h3>Request a Quote</h3>
+        <h3 data-i18n="contact_form_title">Request a Quote</h3>
         <form id="contactForm" action="https://formspree.io/f/xpznqkdl" method="POST" novalidate>
           <div class="form-row">
             <div class="form-group">
-              <label for="name">Full Name *</label>
+              <label for="name" data-i18n="form_name">Full Name *</label>
               <input type="text" id="name" name="name" placeholder="Your name" required aria-required="true" autocomplete="name">
               <div class="form-error" id="nameError" aria-live="polite" aria-atomic="true">Please enter your name</div>
             </div>
             <div class="form-group">
-              <label for="company">Company Name</label>
+              <label for="company" data-i18n="form_company">Company Name</label>
               <input type="text" id="company" name="company" placeholder="Your company" autocomplete="organization">
             </div>
           </div>
           <div class="form-row">
             <div class="form-group">
-              <label for="email">Email *</label>
+              <label for="email" data-i18n="form_email">Email *</label>
               <input type="email" id="email" name="email" placeholder="you@company.com" required aria-required="true" autocomplete="email">
               <div class="form-error" id="emailError" aria-live="polite" aria-atomic="true">Please enter a valid email address</div>
             </div>
             <div class="form-group">
-              <label for="phone">Phone</label>
+              <label for="phone" data-i18n="form_phone">Phone</label>
               <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" autocomplete="tel" pattern="[+]?[0-9\s\-]{7,15}">
               <div class="form-error" id="phoneError">Please enter a valid phone number</div>
             </div>
           </div>
           <div class="form-group">
-            <label for="quantity">Monthly Requirement (Tons) *</label>
+            <label for="quantity" data-i18n="form_quantity">Monthly Requirement (Tons) *</label>
             <select id="quantity" name="quantity" required aria-required="true">
               <option value="" selected>Select quantity</option>
               <option value="1-50">1 - 50 Tons</option>
@@ -2069,10 +1835,10 @@
             <div class="form-error" id="quantityError" aria-live="polite" aria-atomic="true">Please select a quantity range</div>
           </div>
           <div class="form-group">
-            <label for="message">Message</label>
+            <label for="message" data-i18n="form_message">Message</label>
             <textarea id="message" name="message" placeholder="Tell us about your requirements..."></textarea>
           </div>
-          <button type="submit" class="form-submit" id="submitBtn">Send Enquiry &rarr;</button>
+          <button type="submit" class="form-submit" id="submitBtn" data-i18n="form_submit">Send Enquiry &rarr;</button>
         </form>
         <div class="form-success" id="formSuccess" aria-live="polite" aria-atomic="true">
           <div class="form-success-icon" aria-hidden="true">&#x2705;</div>
@@ -2161,30 +1927,7 @@
     var SAVINGS_RATIO = 0.30;
     var CO2_FACTOR = 2.4;
 
-    // ===== DARK MODE =====
-    var themeToggle = document.getElementById('themeToggle');
-    var themeColor = document.getElementById('themeColor');
-    var savedTheme = localStorage.getItem('theme');
-
-    function setTheme(theme) {
-      document.documentElement.setAttribute('data-theme', theme);
-      themeToggle.textContent = theme === 'dark' ? '\u2600\uFE0F' : '\uD83C\uDF19';
-      themeColor.content = theme === 'dark' ? '#1a1a2e' : '#2d6a4f';
-      localStorage.setItem('theme', theme);
-    }
-
-    if (savedTheme) {
-      setTheme(savedTheme);
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setTheme('dark');
-    }
-
-    themeToggle.addEventListener('click', function() {
-      var current = document.documentElement.getAttribute('data-theme');
-      setTheme(current === 'dark' ? 'light' : 'dark');
-    });
-
-    // ===== COOKIE CONSENT =====
+// ===== COOKIE CONSENT =====
     var cookieBanner = document.getElementById('cookieBanner');
     var cookieAccept = document.getElementById('cookieAccept');
     var cookieDecline = document.getElementById('cookieDecline');
@@ -2303,93 +2046,7 @@
       counterObserver.observe(el);
     });
 
-    // ===== TESTIMONIAL CAROUSEL =====
-    var track = document.getElementById('carouselTrack');
-    var prevBtn = document.getElementById('carouselPrev');
-    var nextBtn = document.getElementById('carouselNext');
-    var dotsContainer = document.getElementById('carouselDots');
-    var cards = track.querySelectorAll('.testimonial-card');
-    var currentSlide = 0;
-    var slidesPerView = 3;
-    var autoplayTimer;
-
-    function getPerView() {
-      if (window.innerWidth <= 768) return 1;
-      if (window.innerWidth <= 992) return 2;
-      return 3;
-    }
-
-    function getTotalSlides() {
-      return Math.max(1, cards.length - slidesPerView + 1);
-    }
-
-    function buildDots() {
-      dotsContainer.innerHTML = '';
-      var total = getTotalSlides();
-      for (var i = 0; i < total; i++) {
-        var dot = document.createElement('button');
-        dot.className = 'carousel-dot' + (i === currentSlide ? ' active' : '');
-        dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
-        dot.dataset.index = i;
-        dotsContainer.appendChild(dot);
-      }
-    }
-
-    function goToSlide(index) {
-      var total = getTotalSlides();
-      currentSlide = Math.max(0, Math.min(index, total - 1));
-      var cardWidth = cards[0].offsetWidth + 32;
-      if (slidesPerView === 1) cardWidth = track.parentElement.offsetWidth;
-      track.style.transform = 'translateX(-' + (currentSlide * cardWidth) + 'px)';
-      dotsContainer.querySelectorAll('.carousel-dot').forEach(function(d, i) {
-        d.classList.toggle('active', i === currentSlide);
-      });
-      prevBtn.disabled = currentSlide === 0;
-      nextBtn.disabled = currentSlide >= total - 1;
-    }
-
-    function startAutoplay() {
-      stopAutoplay();
-      autoplayTimer = setInterval(function() {
-        var total = getTotalSlides();
-        goToSlide(currentSlide >= total - 1 ? 0 : currentSlide + 1);
-      }, 5000);
-    }
-
-    function stopAutoplay() {
-      if (autoplayTimer) clearInterval(autoplayTimer);
-    }
-
-    function initCarousel() {
-      slidesPerView = getPerView();
-      currentSlide = 0;
-      buildDots();
-      goToSlide(0);
-      startAutoplay();
-    }
-
-    prevBtn.addEventListener('click', function() { stopAutoplay(); goToSlide(currentSlide - 1); startAutoplay(); });
-    nextBtn.addEventListener('click', function() { stopAutoplay(); goToSlide(currentSlide + 1); startAutoplay(); });
-    dotsContainer.addEventListener('click', function(e) {
-      if (e.target.classList.contains('carousel-dot')) {
-        stopAutoplay();
-        goToSlide(parseInt(e.target.dataset.index, 10));
-        startAutoplay();
-      }
-    });
-
-    window.addEventListener('resize', function() {
-      var newPerView = getPerView();
-      if (newPerView !== slidesPerView) {
-        slidesPerView = newPerView;
-        buildDots();
-        goToSlide(0);
-      }
-    });
-
-    initCarousel();
-
-    // ===== PRICING CALCULATOR =====
+// ===== PRICING CALCULATOR =====
     var calcTons = document.getElementById('calcTons');
     var calcCoalPrice = document.getElementById('calcCoalPrice');
 
@@ -2498,6 +2155,7 @@
     // ===== MULTI-LANGUAGE (i18n) =====
     var translations = {
       hi: {
+        // Nav
         nav_about: '\u0939\u092E\u093E\u0930\u0947 \u092C\u093E\u0930\u0947 \u092E\u0947\u0902',
         nav_products: '\u0909\u0924\u094D\u092A\u093E\u0926',
         nav_pricing: '\u092E\u0942\u0932\u094D\u092F',
@@ -2505,6 +2163,71 @@
         nav_contact: '\u0938\u0902\u092A\u0930\u094D\u0915',
         nav_portal: '\u092A\u094B\u0930\u094D\u091F\u0932',
         nav_quote: '\u0915\u094B\u091F\u0947\u0936\u0928 \u092A\u093E\u090F\u0902',
+        // Hero
+        hero_badge: '\u0938\u094D\u0925\u093E\u092F\u0940 \u090A\u0930\u094D\u091C\u093E \u0938\u092E\u093E\u0927\u093E\u0928',
+        hero_title: '\u0938\u094D\u0935\u091A\u094D\u091B <em>\u092C\u093E\u092F\u094B\u092E\u093E\u0938</em> \u090A\u0930\u094D\u091C\u093E \u0938\u0947 \u0909\u0926\u094D\u092F\u094B\u0917 \u0915\u094B \u0936\u0915\u094D\u0924\u093F',
+        hero_desc: '\u0939\u092E \u0915\u0943\u0937\u093F \u0905\u092A\u0936\u093F\u0937\u094D\u091F \u0938\u0947 \u092A\u094D\u0930\u0940\u092E\u093F\u092F\u092E \u092C\u093E\u092F\u094B\u092E\u093E\u0938 \u092A\u0947\u0932\u0947\u091F \u092C\u0928\u093E\u0924\u0947 \u0939\u0948\u0902, \u091C\u094B \u092D\u093E\u0930\u0924 \u092D\u0930 \u092E\u0947\u0902 \u0909\u0926\u094D\u092F\u094B\u0917\u094B\u0902, \u092C\u093F\u091C\u0932\u0940 \u0938\u0902\u092F\u0902\u0924\u094D\u0930\u094B\u0902 \u0914\u0930 \u0935\u094D\u092F\u093E\u092A\u093E\u0930\u093F\u0915 \u0939\u0940\u091F\u093F\u0902\u0917 \u0915\u0947 \u0932\u093F\u090F \u092A\u0930\u094D\u092F\u093E\u0935\u0930\u0923 \u0905\u0928\u0941\u0915\u0942\u0932 \u0908\u0902\u0927\u0928 \u0935\u093F\u0915\u0932\u094D\u092A \u092A\u094D\u0930\u0926\u093E\u0928 \u0915\u0930\u0924\u0947 \u0939\u0948\u0902\u0964',
+        hero_cta: '\u0915\u094B\u091F\u0947\u0936\u0928 \u092A\u093E\u090F\u0902 \u2192',
+        hero_whatsapp: '\u0935\u094D\u0939\u093E\u091F\u094D\u0938\u090F\u092A \u0915\u0930\u0947\u0902',
+        hero_card_title: '\u092C\u093E\u092F\u094B\u092E\u093E\u0938 \u092A\u0947\u0932\u0947\u091F',
+        hero_card_desc: '\u0938\u094D\u0925\u093E\u092F\u0940 \u0915\u0943\u0937\u093F \u0905\u0935\u0936\u0947\u0937\u094B\u0902 \u0938\u0947 \u092C\u0928\u0947 \u0909\u091A\u094D\u091A-\u0915\u0948\u0932\u094B\u0930\u0940, \u0915\u092E-\u0930\u093E\u0916 \u092A\u0947\u0932\u0947\u091F',
+        // About
+        about_card_title: '\u0916\u0947\u0924 \u0915\u0947 \u0915\u091A\u0930\u0947 \u0938\u0947 \u0938\u094D\u0935\u091A\u094D\u091B \u0908\u0902\u0927\u0928',
+        about_card_desc: '\u0939\u092E \u0916\u0947\u0924\u094B\u0902 \u092E\u0947\u0902 \u091C\u0932\u093E\u090F \u091C\u093E\u0928\u0947 \u0935\u093E\u0932\u0947 \u0915\u0943\u0937\u093F \u0905\u0935\u0936\u0947\u0937\u094B\u0902 \u0915\u094B \u0909\u091A\u094D\u091A \u0917\u0941\u0923\u0935\u0924\u094D\u0924\u093E \u0935\u093E\u0932\u0947 \u092C\u093E\u092F\u094B\u092E\u093E\u0938 \u092A\u0947\u0932\u0947\u091F \u092E\u0947\u0902 \u092C\u0926\u0932\u0924\u0947 \u0939\u0948\u0902, \u091C\u093F\u0938\u0938\u0947 \u0915\u093F\u0938\u093E\u0928\u094B\u0902 \u0915\u094B \u0906\u092F \u0914\u0930 \u0909\u0926\u094D\u092F\u094B\u0917\u094B\u0902 \u0915\u094B \u0938\u094D\u0935\u091A\u094D\u091B \u090A\u0930\u094D\u091C\u093E \u092E\u093F\u0932\u0924\u0940 \u0939\u0948\u0964',
+        about_label: '\u0915\u0928\u094B\u091C\u093C \u092C\u093E\u092F\u094B \u090F\u0928\u0930\u094D\u091C\u0940 \u0915\u0947 \u092C\u093E\u0930\u0947 \u092E\u0947\u0902',
+        about_title: '\u092D\u093E\u0930\u0924 \u0915\u0947 \u0938\u094D\u0935\u091A\u094D\u091B \u090A\u0930\u094D\u091C\u093E \u092D\u0935\u093F\u0937\u094D\u092F \u0915\u093E \u0928\u093F\u0930\u094D\u092E\u093E\u0923',
+        about_desc1: '\u0915\u0928\u094B\u091C\u093C \u092C\u093E\u092F\u094B \u090F\u0928\u0930\u094D\u091C\u0940 \u092D\u093E\u0930\u0924 \u092E\u0947\u0902 \u0938\u094D\u0925\u093F\u0924 \u090F\u0915 \u092C\u093E\u092F\u094B\u092E\u093E\u0938 \u092A\u0947\u0932\u0947\u091F \u0928\u093F\u0930\u094D\u092E\u093E\u0923 \u0915\u0902\u092A\u0928\u0940 \u0939\u0948\u0964 \u0939\u092E \u0938\u0940\u0927\u0947 \u0915\u093F\u0938\u093E\u0928\u094B\u0902 \u0938\u0947 \u0915\u0943\u0937\u093F \u0905\u092A\u0936\u093F\u0937\u094D\u091F \u0916\u0930\u0940\u0926\u0924\u0947 \u0939\u0948\u0902 \u0914\u0930 \u092B\u0938\u0932 \u0905\u0935\u0936\u0947\u0937\u094B\u0902 \u0915\u094B \u0938\u0902\u092A\u0940\u0921\u093C\u093F\u0924 \u092C\u093E\u092F\u094B\u092E\u093E\u0938 \u092A\u0947\u0932\u0947\u091F \u092E\u0947\u0902 \u092C\u0926\u0932\u0924\u0947 \u0939\u0948\u0902 \u091C\u094B \u0915\u094B\u092F\u0932\u0947 \u0914\u0930 \u0905\u0928\u094D\u092F \u091C\u0940\u0935\u093E\u0936\u094D\u092E \u0908\u0902\u0927\u0928 \u0915\u093E \u092A\u0930\u094D\u092F\u093E\u0935\u0930\u0923 \u0905\u0928\u0941\u0915\u0942\u0932 \u0935\u093F\u0915\u0932\u094D\u092A \u0939\u0948\u0964',
+        about_desc2: '\u0939\u092E\u093E\u0930\u093E \u0909\u0924\u094D\u092A\u093E\u0926\u0928 \u0928\u093F\u0930\u0902\u0924\u0930 \u0906\u092A\u0942\u0930\u094D\u0924\u093F \u0914\u0930 \u0917\u0941\u0923\u0935\u0924\u094D\u0924\u093E \u0938\u0941\u0928\u093F\u0936\u094D\u091A\u093F\u0924 \u0915\u0930\u0924\u093E \u0939\u0948, \u0939\u0930 \u091A\u0930\u0923 \u092E\u0947\u0902 \u0926\u0948\u0928\u093F\u0915 \u0930\u093F\u092A\u094B\u0930\u094D\u091F\u093F\u0902\u0917 \u0914\u0930 \u0917\u0941\u0923\u0935\u0924\u094D\u0924\u093E \u091C\u093E\u0901\u091A \u0915\u0947 \u092E\u093E\u0927\u094D\u092F\u092E \u0938\u0947\u0964',
+        about_h1: '\u0938\u0940\u0927\u0947 \u0915\u093F\u0938\u093E\u0928\u094B\u0902 \u0938\u0947 \u0916\u0930\u0940\u0926',
+        about_h1_desc: '\u0915\u091A\u094D\u091A\u093E \u092E\u093E\u0932 \u0938\u0940\u0927\u0947 \u0938\u094D\u0925\u093E\u0928\u0940\u092F \u0915\u093F\u0938\u093E\u0928\u094B\u0902 \u0938\u0947 \u0916\u0930\u0940\u0926\u093E \u091C\u093E\u0924\u093E \u0939\u0948, \u0917\u094D\u0930\u093E\u092E\u0940\u0923 \u0906\u091C\u0940\u0935\u093F\u0915\u093E \u0915\u093E \u0938\u092E\u0930\u094D\u0925\u0928\u0964',
+        about_h2: '\u0906\u0927\u0941\u0928\u093F\u0915 \u0928\u093F\u0930\u094D\u092E\u093E\u0923',
+        about_h2_desc: '\u0938\u094D\u0935\u091A\u093E\u0932\u093F\u0924 \u0917\u0941\u0923\u0935\u0924\u094D\u0924\u093E \u0928\u093F\u092F\u0902\u0924\u094D\u0930\u0923 \u092A\u094D\u0930\u0923\u093E\u0932\u093F\u092F\u094B\u0902 \u0915\u0947 \u0938\u093E\u0925 \u0905\u0924\u094D\u092F\u093E\u0927\u0941\u0928\u093F\u0915 \u092A\u0947\u0932\u0947\u091F \u092E\u093F\u0932\u0947\u0902\u0964',
+        about_h3: '\u0935\u093F\u0936\u094D\u0935\u0938\u0928\u0940\u092F \u0906\u092A\u0942\u0930\u094D\u0924\u093F \u0936\u094D\u0930\u0943\u0902\u0916\u0932\u093E',
+        about_h3_desc: '\u092A\u0942\u0930\u0947 \u092D\u093E\u0930\u0924 \u092E\u0947\u0902 \u0938\u092E\u092F \u092A\u0930 \u0921\u093F\u0932\u0940\u0935\u0930\u0940 \u0915\u0947 \u0932\u093F\u090F \u0905\u092A\u0928\u093E \u092C\u0947\u0921\u093C\u093E \u0914\u0930 \u0932\u0949\u091C\u093F\u0938\u094D\u091F\u093F\u0915\u094D\u0938 \u0928\u0947\u091F\u0935\u0930\u094D\u0915\u0964',
+        // Products
+        products_label: '\u0939\u092E\u093E\u0930\u0947 \u0909\u0924\u094D\u092A\u093E\u0926',
+        products_title: '\u092A\u094D\u0930\u0940\u092E\u093F\u092F\u092E \u092C\u093E\u092F\u094B\u092E\u093E\u0938 \u092A\u0947\u0932\u0947\u091F',
+        products_desc: '\u0938\u093E\u0935\u0927\u093E\u0928\u0940 \u0938\u0947 \u0916\u0930\u0940\u0926\u0947 \u0917\u090F \u0915\u0943\u0937\u093F \u0905\u092A\u0936\u093F\u0937\u094D\u091F \u0938\u0947 \u0938\u091F\u0940\u0915\u0924\u093E \u0938\u0947 \u0928\u093F\u0930\u094D\u092E\u093F\u0924, \u0939\u092E\u093E\u0930\u0947 \u092A\u0947\u0932\u0947\u091F \u0932\u0917\u093E\u0924\u093E\u0930 \u0917\u0941\u0923\u0935\u0924\u094D\u0924\u093E \u0914\u0930 \u0909\u091A\u094D\u091A \u090A\u0930\u094D\u091C\u093E \u0909\u0924\u094D\u092A\u093E\u0926\u0928 \u092A\u094D\u0930\u0926\u093E\u0928 \u0915\u0930\u0924\u0947 \u0939\u0948\u0902\u0964',
+        prod1_title: '\u0914\u0926\u094D\u092F\u094B\u0917\u093F\u0915 \u092A\u0947\u0932\u0947\u091F',
+        prod1_desc: '\u092C\u0949\u0907\u0932\u0930 \u0914\u0930 \u092D\u091F\u094D\u0920\u093F\u092F\u094B\u0902 \u0915\u0947 \u0932\u093F\u090F \u0909\u091A\u094D\u091A-\u0915\u0948\u0932\u094B\u0930\u0940 \u092C\u093E\u092F\u094B\u092E\u093E\u0938 \u092A\u0947\u0932\u0947\u091F\u0964 \u0928\u093F\u0930\u094D\u092E\u093E\u0923 \u092E\u0947\u0902 \u0915\u094B\u092F\u0932\u0947 \u0915\u094B \u0938\u094D\u0935\u091A\u094D\u091B, \u0932\u093E\u0917\u0924 \u092A\u094D\u0930\u092D\u093E\u0935\u0940 \u0908\u0902\u0927\u0928 \u0938\u094D\u0930\u094B\u0924 \u0938\u0947 \u092C\u0926\u0932\u0928\u0947 \u0915\u0947 \u0932\u093F\u090F \u0906\u0926\u0930\u094D\u0936\u0964',
+        prod2_title: '\u092A\u093E\u0935\u0930 \u092A\u094D\u0932\u093E\u0902\u091F \u0917\u094D\u0930\u0947\u0921',
+        prod2_desc: '\u092C\u093F\u091C\u0932\u0940 \u0938\u0902\u092F\u0902\u0924\u094D\u0930\u094B\u0902 \u092E\u0947\u0902 \u0938\u0939-\u0926\u0939\u0928 \u0915\u0947 \u0932\u093F\u090F \u0925\u094B\u0915 \u0906\u092A\u0942\u0930\u094D\u0924\u093F\u0964 \u0935\u093F\u0936\u094D\u0935\u0938\u0928\u0940\u092F \u090A\u0930\u094D\u091C\u093E \u0909\u0924\u094D\u092A\u093E\u0926\u0928 \u0915\u0947 \u0932\u093F\u090F \u0938\u092E\u093E\u0928 \u0906\u0915\u093E\u0930 \u0914\u0930 \u0928\u092E\u0940 \u0938\u093E\u092E\u0917\u094D\u0930\u0940\u0964',
+        prod3_title: '\u0935\u094D\u092F\u093E\u092A\u093E\u0930\u093F\u0915 \u0939\u0940\u091F\u093F\u0902\u0917',
+        prod3_desc: '\u0935\u094D\u092F\u093E\u092A\u093E\u0930\u093F\u0915 \u0939\u0940\u091F\u093F\u0902\u0917 \u092A\u094D\u0930\u0923\u093E\u0932\u093F\u092F\u094B\u0902 \u0915\u0947 \u0932\u093F\u090F \u0938\u094D\u0935\u091A\u094D\u091B \u091C\u0932\u0928\u0947 \u0935\u093E\u0932\u0947 \u092A\u0947\u0932\u0947\u091F\u0964 \u0915\u092E \u0930\u093E\u0916 \u0915\u093E \u092E\u0924\u0932\u092C \u0915\u092E \u0930\u0916\u0930\u0916\u093E\u0935 \u0914\u0930 \u0938\u094D\u0935\u091A\u094D\u091B \u0938\u0902\u091A\u093E\u0932\u0928\u0964',
+        // Process
+        process_label: '\u0939\u092E\u093E\u0930\u0940 \u092A\u094D\u0930\u0915\u094D\u0930\u093F\u092F\u093E',
+        process_title: '\u0916\u0947\u0924 \u0938\u0947 \u0908\u0902\u0927\u0928 \u0924\u0915',
+        process_desc: '\u090F\u0915 \u0938\u0941\u0935\u094D\u092F\u0935\u0938\u094D\u0925\u093F\u0924 \u0928\u093F\u0930\u094D\u092E\u093E\u0923 \u092A\u094D\u0930\u0915\u094D\u0930\u093F\u092F\u093E \u091C\u094B \u0915\u091A\u094D\u091A\u0947 \u092E\u093E\u0932 \u0915\u0947 \u0938\u0902\u0917\u094D\u0930\u0939\u0923 \u0938\u0947 \u0905\u0902\u0924\u093F\u092E \u0921\u093F\u0932\u0940\u0935\u0930\u0940 \u0924\u0915 \u0939\u0930 \u0915\u0926\u092E \u092A\u0930 \u0917\u0941\u0923\u0935\u0924\u094D\u0924\u093E \u0938\u0941\u0928\u093F\u0936\u094D\u091A\u093F\u0924 \u0915\u0930\u0924\u0940 \u0939\u0948\u0964',
+        step1_title: '\u0915\u091A\u094D\u091A\u093E \u092E\u093E\u0932 \u0938\u0902\u0917\u094D\u0930\u0939\u0923',
+        step1_desc: '\u0938\u094D\u0925\u093E\u0928\u0940\u092F \u0915\u093F\u0938\u093E\u0928\u094B\u0902 \u0938\u0947 \u0938\u0940\u0927\u0947 \u0916\u0930\u0940\u0926\u0947 \u0917\u090F \u0915\u0943\u0937\u093F \u0905\u0935\u0936\u0947\u0937 \u2014 \u092B\u0938\u0932 \u0921\u0902\u0920\u0932, \u092D\u0942\u0938\u0940 \u0914\u0930 \u0905\u0928\u094D\u092F \u092C\u093E\u092F\u094B\u092E\u093E\u0938 \u0915\u091A\u0930\u093E\u0964',
+        step2_title: '\u092A\u094D\u0930\u0938\u0902\u0938\u094D\u0915\u0930\u0923 \u0914\u0930 \u0938\u0941\u0916\u093E\u0928\u093E',
+        step2_desc: '\u0915\u091A\u094D\u091A\u0947 \u092E\u093E\u0932 \u0915\u094B \u0938\u093E\u092B \u0915\u093F\u092F\u093E \u091C\u093E\u0924\u093E \u0939\u0948, \u0915\u093E\u091F\u093E \u091C\u093E\u0924\u093E \u0939\u0948 \u0914\u0930 \u092A\u0947\u0932\u0947\u091F \u092C\u0928\u093E\u0928\u0947 \u0915\u0947 \u0932\u093F\u090F \u0907\u0937\u094D\u091F\u0924\u092E \u0928\u092E\u0940 \u0938\u094D\u0924\u0930 \u0924\u0915 \u0938\u0941\u0916\u093E\u092F\u093E \u091C\u093E\u0924\u093E \u0939\u0948\u0964',
+        step3_title: '\u092A\u0947\u0932\u0947\u091F\u0940\u0915\u0930\u0923',
+        step3_desc: '\u0909\u091A\u094D\u091A-\u0926\u092C\u093E\u0935 \u092A\u0947\u0932\u0947\u091F \u092E\u093F\u0932\u0947\u0902 \u092C\u093E\u092F\u094B\u092E\u093E\u0938 \u0915\u094B \u0938\u092E\u093E\u0928, \u0918\u0928\u0947 \u092A\u0947\u0932\u0947\u091F \u092E\u0947\u0902 \u0938\u0902\u092A\u0940\u0921\u093C\u093F\u0924 \u0915\u0930\u0924\u0940 \u0939\u0948\u0902 \u091C\u093F\u0928\u0915\u093E \u0915\u0948\u0932\u094B\u0930\u0940 \u092E\u0942\u0932\u094D\u092F \u0938\u092E\u093E\u0928 \u0930\u0939\u0924\u093E \u0939\u0948\u0964',
+        step4_title: '\u0917\u0941\u0923\u0935\u0924\u094D\u0924\u093E \u0914\u0930 \u092A\u094D\u0930\u0947\u0937\u0923',
+        step4_desc: '\u0939\u0930 \u092C\u0948\u091A \u0915\u094B \u0917\u094D\u0930\u093E\u0939\u0915\u094B\u0902 \u0915\u094B \u092D\u0947\u091C\u0928\u0947 \u0938\u0947 \u092A\u0939\u0932\u0947 \u0928\u092E\u0940, \u0930\u093E\u0916 \u0938\u093E\u092E\u0917\u094D\u0930\u0940 \u0914\u0930 \u0915\u0948\u0932\u094B\u0930\u0940 \u092E\u0942\u0932\u094D\u092F \u0915\u0947 \u0932\u093F\u090F \u092A\u0930\u0940\u0915\u094D\u0937\u0923 \u0915\u093F\u092F\u093E \u091C\u093E\u0924\u093E \u0939\u0948\u0964',
+        // Why Us
+        why_label: '\u0915\u0928\u094B\u091C\u093C \u0915\u094D\u092F\u094B\u0902',
+        why_title: '\u0935\u093F\u0936\u094D\u0935\u0938\u0928\u0940\u092F\u0924\u093E \u0915\u0947 \u0932\u093F\u090F \u092C\u0928\u093E\u092F\u093E \u0917\u092F\u093E',
+        why_desc: '\u092A\u0942\u0930\u0947 \u092D\u093E\u0930\u0924 \u092E\u0947\u0902 \u0939\u092E\u093E\u0930\u0947 \u0917\u094D\u0930\u093E\u0939\u0915\u094B\u0902 \u0915\u0947 \u0932\u093F\u090F \u0928\u093F\u0930\u0902\u0924\u0930 \u0906\u092A\u0942\u0930\u094D\u0924\u093F \u0914\u0930 \u0917\u0941\u0923\u0935\u0924\u094D\u0924\u093E\u0964',
+        why1_title: 'GCV Kcal/kg',
+        why1_desc: '\u0939\u0930 \u0915\u093F\u0932\u094B\u0917\u094D\u0930\u093E\u092E \u0938\u0947 \u0905\u0927\u093F\u0915\u0924\u092E \u090A\u0930\u094D\u091C\u093E \u0938\u0941\u0928\u093F\u0936\u094D\u091A\u093F\u0924 \u0915\u0930\u0928\u0947 \u0935\u093E\u0932\u093E \u0909\u091A\u094D\u091A \u0915\u0948\u0932\u094B\u0930\u0940 \u092E\u0942\u0932\u094D\u092F',
+        why2_title: '\u0915\u092E \u0930\u093E\u0916 \u0938\u093E\u092E\u0917\u094D\u0930\u0940',
+        why2_desc: '\u0915\u0941\u0936\u0932 \u0938\u0902\u091A\u093E\u0932\u0928 \u0915\u0947 \u0932\u093F\u090F \u0928\u094D\u092F\u0942\u0928\u0924\u092E \u0905\u0935\u0936\u0947\u0937 \u0915\u0947 \u0938\u093E\u0925 \u0938\u094D\u0935\u091A\u094D\u091B \u0926\u0939\u0928',
+        why3_title: '\u0915\u0943\u0937\u093F \u0905\u092A\u0936\u093F\u0937\u094D\u091F',
+        why3_desc: '\u092A\u0942\u0930\u0940 \u0924\u0930\u0939 \u0938\u0947 \u0916\u0947\u0924 \u0915\u0947 \u0905\u0935\u0936\u0947\u0937\u094B\u0902 \u0938\u0947 \u092C\u0928\u0947 \u092A\u0947\u0932\u0947\u091F, \u092A\u0930\u093E\u0932\u0940 \u091C\u0932\u093E\u0928\u0947 \u092E\u0947\u0902 \u0915\u092E\u0940',
+        why4_title: '\u0909\u0924\u094D\u092A\u093E\u0926\u0928',
+        why4_desc: '\u0926\u0948\u0928\u093F\u0915 \u0917\u0941\u0923\u0935\u0924\u094D\u0924\u093E \u0928\u093F\u0917\u0930\u093E\u0928\u0940 \u0915\u0947 \u0938\u093E\u0925 \u091A\u094C\u092C\u0940\u0938\u094B\u0902 \u0918\u0902\u091F\u0947 \u0928\u093F\u0930\u094D\u092E\u093E\u0923',
+        // Sustainability
+        sustain_label: '\u0938\u094D\u0925\u093F\u0930\u0924\u093E',
+        sustain_title: '\u0935\u094D\u092F\u093E\u092A\u093E\u0930 \u0915\u0947 \u0932\u093F\u090F \u0905\u091A\u094D\u091B\u093E, \u0927\u0930\u0924\u0940 \u0915\u0947 \u0932\u093F\u090F \u092C\u0947\u0939\u0924\u0930',
+        sustain_desc1: '\u0915\u094B\u092F\u0932\u0947 \u0915\u0947 \u092C\u091C\u093E\u092F \u092C\u093E\u092F\u094B\u092E\u093E\u0938 \u092A\u0947\u0932\u0947\u091F \u0915\u093E \u0909\u092A\u092F\u094B\u0917 \u0915\u0930\u0928\u0947 \u0938\u0947 \u0915\u093E\u0930\u094D\u092C\u0928 \u0909\u0924\u094D\u0938\u0930\u094D\u091C\u0928 \u092E\u0947\u0902 \u0915\u093E\u092B\u0940 \u0915\u092E\u0940 \u0906\u0924\u0940 \u0939\u0948\u0964 \u0915\u0943\u0937\u093F \u0905\u092A\u0936\u093F\u0937\u094D\u091F \u0915\u094B \u0908\u0902\u0927\u0928 \u092E\u0947\u0902 \u092C\u0926\u0932\u0915\u0930, \u0939\u092E \u092A\u0930\u093E\u0932\u0940 \u091C\u0932\u093E\u0928\u0947 \u0915\u094B \u092D\u0940 \u0915\u092E \u0915\u0930\u0928\u0947 \u092E\u0947\u0902 \u092E\u0926\u0926 \u0915\u0930\u0924\u0947 \u0939\u0948\u0902 \u2014 \u091C\u094B \u092D\u093E\u0930\u0924 \u092E\u0947\u0902 \u092A\u094D\u0930\u0926\u0942\u0937\u0923 \u0915\u093E \u092A\u094D\u0930\u092E\u0941\u0916 \u0915\u093E\u0930\u0923 \u0939\u0948\u0964',
+        sustain_desc2: '\u0939\u092E\u093E\u0930\u0947 \u092A\u0947\u0932\u0947\u091F \u090F\u0915 \u0932\u093E\u0917\u0924 \u092A\u094D\u0930\u092D\u093E\u0935\u0940, \u0915\u093E\u0930\u094D\u092C\u0928 \u0928\u094D\u092F\u0942\u091F\u094D\u0930\u0932 \u090A\u0930\u094D\u091C\u093E \u0938\u094D\u0930\u094B\u0924 \u092A\u094D\u0930\u0926\u093E\u0928 \u0915\u0930\u0924\u0947 \u0939\u0948\u0902 \u091C\u094B \u0909\u0926\u094D\u092F\u094B\u0917\u094B\u0902 \u0915\u094B \u0938\u094D\u0925\u093F\u0930\u0924\u093E \u0932\u0915\u094D\u0937\u094D\u092F \u092A\u0942\u0930\u0947 \u0915\u0930\u0928\u0947 \u092E\u0947\u0902 \u092E\u0926\u0926 \u0915\u0930\u0924\u0947 \u0939\u0948\u0902 \u0914\u0930 \u0908\u0902\u0927\u0928 \u0932\u093E\u0917\u0924 \u0915\u092E \u0915\u0930\u0924\u0947 \u0939\u0948\u0902\u0964',
+        impact_carbon: '\u092C\u093E\u092F\u094B\u092E\u093E\u0938 \u092A\u0947\u0932\u0947\u091F \u0915\u0947\u0935\u0932 \u092A\u094C\u0927\u0947 \u0915\u0940 \u0935\u0943\u0926\u094D\u0927\u093F \u0915\u0947 \u0926\u094C\u0930\u093E\u0928 \u0905\u0935\u0936\u094B\u0937\u093F\u0924 CO2 \u091B\u094B\u0921\u093C\u0924\u0947 \u0939\u0948\u0902',
+        impact_stubble: '\u0916\u0947\u0924\u094B\u0902 \u092E\u0947\u0902 \u092B\u0938\u0932 \u0905\u0935\u0936\u0947\u0937 \u091C\u0932\u093E\u0928\u0947 \u0915\u094B \u0915\u092E \u0915\u0930\u0924\u093E \u0939\u0948',
+        impact_cost: '\u092A\u093E\u0930\u0902\u092A\u0930\u093F\u0915 \u0908\u0902\u0927\u0928 \u0938\u0947 30-40% \u0938\u0938\u094D\u0924\u093E',
+        impact_farmer: '\u0915\u093F\u0938\u093E\u0928 \u0938\u092E\u0941\u0926\u093E\u092F\u094B\u0902 \u0915\u0947 \u0932\u093F\u090F \u0905\u0924\u093F\u0930\u093F\u0915\u094D\u0924 \u0906\u092F',
+        // Blog
         blog_label: '\u0938\u0902\u0938\u093E\u0927\u0928',
         blog_title: '\u091C\u093E\u0928\u0915\u093E\u0930\u0940 \u0914\u0930 \u0905\u0902\u0924\u0930\u094D\u0926\u0943\u0937\u094D\u091F\u093F',
         blog_desc: '\u092C\u093E\u092F\u094B\u092E\u093E\u0938 \u090A\u0930\u094D\u091C\u093E, \u0938\u094D\u0925\u093F\u0930\u0924\u093E \u0914\u0930 \u0909\u0926\u094D\u092F\u094B\u0917 \u0930\u0941\u091D\u093E\u0928\u094B\u0902 \u0915\u0947 \u092C\u093E\u0930\u0947 \u092E\u0947\u0902 \u091C\u093E\u0928\u0947\u0902\u0964',
@@ -2518,6 +2241,7 @@
         blog3_title: '\u092D\u093E\u0930\u0924 \u0915\u0940 \u092C\u093E\u092F\u094B\u092E\u093E\u0938 \u090A\u0930\u094D\u091C\u093E \u0928\u0940\u0924\u093F: \u0906\u092A\u0915\u094B \u0915\u094D\u092F\u093E \u091C\u093E\u0928\u0928\u093E \u091A\u093E\u0939\u093F\u090F',
         blog3_desc: '\u0938\u0930\u0915\u093E\u0930\u0940 \u092A\u094D\u0930\u094B\u0924\u094D\u0938\u093E\u0939\u0928, \u0915\u093E\u0930\u094D\u092C\u0928 \u0915\u094D\u0930\u0947\u0921\u093F\u091F \u0914\u0930 \u0928\u093F\u092F\u092E\u094B\u0902 \u0915\u093E \u0905\u0935\u0932\u094B\u0915\u0928\u0964',
         blog_readmore: '\u0914\u0930 \u092A\u0922\u093C\u0947\u0902 \u2192',
+        // Calculator
         calc_label: '\u092E\u0942\u0932\u094D\u092F \u0928\u093F\u0930\u094D\u0927\u093E\u0930\u0923',
         calc_title: '\u0905\u092A\u0928\u0940 \u092C\u091A\u0924 \u0915\u093E \u0905\u0928\u0941\u092E\u093E\u0928 \u0932\u0917\u093E\u090F\u0902',
         calc_desc: '\u0915\u094B\u092F\u0932\u0947 \u0938\u0947 \u0915\u0928\u094B\u091C\u093C \u092C\u093E\u092F\u094B\u092E\u093E\u0938 \u092A\u0947\u0932\u0947\u091F \u092A\u0930 \u0938\u094D\u0935\u093F\u091A \u0915\u0930\u0915\u0947 \u0915\u093F\u0924\u0928\u093E \u092C\u091A\u093E \u0938\u0915\u0924\u0947 \u0939\u0948\u0902\u0964',
@@ -2528,10 +2252,19 @@
         calc_pellet_annual: '\u092A\u0947\u0932\u0947\u091F \u0932\u093E\u0917\u0924 / \u0935\u0930\u094D\u0937',
         calc_co2: 'CO2 \u092C\u091A\u0924 / \u0935\u0930\u094D\u0937 (\u091F\u0928)',
         calc_note: '* \u0905\u0928\u0941\u092E\u093E\u0928 \u20B98,500/\u091F\u0928 \u092A\u0947\u0932\u0947\u091F \u092E\u0942\u0932\u094D\u092F \u0914\u0930 30% \u092C\u091A\u0924 \u092A\u0930 \u0906\u0927\u093E\u0930\u093F\u0924\u0964',
-        impact_carbon: '\u092C\u093E\u092F\u094B\u092E\u093E\u0938 \u092A\u0947\u0932\u0947\u091F \u0915\u0947\u0935\u0932 \u092A\u094C\u0927\u0947 \u0915\u0940 \u0935\u0943\u0926\u094D\u0927\u093F \u0915\u0947 \u0926\u094C\u0930\u093E\u0928 \u0905\u0935\u0936\u094B\u0937\u093F\u0924 CO2 \u091B\u094B\u0921\u093C\u0924\u0947 \u0939\u0948\u0902',
-        impact_stubble: '\u0916\u0947\u0924\u094B\u0902 \u092E\u0947\u0902 \u092B\u0938\u0932 \u0905\u0935\u0936\u0947\u0937 \u091C\u0932\u093E\u0928\u0947 \u0915\u094B \u0915\u092E \u0915\u0930\u0924\u093E \u0939\u0948',
-        impact_cost: '\u092A\u093E\u0930\u0902\u092A\u0930\u093F\u0915 \u0908\u0902\u0927\u0928 \u0938\u0947 30-40% \u0938\u0938\u094D\u0924\u093E',
-        impact_farmer: '\u0915\u093F\u0938\u093E\u0928 \u0938\u092E\u0941\u0926\u093E\u092F\u094B\u0902 \u0915\u0947 \u0932\u093F\u090F \u0905\u0924\u093F\u0930\u093F\u0915\u094D\u0924 \u0906\u092F',
+        // Contact
+        contact_title: '\u090A\u0930\u094D\u091C\u093E \u0915\u0947 \u092C\u093E\u0930\u0947 \u092E\u0947\u0902 \u092C\u093E\u0924 \u0915\u0930\u0947\u0902',
+        contact_desc: '\u091A\u093E\u0939\u0947 \u0906\u092A\u0915\u094B \u0925\u094B\u0915 \u092E\u0947\u0902 \u092C\u093E\u092F\u094B\u092E\u093E\u0938 \u092A\u0947\u0932\u0947\u091F \u091A\u093E\u0939\u093F\u090F \u092F\u093E \u0938\u094D\u0925\u093E\u092F\u0940 \u0908\u0902\u0927\u0928 \u0935\u093F\u0915\u0932\u094D\u092A \u091C\u093E\u0928\u0928\u093E \u091A\u093E\u0939\u0924\u0947 \u0939\u094B\u0902, \u0939\u092E \u092E\u0926\u0926 \u0915\u0947 \u0932\u093F\u090F \u092F\u0939\u093E\u0901 \u0939\u0948\u0902\u0964 \u0939\u092E\u093E\u0930\u0940 \u091F\u0940\u092E 24 \u0918\u0902\u091F\u0947 \u092E\u0947\u0902 \u0906\u092A\u0938\u0947 \u0938\u0902\u092A\u0930\u094D\u0915 \u0915\u0930\u0947\u0917\u0940\u0964',
+        contact_whatsapp: '\u0935\u094D\u0939\u093E\u091F\u094D\u0938\u090F\u092A \u092A\u0930 \u092C\u093E\u0924 \u0915\u0930\u0947\u0902',
+        contact_form_title: '\u0915\u094B\u091F\u0947\u0936\u0928 \u0915\u0947 \u0932\u093F\u090F \u0905\u0928\u0941\u0930\u094B\u0927',
+        form_name: '\u092A\u0942\u0930\u093E \u0928\u093E\u092E *',
+        form_company: '\u0915\u0902\u092A\u0928\u0940 \u0915\u093E \u0928\u093E\u092E',
+        form_email: '\u0908\u092E\u0947\u0932 *',
+        form_phone: '\u092B\u093C\u094B\u0928',
+        form_quantity: '\u092E\u093E\u0938\u093F\u0915 \u0906\u0935\u0936\u094D\u092F\u0915\u0924\u093E (\u091F\u0928) *',
+        form_message: '\u0938\u0902\u0926\u0947\u0936',
+        form_submit: '\u092A\u0942\u091B\u0924\u093E\u091B \u092D\u0947\u091C\u0947\u0902 \u2192',
+        // Cookie
         cookie_text: '\u0939\u092E \u0906\u092A\u0915\u0947 \u0905\u0928\u0941\u092D\u0935 \u0915\u094B \u092C\u0947\u0939\u0924\u0930 \u092C\u0928\u093E\u0928\u0947 \u0915\u0947 \u0932\u093F\u090F \u0915\u0941\u0915\u0940\u091C\u093C \u0915\u093E \u0909\u092A\u092F\u094B\u0917 \u0915\u0930\u0924\u0947 \u0939\u0948\u0902\u0964',
         cookie_accept: '\u0938\u094D\u0935\u0940\u0915\u093E\u0930 \u0915\u0930\u0947\u0902',
         cookie_decline: '\u0905\u0938\u094D\u0935\u0940\u0915\u093E\u0930'
