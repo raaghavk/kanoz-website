@@ -67,6 +67,63 @@
   }
   </script>
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What are biomass pellets made from?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our biomass pellets are made from agricultural residues such as crop stalks, rice husks, sawdust, and other farm waste. These materials are cleaned, dried, and compressed under high pressure to form dense, uniform pellets with high calorific value."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the minimum order quantity (MOQ)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our minimum order quantity is 1 ton. However, for the best pricing and logistics efficiency, we recommend orders of 10 tons or more."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the GCV of your pellets?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our pellets deliver a GCV of 3,400+ Kcal/kg with ash content below 5% and moisture under 10%. Every batch is lab-tested."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you deliver across India?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we supply biomass pellets pan-India. Delivery timelines vary by location — typically 3-5 days for nearby states and 5-10 days for distant locations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do biomass pellets compare to coal in terms of cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Biomass pellets typically save 30-40% on fuel costs compared to coal, plus lower maintenance costs and potential carbon credit revenue."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I get a sample before placing a bulk order?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely! Contact us via WhatsApp or the enquiry form, and we'll arrange a sample shipment along with lab test reports."
+        }
+      }
+    ]
+  }
+  </script>
+
   <style>
     /* === RESET & BASE === */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -1003,7 +1060,7 @@
     }
     .whatsapp-float:hover {
       transform: scale(1.1);
-      box-shadow: 0 6px 30px rgba(37,211,102,0.5);
+      box-shadow: 0 6px 30px rgba(37,211,102,0.35);
     }
     .whatsapp-float:focus-visible {
       transform: scale(1.1);
@@ -1125,6 +1182,80 @@
     .lang-btn.active {
       background: var(--green);
       color: var(--white);
+    }
+
+    /* === FAQ SECTION === */
+    .faq {
+      padding: 6rem 1.5rem;
+      background: var(--cream);
+    }
+    .faq-grid {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .faq-item {
+      background: var(--white);
+      border-radius: 12px;
+      border: 1px solid rgba(45,106,79,0.08);
+      overflow: hidden;
+      transition: box-shadow 0.3s;
+    }
+    .faq-item:hover {
+      box-shadow: 0 4px 20px rgba(45,106,79,0.08);
+    }
+    .faq-question {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--green-dark);
+      text-align: left;
+      gap: 1rem;
+    }
+    .faq-question:hover {
+      color: var(--green);
+    }
+    .faq-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(45,106,79,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 1.2rem;
+      color: var(--green);
+      transition: transform 0.3s, background 0.3s;
+    }
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+      background: var(--green);
+      color: var(--white);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+    }
+    .faq-answer p {
+      padding: 0 1.5rem 1.25rem;
+      color: var(--text-light);
+      font-size: 0.95rem;
+      line-height: 1.8;
     }
 
     /* === BLOG SECTION === */
@@ -1354,7 +1485,7 @@
       transition: all 0.2s;
       font-family: inherit;
     }
-    .cookie-decline:hover { border-color: rgba(255,255,255,0.5); color: var(--white); }
+    .cookie-decline:hover { border-color: rgba(255,255,255,0.7); color: var(--white); }
 
     /* === ANIMATED COUNTER === */
     .counter-value {
@@ -1379,6 +1510,15 @@
 
   <!-- SVG Sprite (reusable icons) -->
   <svg xmlns="http://www.w3.org/2000/svg" style="display:none;position:absolute;width:0;height:0;overflow:hidden">
+    <symbol id="icon-pellet" viewBox="0 0 64 64">
+      <ellipse cx="32" cy="14" rx="20" ry="10" fill="#d4a373"/>
+      <rect x="12" y="14" width="40" height="30" fill="#c4956a"/>
+      <ellipse cx="32" cy="44" rx="20" ry="10" fill="#b8875c"/>
+      <ellipse cx="32" cy="14" rx="20" ry="10" fill="#d4a373"/>
+      <ellipse cx="32" cy="14" rx="14" ry="6" fill="#e0b48a" opacity="0.6"/>
+      <line x1="12" y1="14" x2="12" y2="44" stroke="#a67a50" stroke-width="1"/>
+      <line x1="52" y1="14" x2="52" y2="44" stroke="#a67a50" stroke-width="1"/>
+    </symbol>
     <symbol id="icon-whatsapp" viewBox="0 0 24 24">
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
     </symbol>
@@ -1401,7 +1541,8 @@
         <li><a href="#about" data-i18n="nav_about">About</a></li>
         <li><a href="#products" data-i18n="nav_products">Products</a></li>
         <li><a href="#calculator" data-i18n="nav_pricing">Pricing</a></li>
-        <li><a href="#blog" data-i18n="nav_blog">Blog</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="blog.html" data-i18n="nav_blog">Blog</a></li>
         <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
         <li><a href="portal.html" data-i18n="nav_portal">Portal</a></li>
         <li><a href="#contact" class="nav-cta" data-i18n="nav_quote">Get a Quote</a></li>
@@ -1438,7 +1579,7 @@
       </div>
       <div class="hero-visual">
         <div class="hero-card">
-          <div class="hero-icon" aria-hidden="true">&#x1F33F;</div>
+          <div class="hero-icon" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 64 64"><use href="#icon-pellet"/></svg></div>
           <h3 data-i18n="hero_card_title">Biomass Pellets</h3>
           <p data-i18n="hero_card_desc">High-calorific, low-ash pellets made from sustainable agricultural residues</p>
           <div class="hero-stats">
@@ -1685,6 +1826,71 @@
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="section-header">
+      <div class="section-label" data-i18n="faq_label">FAQs</div>
+      <h2 data-i18n="faq_title">Frequently Asked Questions</h2>
+      <p data-i18n="faq_desc">Everything you need to know about biomass pellets, ordering, and delivery.</p>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span data-i18n="faq1_q">What are biomass pellets made from?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="faq1_a">Our biomass pellets are made from agricultural residues such as crop stalks, rice husks, sawdust, and other farm waste. These materials are cleaned, dried, and compressed under high pressure to form dense, uniform pellets with high calorific value.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span data-i18n="faq2_q">What is the minimum order quantity (MOQ)?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="faq2_a">Our minimum order quantity is 1 ton. However, for the best pricing and logistics efficiency, we recommend orders of 10 tons or more. We offer flexible contracts for both one-time purchases and recurring monthly supply.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span data-i18n="faq3_q">What is the GCV (Gross Calorific Value) of your pellets?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="faq3_a">Our pellets deliver a GCV of 3,400+ Kcal/kg with ash content below 5% and moisture under 10%. Every batch is lab-tested and a quality certificate is provided with each shipment to ensure consistency.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span data-i18n="faq4_q">Do you deliver across India?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="faq4_a">Yes, we supply biomass pellets pan-India. Delivery timelines vary by location — typically 3-5 days for nearby states and 5-10 days for distant locations. We handle logistics end-to-end and provide tracking updates.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span data-i18n="faq5_q">How do biomass pellets compare to coal in terms of cost?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="faq5_a">Biomass pellets typically save 30-40% on fuel costs compared to coal. Besides direct cost savings, you also benefit from lower maintenance costs (less soot and corrosion), potential carbon credit revenue, and compliance with government emission norms.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span data-i18n="faq6_q">Can I get a sample before placing a bulk order?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="faq6_a">Absolutely! We encourage potential buyers to test our pellets before committing. Contact us via WhatsApp or the enquiry form, and we'll arrange a sample shipment along with lab test reports for your evaluation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- BLOG / RESOURCES -->
   <section class="blog" id="blog">
     <div class="section-header">
@@ -1693,16 +1899,16 @@
       <p data-i18n="blog_desc">Stay informed about biomass energy, sustainability practices, and industry trends.</p>
     </div>
     <div class="blog-grid">
-      <article class="blog-card animate-on-scroll">
-        <div class="blog-thumb">&#x1F33F;</div>
+      <a href="blog.html#biomass-vs-coal" class="blog-card animate-on-scroll">
+        <div class="blog-thumb"><svg width="40" height="40" viewBox="0 0 64 64"><use href="#icon-pellet"/></svg></div>
         <div class="blog-body">
           <span class="blog-tag" data-i18n="blog_tag_guide">Guide</span>
           <h3 data-i18n="blog1_title">Biomass Pellets vs Coal: A Complete Comparison</h3>
           <p data-i18n="blog1_desc">Discover why industries are switching from coal to biomass pellets. We compare cost, emissions, efficiency, and long-term sustainability.</p>
           <span class="blog-read-more" data-i18n="blog_readmore">Read More &rarr;</span>
         </div>
-      </article>
-      <article class="blog-card animate-on-scroll">
+      </a>
+      <a href="blog.html#textile-case-study" class="blog-card animate-on-scroll">
         <div class="blog-thumb">&#x1F3ED;</div>
         <div class="blog-body">
           <span class="blog-tag" data-i18n="blog_tag_case">Case Study</span>
@@ -1710,8 +1916,8 @@
           <p data-i18n="blog2_desc">A real-world case study of a textile manufacturer who switched to Kanoz biomass pellets and transformed their energy economics.</p>
           <span class="blog-read-more" data-i18n="blog_readmore">Read More &rarr;</span>
         </div>
-      </article>
-      <article class="blog-card animate-on-scroll">
+      </a>
+      <a href="blog.html#biomass-energy-policy" class="blog-card animate-on-scroll">
         <div class="blog-thumb">&#x1F30D;</div>
         <div class="blog-body">
           <span class="blog-tag" data-i18n="blog_tag_insight">Industry Insight</span>
@@ -1719,7 +1925,10 @@
           <p data-i18n="blog3_desc">An overview of government incentives, carbon credit opportunities, and regulations driving biomass adoption in Indian industry.</p>
           <span class="blog-read-more" data-i18n="blog_readmore">Read More &rarr;</span>
         </div>
-      </article>
+      </a>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem;">
+      <a href="blog.html" class="btn btn-outline">View All Articles &rarr;</a>
     </div>
   </section>
 
@@ -1866,8 +2075,8 @@
         <ul>
           <li><a href="#about">About Us</a></li>
           <li><a href="#products">Products</a></li>
-          <li><a href="#process">Our Process</a></li>
-          <li><a href="#why-us">Why Kanoz</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="blog.html">Blog</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -2241,6 +2450,22 @@
         blog3_title: '\u092D\u093E\u0930\u0924 \u0915\u0940 \u092C\u093E\u092F\u094B\u092E\u093E\u0938 \u090A\u0930\u094D\u091C\u093E \u0928\u0940\u0924\u093F: \u0906\u092A\u0915\u094B \u0915\u094D\u092F\u093E \u091C\u093E\u0928\u0928\u093E \u091A\u093E\u0939\u093F\u090F',
         blog3_desc: '\u0938\u0930\u0915\u093E\u0930\u0940 \u092A\u094D\u0930\u094B\u0924\u094D\u0938\u093E\u0939\u0928, \u0915\u093E\u0930\u094D\u092C\u0928 \u0915\u094D\u0930\u0947\u0921\u093F\u091F \u0914\u0930 \u0928\u093F\u092F\u092E\u094B\u0902 \u0915\u093E \u0905\u0935\u0932\u094B\u0915\u0928\u0964',
         blog_readmore: '\u0914\u0930 \u092A\u0922\u093C\u0947\u0902 \u2192',
+        // FAQ
+        faq_label: '\u0905\u0915\u094D\u0938\u0930 \u092A\u0942\u091B\u0947 \u091C\u093E\u0928\u0947 \u0935\u093E\u0932\u0947 \u092A\u094D\u0930\u0936\u094D\u0928',
+        faq_title: '\u0905\u0915\u094D\u0938\u0930 \u092A\u0942\u091B\u0947 \u091C\u093E\u0928\u0947 \u0935\u093E\u0932\u0947 \u092A\u094D\u0930\u0936\u094D\u0928',
+        faq_desc: '\u092C\u093E\u092F\u094B\u092E\u093E\u0938 \u092A\u0947\u0932\u0947\u091F, \u0911\u0930\u094D\u0921\u0930\u093F\u0902\u0917 \u0914\u0930 \u0921\u093F\u0932\u0940\u0935\u0930\u0940 \u0915\u0947 \u092C\u093E\u0930\u0947 \u092E\u0947\u0902 \u0938\u092C \u0915\u0941\u091B \u091C\u093E\u0928\u0947\u0902\u0964',
+        faq1_q: '\u092C\u093E\u092F\u094B\u092E\u093E\u0938 \u092A\u0947\u0932\u0947\u091F \u0915\u093F\u0938\u0938\u0947 \u092C\u0928\u0924\u0947 \u0939\u0948\u0902?',
+        faq1_a: '\u0939\u092E\u093E\u0930\u0947 \u092C\u093E\u092F\u094B\u092E\u093E\u0938 \u092A\u0947\u0932\u0947\u091F \u0915\u0943\u0937\u093F \u0905\u0935\u0936\u0947\u0937\u094B\u0902 \u091C\u0948\u0938\u0947 \u092B\u0938\u0932 \u0921\u0902\u0920\u0932, \u091A\u093E\u0935\u0932 \u0915\u0940 \u092D\u0942\u0938\u0940, \u0932\u0915\u0921\u093C\u0940 \u0915\u093E \u092C\u0941\u0930\u093E\u0926\u093E \u0914\u0930 \u0905\u0928\u094D\u092F \u0916\u0947\u0924\u0940 \u0915\u091A\u0930\u0947 \u0938\u0947 \u092C\u0928\u0947 \u0939\u0948\u0902\u0964',
+        faq2_q: '\u0928\u094D\u092F\u0942\u0928\u0924\u092E \u0911\u0930\u094D\u0921\u0930 \u092E\u093E\u0924\u094D\u0930\u093E (MOQ) \u0915\u094D\u092F\u093E \u0939\u0948?',
+        faq2_a: '\u0939\u092E\u093E\u0930\u0940 \u0928\u094D\u092F\u0942\u0928\u0924\u092E \u0911\u0930\u094D\u0921\u0930 \u092E\u093E\u0924\u094D\u0930\u093E 1 \u091F\u0928 \u0939\u0948\u0964 \u0939\u093E\u0932\u093E\u0902\u0915\u093F, \u092C\u0947\u0939\u0924\u0930 \u092E\u0942\u0932\u094D\u092F \u0915\u0947 \u0932\u093F\u090F 10 \u091F\u0928 \u092F\u093E \u0909\u0938\u0938\u0947 \u0905\u0927\u093F\u0915 \u0915\u0940 \u0938\u093F\u092B\u093E\u0930\u093F\u0936 \u0939\u0948\u0964',
+        faq3_q: '\u0906\u092A\u0915\u0947 \u092A\u0947\u0932\u0947\u091F \u0915\u093E GCV \u0915\u093F\u0924\u0928\u093E \u0939\u0948?',
+        faq3_a: '\u0939\u092E\u093E\u0930\u0947 \u092A\u0947\u0932\u0947\u091F 3,400+ Kcal/kg GCV \u0926\u0947\u0924\u0947 \u0939\u0948\u0902, 5% \u0938\u0947 \u0915\u092E \u0930\u093E\u0916 \u0914\u0930 10% \u0938\u0947 \u0915\u092E \u0928\u092E\u0940 \u0915\u0947 \u0938\u093E\u0925\u0964',
+        faq4_q: '\u0915\u094D\u092F\u093E \u0906\u092A \u092A\u0942\u0930\u0947 \u092D\u093E\u0930\u0924 \u092E\u0947\u0902 \u0921\u093F\u0932\u0940\u0935\u0930\u0940 \u0915\u0930\u0924\u0947 \u0939\u0948\u0902?',
+        faq4_a: '\u0939\u093E\u0901, \u0939\u092E \u092A\u0942\u0930\u0947 \u092D\u093E\u0930\u0924 \u092E\u0947\u0902 \u0906\u092A\u0942\u0930\u094D\u0924\u093F \u0915\u0930\u0924\u0947 \u0939\u0948\u0902\u0964 \u0928\u091C\u0926\u0940\u0915\u0940 \u0930\u093E\u091C\u094D\u092F\u094B\u0902 \u092E\u0947\u0902 3-5 \u0926\u093F\u0928 \u0914\u0930 \u0926\u0942\u0930 \u0938\u094D\u0925\u093E\u0928\u094B\u0902 \u092A\u0930 5-10 \u0926\u093F\u0928\u0964',
+        faq5_q: '\u092C\u093E\u092F\u094B\u092E\u093E\u0938 \u092A\u0947\u0932\u0947\u091F \u0915\u094B\u092F\u0932\u0947 \u0938\u0947 \u0915\u093F\u0924\u0928\u0947 \u0938\u0938\u094D\u0924\u0947 \u0939\u0948\u0902?',
+        faq5_a: '\u092C\u093E\u092F\u094B\u092E\u093E\u0938 \u092A\u0947\u0932\u0947\u091F \u0915\u094B\u092F\u0932\u0947 \u0915\u0940 \u0924\u0941\u0932\u0928\u093E \u092E\u0947\u0902 30-40% \u0908\u0902\u0927\u0928 \u0932\u093E\u0917\u0924 \u092C\u091A\u093E\u0924\u0947 \u0939\u0948\u0902\u0964',
+        faq6_q: '\u0915\u094D\u092F\u093E \u092E\u0948\u0902 \u092C\u0921\u093C\u093E \u0911\u0930\u094D\u0921\u0930 \u0938\u0947 \u092A\u0939\u0932\u0947 \u0928\u092E\u0942\u0928\u093E \u0932\u0947 \u0938\u0915\u0924\u093E \u0939\u0942\u0901?',
+        faq6_a: '\u092C\u093F\u0932\u094D\u0915\u0941\u0932! \u0935\u094D\u0939\u093E\u091F\u094D\u0938\u090F\u092A \u092F\u093E \u092B\u0949\u0930\u094D\u092E \u0938\u0947 \u0938\u0902\u092A\u0930\u094D\u0915 \u0915\u0930\u0947\u0902, \u0939\u092E \u0928\u092E\u0942\u0928\u093E \u092D\u0947\u091C \u0926\u0947\u0902\u0917\u0947\u0964',
         // Calculator
         calc_label: '\u092E\u0942\u0932\u094D\u092F \u0928\u093F\u0930\u094D\u0927\u093E\u0930\u0923',
         calc_title: '\u0905\u092A\u0928\u0940 \u092C\u091A\u0924 \u0915\u093E \u0905\u0928\u0941\u092E\u093E\u0928 \u0932\u0917\u093E\u090F\u0902',
@@ -2306,6 +2531,22 @@
     });
 
     if (currentLang !== 'en') setLanguage(currentLang);
+
+    // ===== FAQ ACCORDION =====
+    document.querySelectorAll('.faq-question').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = btn.closest('.faq-item');
+        var isActive = item.classList.contains('active');
+        document.querySelectorAll('.faq-item.active').forEach(function(el) {
+          el.classList.remove('active');
+          el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        });
+        if (!isActive) {
+          item.classList.add('active');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
 
     // ===== PWA SERVICE WORKER =====
     if ('serviceWorker' in navigator) {

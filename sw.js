@@ -1,7 +1,8 @@
-var CACHE_NAME = 'kanoz-v1';
+var CACHE_NAME = 'kanoz-v2';
 var ASSETS = [
   '/',
   '/index.html',
+  '/blog.html',
   '/logo.png',
   '/manifest.json'
 ];
