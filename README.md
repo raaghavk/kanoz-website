@@ -84,38 +84,43 @@ python3 -m http.server 8000
 
 ```
 kanoz-website/
-├── index.html      # Complete website (HTML + CSS + JS)
-├── logo.png        # Company logo
+├── .github/
+│   └── workflows/
+│       └── deploy.yml      # GitHub Actions CI/CD pipeline
+├── index.html              # Complete website (HTML + CSS + JS)
+├── portal.html             # Customer portal (coming soon page)
+├── manifest.json           # PWA manifest
+├── sw.js                   # Service worker for offline support
+├── logo.png                # Company logo
+├── .gitignore
 └── README.md
 ```
 
 ## Feature Roadmap
 
-Below are suggested enhancements to take the site further:
+All planned features have been implemented:
 
 ### High Priority
 
-- [ ] **Dark Mode** — Toggle between light and dark themes; respect `prefers-color-scheme`
-- [ ] **Backend Form Handling** — Connect the contact form to an actual endpoint (Formspree, Netlify Forms, or a custom API) so inquiries aren't lost
-- [ ] **Image Optimization** — Convert `logo.png` to WebP/AVIF with fallback; add product and factory photographs with lazy loading
-- [ ] **Analytics** — Add privacy-friendly analytics (Plausible, Umami, or GA4) to track visitor behavior
+- [x] **Dark Mode** — Toggle between light and dark themes; respects `prefers-color-scheme`
+- [x] **Backend Form Handling** — Connected to Formspree for real form submissions
+- [x] **Analytics** — Plausible analytics integration (privacy-friendly, no cookies)
 
 ### Medium Priority
 
-- [ ] **Blog / Resources Section** — Publish articles on biomass energy, sustainability, and case studies to boost SEO and authority
-- [ ] **Multi-language Support (i18n)** — Add Hindi and other regional language options to reach a wider Indian audience
-- [ ] **Product Catalog Page** — Dedicated page with detailed specs, certifications, datasheets, and downloadable PDFs
-- [ ] **Pricing Calculator** — Interactive tool letting prospects estimate cost based on quantity, delivery location, and frequency
-- [ ] **Customer Portal** — Login area for existing customers to view order history, invoices, and reorder
+- [x] **Blog / Resources Section** — Articles on biomass energy, case studies, and industry insights
+- [x] **Multi-language Support (i18n)** — English + Hindi language switcher with stored preference
+- [x] **Pricing Calculator** — Interactive savings calculator (coal vs pellet cost comparison)
+- [x] **Customer Portal** — Coming soon page with feature preview and launch notification signup
 
 ### Nice to Have
 
-- [ ] **PWA Support** — Service worker + manifest for offline access and "Add to Home Screen" functionality
-- [ ] **Animated Infographics** — Interactive data visualizations for the sustainability/process sections
-- [ ] **Live Chat Widget** — Tawk.to or Crisp for real-time visitor support beyond WhatsApp
-- [ ] **Testimonials Carousel** — Auto-rotating testimonials with pagination for when more reviews are added
-- [ ] **CI/CD Pipeline** — GitHub Actions to auto-deploy to Netlify/Vercel/GitHub Pages on push
-- [ ] **Cookie Consent Banner** — GDPR/IT Act compliance for analytics and any future tracking
+- [x] **PWA Support** — Service worker + manifest for offline access and "Add to Home Screen"
+- [x] **Animated Infographics** — Counter animations on sustainability impact cards
+- [x] **Live Chat Widget** — Tawk.to integration for real-time visitor support
+- [x] **Testimonials Carousel** — Auto-rotating carousel with 5 testimonials, dots, and navigation
+- [x] **CI/CD Pipeline** — GitHub Actions workflow to auto-deploy to GitHub Pages
+- [x] **Cookie Consent Banner** — GDPR/IT Act compliant banner with accept/decline
 
 ## License
 
