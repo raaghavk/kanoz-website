@@ -337,13 +337,31 @@
   <!-- SVG Sprite -->
   <svg xmlns="http://www.w3.org/2000/svg" style="display:none;position:absolute;width:0;height:0;overflow:hidden">
     <symbol id="icon-pellet" viewBox="0 0 64 64">
-      <ellipse cx="32" cy="14" rx="20" ry="10" fill="#d4a373"/>
-      <rect x="12" y="14" width="40" height="30" fill="#c4956a"/>
-      <ellipse cx="32" cy="44" rx="20" ry="10" fill="#b8875c"/>
-      <ellipse cx="32" cy="14" rx="20" ry="10" fill="#d4a373"/>
-      <ellipse cx="32" cy="14" rx="14" ry="6" fill="#e0b48a" opacity="0.6"/>
-      <line x1="12" y1="14" x2="12" y2="44" stroke="#a67a50" stroke-width="1"/>
-      <line x1="52" y1="14" x2="52" y2="44" stroke="#a67a50" stroke-width="1"/>
+      <defs>
+        <linearGradient id="pelletGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#a67a50"/>
+          <stop offset="30%" stop-color="#d4a373"/>
+          <stop offset="70%" stop-color="#c4956a"/>
+          <stop offset="100%" stop-color="#8b6340"/>
+        </linearGradient>
+        <linearGradient id="pelletTop" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#e0b48a"/>
+          <stop offset="100%" stop-color="#c4956a"/>
+        </linearGradient>
+      </defs>
+      <ellipse cx="34" cy="54" rx="18" ry="5" fill="rgba(0,0,0,0.12)"/>
+      <rect x="14" y="16" width="36" height="32" rx="2" fill="url(#pelletGrad)"/>
+      <ellipse cx="14" cy="32" rx="3" ry="16" fill="#a67a50"/>
+      <ellipse cx="50" cy="32" rx="3" ry="16" fill="#8b6340"/>
+      <ellipse cx="32" cy="16" rx="18" ry="8" fill="url(#pelletTop)"/>
+      <line x1="18" y1="22" x2="18" y2="42" stroke="#b8875c" stroke-width="0.8" opacity="0.5"/>
+      <line x1="24" y1="18" x2="24" y2="46" stroke="#b8875c" stroke-width="0.6" opacity="0.4"/>
+      <line x1="32" y1="17" x2="32" y2="47" stroke="#b8875c" stroke-width="0.6" opacity="0.3"/>
+      <line x1="40" y1="18" x2="40" y2="46" stroke="#9a7048" stroke-width="0.6" opacity="0.4"/>
+      <line x1="46" y1="22" x2="46" y2="42" stroke="#9a7048" stroke-width="0.8" opacity="0.5"/>
+      <ellipse cx="28" cy="14" rx="8" ry="3" fill="rgba(255,255,255,0.25)"/>
+      <ellipse cx="32" cy="48" rx="18" ry="8" fill="#a67a50"/>
+      <ellipse cx="32" cy="48" rx="14" ry="5" fill="#8b6340" opacity="0.5"/>
     </symbol>
   </svg>
 

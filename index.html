@@ -74,50 +74,50 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "What are biomass pellets made from?",
+        "name": "What are biomass pellets?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Our biomass pellets are made from agricultural residues such as crop stalks, rice husks, sawdust, and other farm waste. These materials are cleaned, dried, and compressed under high pressure to form dense, uniform pellets with high calorific value."
+          "text": "Biomass pellets are compressed cylinders made from agricultural residues like crop stalks, rice husks, and sawdust. They are used as a cleaner alternative to coal in industrial boilers and heating systems, with a calorific value of 3,200-3,800 Kcal/kg."
         }
       },
       {
         "@type": "Question",
-        "name": "What is the minimum order quantity (MOQ)?",
+        "name": "How do biomass pellets compare to coal?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Our minimum order quantity is 1 ton. However, for the best pricing and logistics efficiency, we recommend orders of 10 tons or more."
+          "text": "Biomass pellets have comparable calorific value to Indian coal but with dramatically lower ash (3-8% vs 25-45%), negligible sulphur, and are carbon-neutral. Industries typically save 30-40% on total fuel costs after switching."
         }
       },
       {
         "@type": "Question",
-        "name": "What is the GCV of your pellets?",
+        "name": "Can existing coal boilers use biomass pellets?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Our pellets deliver a GCV of 3,400+ Kcal/kg with ash content below 5% and moisture under 10%. Every batch is lab-tested."
+          "text": "Yes. Most coal-fired boilers (1 TPH and above) can burn biomass pellets with only minor grate and feed mechanism adjustments. The conversion typically takes 2-3 days."
         }
       },
       {
         "@type": "Question",
-        "name": "Do you deliver across India?",
+        "name": "Are biomass pellets compliant with CPCB emission norms?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, we supply biomass pellets pan-India. Delivery timelines vary by location — typically 3-5 days for nearby states and 5-10 days for distant locations."
+          "text": "Yes. Biomass pellets produce significantly lower particulate matter, virtually zero SO2, and no toxic heavy metals compared to coal. Switching to biomass is often the simplest way to meet CPCB standards."
         }
       },
       {
         "@type": "Question",
-        "name": "How do biomass pellets compare to coal in terms of cost?",
+        "name": "What industries use biomass pellets?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Biomass pellets typically save 30-40% on fuel costs compared to coal, plus lower maintenance costs and potential carbon credit revenue."
+          "text": "Biomass pellets are used across textile mills, food processing units, brick kilns, chemical plants, paper mills, and thermal power plants. Power plants are mandated to co-fire 5-10% biomass with coal."
         }
       },
       {
         "@type": "Question",
-        "name": "Can I get a sample before placing a bulk order?",
+        "name": "Can industries earn carbon credits by switching to biomass?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Absolutely! Contact us via WhatsApp or the enquiry form, and we'll arrange a sample shipment along with lab test reports."
+          "text": "Yes. Every ton of coal replaced by biomass avoids approximately 2.4 tons of CO2 emissions. These can be registered as carbon credits and sold on voluntary or compliance markets."
         }
       }
     ]
@@ -1511,13 +1511,41 @@
   <!-- SVG Sprite (reusable icons) -->
   <svg xmlns="http://www.w3.org/2000/svg" style="display:none;position:absolute;width:0;height:0;overflow:hidden">
     <symbol id="icon-pellet" viewBox="0 0 64 64">
-      <ellipse cx="32" cy="14" rx="20" ry="10" fill="#d4a373"/>
-      <rect x="12" y="14" width="40" height="30" fill="#c4956a"/>
-      <ellipse cx="32" cy="44" rx="20" ry="10" fill="#b8875c"/>
-      <ellipse cx="32" cy="14" rx="20" ry="10" fill="#d4a373"/>
-      <ellipse cx="32" cy="14" rx="14" ry="6" fill="#e0b48a" opacity="0.6"/>
-      <line x1="12" y1="14" x2="12" y2="44" stroke="#a67a50" stroke-width="1"/>
-      <line x1="52" y1="14" x2="52" y2="44" stroke="#a67a50" stroke-width="1"/>
+      <!-- Main pellet body -->
+      <defs>
+        <linearGradient id="pelletGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#a67a50"/>
+          <stop offset="30%" stop-color="#d4a373"/>
+          <stop offset="70%" stop-color="#c4956a"/>
+          <stop offset="100%" stop-color="#8b6340"/>
+        </linearGradient>
+        <linearGradient id="pelletTop" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#e0b48a"/>
+          <stop offset="100%" stop-color="#c4956a"/>
+        </linearGradient>
+      </defs>
+      <!-- Shadow -->
+      <ellipse cx="34" cy="54" rx="18" ry="5" fill="rgba(0,0,0,0.12)"/>
+      <!-- Cylinder body -->
+      <rect x="14" y="16" width="36" height="32" rx="2" fill="url(#pelletGrad)"/>
+      <!-- Left rounded edge -->
+      <ellipse cx="14" cy="32" rx="3" ry="16" fill="#a67a50"/>
+      <!-- Right rounded edge -->
+      <ellipse cx="50" cy="32" rx="3" ry="16" fill="#8b6340"/>
+      <!-- Top face -->
+      <ellipse cx="32" cy="16" rx="18" ry="8" fill="url(#pelletTop)"/>
+      <!-- Fiber texture lines -->
+      <line x1="18" y1="22" x2="18" y2="42" stroke="#b8875c" stroke-width="0.8" opacity="0.5"/>
+      <line x1="24" y1="18" x2="24" y2="46" stroke="#b8875c" stroke-width="0.6" opacity="0.4"/>
+      <line x1="32" y1="17" x2="32" y2="47" stroke="#b8875c" stroke-width="0.6" opacity="0.3"/>
+      <line x1="40" y1="18" x2="40" y2="46" stroke="#9a7048" stroke-width="0.6" opacity="0.4"/>
+      <line x1="46" y1="22" x2="46" y2="42" stroke="#9a7048" stroke-width="0.8" opacity="0.5"/>
+      <!-- Top highlight -->
+      <ellipse cx="28" cy="14" rx="8" ry="3" fill="rgba(255,255,255,0.25)"/>
+      <!-- Bottom face -->
+      <ellipse cx="32" cy="48" rx="18" ry="8" fill="#a67a50"/>
+      <!-- Bottom highlight -->
+      <ellipse cx="32" cy="48" rx="14" ry="5" fill="#8b6340" opacity="0.5"/>
     </symbol>
     <symbol id="icon-whatsapp" viewBox="0 0 24 24">
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
@@ -1826,71 +1854,6 @@
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section class="faq" id="faq">
-    <div class="section-header">
-      <div class="section-label" data-i18n="faq_label">FAQs</div>
-      <h2 data-i18n="faq_title">Frequently Asked Questions</h2>
-      <p data-i18n="faq_desc">Everything you need to know about biomass pellets, ordering, and delivery.</p>
-    </div>
-    <div class="faq-grid">
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span data-i18n="faq1_q">What are biomass pellets made from?</span>
-          <span class="faq-icon" aria-hidden="true">+</span>
-        </button>
-        <div class="faq-answer">
-          <p data-i18n="faq1_a">Our biomass pellets are made from agricultural residues such as crop stalks, rice husks, sawdust, and other farm waste. These materials are cleaned, dried, and compressed under high pressure to form dense, uniform pellets with high calorific value.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span data-i18n="faq2_q">What is the minimum order quantity (MOQ)?</span>
-          <span class="faq-icon" aria-hidden="true">+</span>
-        </button>
-        <div class="faq-answer">
-          <p data-i18n="faq2_a">Our minimum order quantity is 1 ton. However, for the best pricing and logistics efficiency, we recommend orders of 10 tons or more. We offer flexible contracts for both one-time purchases and recurring monthly supply.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span data-i18n="faq3_q">What is the GCV (Gross Calorific Value) of your pellets?</span>
-          <span class="faq-icon" aria-hidden="true">+</span>
-        </button>
-        <div class="faq-answer">
-          <p data-i18n="faq3_a">Our pellets deliver a GCV of 3,400+ Kcal/kg with ash content below 5% and moisture under 10%. Every batch is lab-tested and a quality certificate is provided with each shipment to ensure consistency.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span data-i18n="faq4_q">Do you deliver across India?</span>
-          <span class="faq-icon" aria-hidden="true">+</span>
-        </button>
-        <div class="faq-answer">
-          <p data-i18n="faq4_a">Yes, we supply biomass pellets pan-India. Delivery timelines vary by location — typically 3-5 days for nearby states and 5-10 days for distant locations. We handle logistics end-to-end and provide tracking updates.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span data-i18n="faq5_q">How do biomass pellets compare to coal in terms of cost?</span>
-          <span class="faq-icon" aria-hidden="true">+</span>
-        </button>
-        <div class="faq-answer">
-          <p data-i18n="faq5_a">Biomass pellets typically save 30-40% on fuel costs compared to coal. Besides direct cost savings, you also benefit from lower maintenance costs (less soot and corrosion), potential carbon credit revenue, and compliance with government emission norms.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span data-i18n="faq6_q">Can I get a sample before placing a bulk order?</span>
-          <span class="faq-icon" aria-hidden="true">+</span>
-        </button>
-        <div class="faq-answer">
-          <p data-i18n="faq6_a">Absolutely! We encourage potential buyers to test our pellets before committing. Contact us via WhatsApp or the enquiry form, and we'll arrange a sample shipment along with lab test reports for your evaluation.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- BLOG / RESOURCES -->
   <section class="blog" id="blog">
     <div class="section-header">
@@ -1970,6 +1933,71 @@
           </div>
         </div>
         <p class="calc-note" data-i18n="calc_note">* Estimates based on average pellet price of &#8377;8,500/ton and 30% savings. Actual prices may vary.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="section-header">
+      <div class="section-label" data-i18n="faq_label">FAQs</div>
+      <h2 data-i18n="faq_title">Frequently Asked Questions</h2>
+      <p data-i18n="faq_desc">Common questions about biomass pellets and their use in industry.</p>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span data-i18n="faq1_q">What are biomass pellets?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="faq1_a">Biomass pellets are compressed cylinders made from agricultural residues like crop stalks, rice husks, and sawdust. They are dried and compressed under high pressure to produce a dense, uniform fuel with high calorific value (3,200–3,800 Kcal/kg), used as a cleaner alternative to coal in industrial boilers and heating systems.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span data-i18n="faq2_q">How do biomass pellets compare to coal?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="faq2_a">Biomass pellets have a comparable calorific value to Indian coal but with dramatically lower ash (3–8% vs 25–45%), negligible sulphur, and lower emissions. They cost 20–30% less per ton and are carbon-neutral since the CO2 released during burning equals what the plants absorbed during growth. Industries typically save 30–40% on total fuel costs after switching.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span data-i18n="faq3_q">Can existing coal boilers use biomass pellets?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="faq3_a">Yes. Most coal-fired boilers (1 TPH and above) can burn biomass pellets with only minor grate and feed mechanism adjustments. Full boiler replacement is not needed. The conversion typically takes 2–3 days and is very cost-effective compared to installing new equipment.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span data-i18n="faq4_q">Are biomass pellets compliant with CPCB emission norms?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="faq4_a">Yes. Biomass pellets produce significantly lower particulate matter, virtually zero SO2, and no toxic heavy metals compared to coal. Switching to biomass is often the simplest and cheapest way to meet Central Pollution Control Board (CPCB) standards without installing expensive scrubbers or electrostatic precipitators.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span data-i18n="faq5_q">What industries use biomass pellets?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="faq5_a">Biomass pellets are widely used across textile mills, food processing units, brick kilns, chemical plants, paper mills, and thermal power plants. Any industry that runs a coal-fired boiler or furnace can switch to biomass pellets. Power plants are also mandated by the government to co-fire 5–10% biomass with coal.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span data-i18n="faq6_q">Can industries earn carbon credits by switching to biomass?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <p data-i18n="faq6_a">Yes. Every ton of coal replaced by biomass avoids approximately 2.4 tons of CO2 emissions. These reductions can be registered as carbon credits and sold on voluntary or compliance markets. A factory using 100 tons of pellets per month can generate around 2,880 credits annually — a significant additional revenue stream.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -2453,19 +2481,19 @@
         // FAQ
         faq_label: '\u0905\u0915\u094D\u0938\u0930 \u092A\u0942\u091B\u0947 \u091C\u093E\u0928\u0947 \u0935\u093E\u0932\u0947 \u092A\u094D\u0930\u0936\u094D\u0928',
         faq_title: '\u0905\u0915\u094D\u0938\u0930 \u092A\u0942\u091B\u0947 \u091C\u093E\u0928\u0947 \u0935\u093E\u0932\u0947 \u092A\u094D\u0930\u0936\u094D\u0928',
-        faq_desc: '\u092C\u093E\u092F\u094B\u092E\u093E\u0938 \u092A\u0947\u0932\u0947\u091F, \u0911\u0930\u094D\u0921\u0930\u093F\u0902\u0917 \u0914\u0930 \u0921\u093F\u0932\u0940\u0935\u0930\u0940 \u0915\u0947 \u092C\u093E\u0930\u0947 \u092E\u0947\u0902 \u0938\u092C \u0915\u0941\u091B \u091C\u093E\u0928\u0947\u0902\u0964',
-        faq1_q: '\u092C\u093E\u092F\u094B\u092E\u093E\u0938 \u092A\u0947\u0932\u0947\u091F \u0915\u093F\u0938\u0938\u0947 \u092C\u0928\u0924\u0947 \u0939\u0948\u0902?',
-        faq1_a: '\u0939\u092E\u093E\u0930\u0947 \u092C\u093E\u092F\u094B\u092E\u093E\u0938 \u092A\u0947\u0932\u0947\u091F \u0915\u0943\u0937\u093F \u0905\u0935\u0936\u0947\u0937\u094B\u0902 \u091C\u0948\u0938\u0947 \u092B\u0938\u0932 \u0921\u0902\u0920\u0932, \u091A\u093E\u0935\u0932 \u0915\u0940 \u092D\u0942\u0938\u0940, \u0932\u0915\u0921\u093C\u0940 \u0915\u093E \u092C\u0941\u0930\u093E\u0926\u093E \u0914\u0930 \u0905\u0928\u094D\u092F \u0916\u0947\u0924\u0940 \u0915\u091A\u0930\u0947 \u0938\u0947 \u092C\u0928\u0947 \u0939\u0948\u0902\u0964',
-        faq2_q: '\u0928\u094D\u092F\u0942\u0928\u0924\u092E \u0911\u0930\u094D\u0921\u0930 \u092E\u093E\u0924\u094D\u0930\u093E (MOQ) \u0915\u094D\u092F\u093E \u0939\u0948?',
-        faq2_a: '\u0939\u092E\u093E\u0930\u0940 \u0928\u094D\u092F\u0942\u0928\u0924\u092E \u0911\u0930\u094D\u0921\u0930 \u092E\u093E\u0924\u094D\u0930\u093E 1 \u091F\u0928 \u0939\u0948\u0964 \u0939\u093E\u0932\u093E\u0902\u0915\u093F, \u092C\u0947\u0939\u0924\u0930 \u092E\u0942\u0932\u094D\u092F \u0915\u0947 \u0932\u093F\u090F 10 \u091F\u0928 \u092F\u093E \u0909\u0938\u0938\u0947 \u0905\u0927\u093F\u0915 \u0915\u0940 \u0938\u093F\u092B\u093E\u0930\u093F\u0936 \u0939\u0948\u0964',
-        faq3_q: '\u0906\u092A\u0915\u0947 \u092A\u0947\u0932\u0947\u091F \u0915\u093E GCV \u0915\u093F\u0924\u0928\u093E \u0939\u0948?',
-        faq3_a: '\u0939\u092E\u093E\u0930\u0947 \u092A\u0947\u0932\u0947\u091F 3,400+ Kcal/kg GCV \u0926\u0947\u0924\u0947 \u0939\u0948\u0902, 5% \u0938\u0947 \u0915\u092E \u0930\u093E\u0916 \u0914\u0930 10% \u0938\u0947 \u0915\u092E \u0928\u092E\u0940 \u0915\u0947 \u0938\u093E\u0925\u0964',
-        faq4_q: '\u0915\u094D\u092F\u093E \u0906\u092A \u092A\u0942\u0930\u0947 \u092D\u093E\u0930\u0924 \u092E\u0947\u0902 \u0921\u093F\u0932\u0940\u0935\u0930\u0940 \u0915\u0930\u0924\u0947 \u0939\u0948\u0902?',
-        faq4_a: '\u0939\u093E\u0901, \u0939\u092E \u092A\u0942\u0930\u0947 \u092D\u093E\u0930\u0924 \u092E\u0947\u0902 \u0906\u092A\u0942\u0930\u094D\u0924\u093F \u0915\u0930\u0924\u0947 \u0939\u0948\u0902\u0964 \u0928\u091C\u0926\u0940\u0915\u0940 \u0930\u093E\u091C\u094D\u092F\u094B\u0902 \u092E\u0947\u0902 3-5 \u0926\u093F\u0928 \u0914\u0930 \u0926\u0942\u0930 \u0938\u094D\u0925\u093E\u0928\u094B\u0902 \u092A\u0930 5-10 \u0926\u093F\u0928\u0964',
-        faq5_q: '\u092C\u093E\u092F\u094B\u092E\u093E\u0938 \u092A\u0947\u0932\u0947\u091F \u0915\u094B\u092F\u0932\u0947 \u0938\u0947 \u0915\u093F\u0924\u0928\u0947 \u0938\u0938\u094D\u0924\u0947 \u0939\u0948\u0902?',
-        faq5_a: '\u092C\u093E\u092F\u094B\u092E\u093E\u0938 \u092A\u0947\u0932\u0947\u091F \u0915\u094B\u092F\u0932\u0947 \u0915\u0940 \u0924\u0941\u0932\u0928\u093E \u092E\u0947\u0902 30-40% \u0908\u0902\u0927\u0928 \u0932\u093E\u0917\u0924 \u092C\u091A\u093E\u0924\u0947 \u0939\u0948\u0902\u0964',
-        faq6_q: '\u0915\u094D\u092F\u093E \u092E\u0948\u0902 \u092C\u0921\u093C\u093E \u0911\u0930\u094D\u0921\u0930 \u0938\u0947 \u092A\u0939\u0932\u0947 \u0928\u092E\u0942\u0928\u093E \u0932\u0947 \u0938\u0915\u0924\u093E \u0939\u0942\u0901?',
-        faq6_a: '\u092C\u093F\u0932\u094D\u0915\u0941\u0932! \u0935\u094D\u0939\u093E\u091F\u094D\u0938\u090F\u092A \u092F\u093E \u092B\u0949\u0930\u094D\u092E \u0938\u0947 \u0938\u0902\u092A\u0930\u094D\u0915 \u0915\u0930\u0947\u0902, \u0939\u092E \u0928\u092E\u0942\u0928\u093E \u092D\u0947\u091C \u0926\u0947\u0902\u0917\u0947\u0964',
+        faq_desc: '\u092C\u093E\u092F\u094B\u092E\u093E\u0938 \u092A\u0947\u0932\u0947\u091F \u0914\u0930 \u0909\u0926\u094D\u092F\u094B\u0917 \u092E\u0947\u0902 \u0909\u0928\u0915\u0947 \u0909\u092A\u092F\u094B\u0917 \u0915\u0947 \u092C\u093E\u0930\u0947 \u092E\u0947\u0902 \u0906\u092E \u0938\u0935\u093E\u0932\u0964',
+        faq1_q: '\u092C\u093E\u092F\u094B\u092E\u093E\u0938 \u092A\u0947\u0932\u0947\u091F \u0915\u094D\u092F\u093E \u0939\u0948\u0902?',
+        faq1_a: '\u092C\u093E\u092F\u094B\u092E\u093E\u0938 \u092A\u0947\u0932\u0947\u091F \u0915\u0943\u0937\u093F \u0905\u0935\u0936\u0947\u0937\u094B\u0902 \u091C\u0948\u0938\u0947 \u092B\u0938\u0932 \u0921\u0902\u0920\u0932, \u091A\u093E\u0935\u0932 \u0915\u0940 \u092D\u0942\u0938\u0940 \u0914\u0930 \u0932\u0915\u0921\u093C\u0940 \u0915\u0947 \u092C\u0941\u0930\u093E\u0926\u0947 \u0938\u0947 \u092C\u0928\u0947 \u0938\u0902\u0915\u0941\u091A\u093F\u0924 \u0938\u093F\u0932\u0947\u0902\u0921\u0930 \u0939\u0948\u0902, \u091C\u094B \u0915\u094B\u092F\u0932\u0947 \u0915\u093E \u0938\u094D\u0935\u091A\u094D\u091B \u0935\u093F\u0915\u0932\u094D\u092A \u0939\u0948\u0902\u0964',
+        faq2_q: '\u092C\u093E\u092F\u094B\u092E\u093E\u0938 \u092A\u0947\u0932\u0947\u091F \u0915\u094B\u092F\u0932\u0947 \u0938\u0947 \u0915\u0948\u0938\u0947 \u0924\u0941\u0932\u0928\u093E \u0915\u0930\u0947\u0902?',
+        faq2_a: '\u092C\u093E\u092F\u094B\u092E\u093E\u0938 \u092A\u0947\u0932\u0947\u091F \u092E\u0947\u0902 \u0915\u094B\u092F\u0932\u0947 \u0938\u0947 \u0915\u092E \u0930\u093E\u0916 (3-8% \u092C\u0928\u093E\u092E 25-45%), \u0928\u094D\u092F\u0942\u0928\u0924\u092E \u0938\u0932\u094D\u092B\u0930 \u0914\u0930 \u0915\u092E \u0909\u0924\u094D\u0938\u0930\u094D\u091C\u0928 \u0939\u094B\u0924\u093E \u0939\u0948\u0964 \u0915\u0941\u0932 \u0908\u0902\u0927\u0928 \u0932\u093E\u0917\u0924 \u092E\u0947\u0902 30-40% \u0924\u0915 \u092C\u091A\u0924 \u0939\u094B\u0924\u0940 \u0939\u0948\u0964',
+        faq3_q: '\u0915\u094D\u092F\u093E \u092E\u094C\u091C\u0942\u0926\u093E \u0915\u094B\u092F\u0932\u093E \u092C\u0949\u0907\u0932\u0930 \u092C\u093E\u092F\u094B\u092E\u093E\u0938 \u092A\u0947\u0932\u0947\u091F \u091C\u0932\u093E \u0938\u0915\u0924\u093E \u0939\u0948?',
+        faq3_a: '\u0939\u093E\u0901\u0964 \u0905\u0927\u093F\u0915\u093E\u0902\u0936 \u0915\u094B\u092F\u0932\u093E \u092C\u0949\u0907\u0932\u0930 (1 TPH \u0914\u0930 \u0909\u0938\u0938\u0947 \u0905\u0927\u093F\u0915) \u092E\u0947\u0902 \u092E\u093E\u092E\u0942\u0932\u0940 \u0917\u094D\u0930\u0947\u091F \u0938\u092E\u093E\u092F\u094B\u091C\u0928 \u0938\u0947 \u092A\u0947\u0932\u0947\u091F \u091C\u0932\u093E\u090F \u091C\u093E \u0938\u0915\u0924\u0947 \u0939\u0948\u0902\u0964 2-3 \u0926\u093F\u0928 \u092E\u0947\u0902 \u092A\u0930\u093F\u0935\u0930\u094D\u0924\u0928 \u0939\u094B \u091C\u093E\u0924\u093E \u0939\u0948\u0964',
+        faq4_q: '\u0915\u094D\u092F\u093E \u092C\u093E\u092F\u094B\u092E\u093E\u0938 \u092A\u0947\u0932\u0947\u091F CPCB \u0909\u0924\u094D\u0938\u0930\u094D\u091C\u0928 \u092E\u093E\u0928\u0915\u094B\u0902 \u0915\u0947 \u0905\u0928\u0941\u0930\u0942\u092A \u0939\u0948\u0902?',
+        faq4_a: '\u0939\u093E\u0901\u0964 \u092C\u093E\u092F\u094B\u092E\u093E\u0938 \u092A\u0947\u0932\u0947\u091F \u0915\u094B\u092F\u0932\u0947 \u0915\u0940 \u0924\u0941\u0932\u0928\u093E \u092E\u0947\u0902 \u0915\u093E\u092B\u0940 \u0915\u092E \u092A\u093E\u0930\u094D\u091F\u093F\u0915\u0941\u0932\u0947\u091F, \u0932\u0917\u092D\u0917 \u0936\u0942\u0928\u094D\u092F SO2 \u0914\u0930 \u0915\u094B\u0908 \u091C\u0939\u0930\u0940\u0932\u0940 \u092D\u093E\u0930\u0940 \u0927\u093E\u0924\u0941 \u0928\u0939\u0940\u0902 \u091B\u094B\u0921\u093C\u0924\u0947\u0964 CPCB \u092E\u093E\u0928\u0915\u094B\u0902 \u0915\u094B \u092A\u0942\u0930\u093E \u0915\u0930\u0928\u0947 \u0915\u093E \u0938\u092C\u0938\u0947 \u0906\u0938\u093E\u0928 \u0924\u0930\u0940\u0915\u093E\u0964',
+        faq5_q: '\u0915\u094C\u0928 \u0938\u0947 \u0909\u0926\u094D\u092F\u094B\u0917 \u092C\u093E\u092F\u094B\u092E\u093E\u0938 \u092A\u0947\u0932\u0947\u091F \u0915\u093E \u0909\u092A\u092F\u094B\u0917 \u0915\u0930\u0924\u0947 \u0939\u0948\u0902?',
+        faq5_a: '\u091F\u0947\u0915\u094D\u0938\u091F\u093E\u0907\u0932 \u092E\u093F\u0932, \u0916\u093E\u0926\u094D\u092F \u092A\u094D\u0930\u0938\u0902\u0938\u094D\u0915\u0930\u0923, \u0908\u0902\u091F \u092D\u091F\u094D\u0920\u0947, \u0930\u093E\u0938\u093E\u092F\u0928\u093F\u0915 \u0938\u0902\u092F\u0902\u0924\u094D\u0930, \u0915\u093E\u0917\u091C \u092E\u093F\u0932 \u0914\u0930 \u0924\u093E\u092A \u092C\u093F\u091C\u0932\u0940 \u0938\u0902\u092F\u0902\u0924\u094D\u0930\u0964 \u0938\u0930\u0915\u093E\u0930 \u0928\u0947 \u0924\u093E\u092A \u0938\u0902\u092F\u0902\u0924\u094D\u0930\u094B\u0902 \u092E\u0947\u0902 5-10% \u092C\u093E\u092F\u094B\u092E\u093E\u0938 \u0938\u0939-\u0926\u0939\u0928 \u0905\u0928\u093F\u0935\u093E\u0930\u094D\u092F \u0915\u093F\u092F\u093E \u0939\u0948\u0964',
+        faq6_q: '\u0915\u094D\u092F\u093E \u092C\u093E\u092F\u094B\u092E\u093E\u0938 \u0938\u0947 \u0915\u093E\u0930\u094D\u092C\u0928 \u0915\u094D\u0930\u0947\u0921\u093F\u091F \u092E\u093F\u0932 \u0938\u0915\u0924\u0947 \u0939\u0948\u0902?',
+        faq6_a: '\u0939\u093E\u0901\u0964 \u0939\u0930 \u091F\u0928 \u0915\u094B\u092F\u0932\u0947 \u0915\u0940 \u091C\u0917\u0939 \u092C\u093E\u092F\u094B\u092E\u093E\u0938 \u0938\u0947 \u0932\u0917\u092D\u0917 2.4 \u091F\u0928 CO2 \u0915\u092E \u0939\u094B\u0924\u093E \u0939\u0948\u0964 \u092F\u0947 \u0915\u093E\u0930\u094D\u092C\u0928 \u0915\u094D\u0930\u0947\u0921\u093F\u091F \u0915\u0947 \u0930\u0942\u092A \u092E\u0947\u0902 \u092C\u0947\u091A\u0947 \u091C\u093E \u0938\u0915\u0924\u0947 \u0939\u0948\u0902 \u2014 \u0905\u0924\u093F\u0930\u093F\u0915\u094D\u0924 \u0930\u093E\u091C\u0938\u094D\u0935 \u0915\u093E \u0938\u094D\u0930\u094B\u0924\u0964',
         // Calculator
         calc_label: '\u092E\u0942\u0932\u094D\u092F \u0928\u093F\u0930\u094D\u0927\u093E\u0930\u0923',
         calc_title: '\u0905\u092A\u0928\u0940 \u092C\u091A\u0924 \u0915\u093E \u0905\u0928\u0941\u092E\u093E\u0928 \u0932\u0917\u093E\u090F\u0902',
