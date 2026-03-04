@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Portal | Kanoz Bio Energy</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green: #2d6a4f; --green-dark: #1b4332; --green-light: #40916c;
+      --gold: #d4a373; --cream: #fefae0; --cream-dark: #f5edd6;
+      --white: #ffffff; --text: #2c2c2c; --text-light: #595c4a;
+      --error: #d32f2f;
+    }
+    body { font-family: 'Inter', system-ui, sans-serif; color: var(--text); background: var(--cream); min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 1.5rem; }
+    .portal-card { background: var(--white); border-radius: 20px; padding: 3rem; box-shadow: 0 20px 60px rgba(45,106,79,0.1); max-width: 440px; width: 100%; text-align: center; }
+    .portal-logo { display: flex; align-items: center; justify-content: center; gap: 0.75rem; margin-bottom: 2rem; }
+    .portal-logo img { width: 48px; height: 48px; border-radius: 10px; }
+    .portal-logo h1 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.5rem; color: var(--green-dark); }
+    .portal-icon { width: 80px; height: 80px; margin: 0 auto 1.5rem; background: linear-gradient(135deg, var(--green), var(--green-light)); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; }
+    .portal-card h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.5rem; color: var(--green-dark); margin-bottom: 0.75rem; }
+    .portal-card p { color: var(--text-light); margin-bottom: 2rem; line-height: 1.7; }
+    .form-group { margin-bottom: 1.25rem; text-align: left; }
+    .form-group label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--text); margin-bottom: 0.4rem; }
+    .form-group input { width: 100%; padding: 0.75rem 1rem; border: 1.5px solid var(--cream-dark); border-radius: 10px; font-family: inherit; font-size: 1rem; background: var(--cream); outline: none; transition: border-color 0.2s; }
+    .form-group input:focus { border-color: var(--green); box-shadow: 0 0 0 3px rgba(45,106,79,0.1); }
+    .portal-btn { width: 100%; padding: 0.875rem; background: var(--green); color: var(--white); border: none; border-radius: 10px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: background 0.2s; margin-bottom: 1rem; }
+    .portal-btn:hover { background: var(--green-dark); }
+    .portal-link { color: var(--green); font-size: 0.9rem; font-weight: 500; }
+    .portal-link:hover { text-decoration: underline; }
+    .portal-divider { display: flex; align-items: center; gap: 1rem; margin: 1.5rem 0; color: var(--text-light); font-size: 0.85rem; }
+    .portal-divider::before, .portal-divider::after { content: ''; flex: 1; height: 1px; background: var(--cream-dark); }
+    .coming-soon-badge { display: inline-block; background: rgba(45,106,79,0.08); color: var(--green); padding: 0.4rem 1rem; border-radius: 100px; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.5px; margin-bottom: 1.5rem; }
+    .features-list { text-align: left; margin: 1.5rem 0; }
+    .features-list li { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 0; border-bottom: 1px solid var(--cream-dark); font-size: 0.95rem; color: var(--text-light); }
+    .features-list li:last-child { border-bottom: none; }
+    .feature-icon { width: 36px; height: 36px; background: rgba(45,106,79,0.08); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+    a { text-decoration: none; color: inherit; }
+  </style>
+</head>
+<body>
+  <div class="portal-card">
+    <div class="portal-logo">
+      <img src="logo.png" alt="Kanoz Bio Energy" width="48" height="48">
+      <h1>Kanoz Bio Energy</h1>
+    </div>
+    <div class="portal-icon" aria-hidden="true">&#x1F512;</div>
+    <div class="coming-soon-badge">Coming Soon</div>
+    <h2>Customer Portal</h2>
+    <p>We're building a dedicated portal for our valued customers. Sign up to be notified when it launches.</p>
+
+    <ul class="features-list">
+      <li><span class="feature-icon">&#x1F4CB;</span> View order history and invoices</li>
+      <li><span class="feature-icon">&#x1F504;</span> Quick reorder with saved preferences</li>
+      <li><span class="feature-icon">&#x1F69A;</span> Real-time delivery tracking</li>
+      <li><span class="feature-icon">&#x1F4CA;</span> Usage analytics and reports</li>
+    </ul>
+
+    <div class="portal-divider">Get notified at launch</div>
+
+    <form action="https://formspree.io/f/xpznqkdl" method="POST">
+      <div class="form-group">
+        <label for="portal-email">Email Address</label>
+        <input type="email" id="portal-email" name="email" placeholder="you@company.com" required autocomplete="email">
+        <input type="hidden" name="_subject" value="Portal Launch Notification Signup">
+      </div>
+      <button type="submit" class="portal-btn">Notify Me</button>
+    </form>
+
+    <a href="index.html" class="portal-link">&larr; Back to Main Site</a>
+  </div>
+</body>
+</html>
