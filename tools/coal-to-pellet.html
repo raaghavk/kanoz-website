@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coal to Pellet Converter | Free Tool — Kanoz Bio Energy</title>
+  <meta name="description" content="Free calculator to convert your coal consumption to equivalent biomass pellet requirement. Compare costs, emissions, and savings instantly.">
+  <meta name="keywords" content="coal to biomass pellet converter, pellet calculator, biomass replacement calculator, coal alternative India">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://kanoz.in/tools/coal-to-pellet.html">
+  <link rel="icon" type="image/png" href="../logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green: #2d6a4f; --green-dark: #1b4332; --green-light: #40916c;
+      --gold: #d4a373; --gold-light: #e9c46a;
+      --cream: #fefae0; --cream-dark: #f5edd6;
+      --white: #ffffff; --text: #2c2c2c; --text-light: #595c4a;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; color: var(--text); background: var(--cream); line-height: 1.7; }
+    a { text-decoration: none; color: inherit; }
+
+    .tool-header {
+      background: var(--green-dark);
+      padding: 1rem 1.5rem;
+    }
+    .tool-header-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .tool-header a { color: var(--white); font-weight: 600; display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; }
+    .tool-header img { width: 28px; height: 28px; }
+    .tool-header nav { display: flex; gap: 1.5rem; }
+    .tool-header nav a { font-weight: 500; opacity: 0.8; }
+    .tool-header nav a:hover { opacity: 1; }
+
+    .tool-hero {
+      background: linear-gradient(135deg, var(--green-dark), var(--green));
+      padding: 4rem 1.5rem 3rem;
+      text-align: center;
+      color: var(--white);
+    }
+    .tool-hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2.2rem;
+      margin-bottom: 0.75rem;
+    }
+    .tool-hero p { opacity: 0.8; max-width: 550px; margin: 0 auto; }
+
+    .tool-main {
+      max-width: 700px;
+      margin: -2rem auto 4rem;
+      padding: 0 1.5rem;
+    }
+    .tool-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 2.5rem;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    }
+    .tool-form-group {
+      margin-bottom: 1.5rem;
+    }
+    .tool-form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+    .tool-form-group .hint {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      margin-bottom: 0.4rem;
+    }
+    .tool-form-group input, .tool-form-group select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1.5px solid var(--cream-dark);
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 1rem;
+      background: var(--cream);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .tool-form-group input:focus, .tool-form-group select:focus {
+      border-color: var(--green);
+      box-shadow: 0 0 0 3px rgba(45,106,79,0.1);
+    }
+
+    .tool-results {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 2px solid var(--cream);
+    }
+    .tool-results h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.3rem;
+      color: var(--green-dark);
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    .result-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    .result-card {
+      background: var(--cream);
+      border-radius: 12px;
+      padding: 1.25rem;
+      text-align: center;
+    }
+    .result-card.highlight {
+      background: linear-gradient(135deg, var(--green-dark), var(--green));
+      color: var(--white);
+      grid-column: 1 / -1;
+    }
+    .result-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-light);
+      margin-bottom: 0.3rem;
+    }
+    .result-card.highlight .result-label { color: rgba(255,255,255,0.7); }
+    .result-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--green-dark);
+    }
+    .result-card.highlight .result-value {
+      color: var(--gold-light);
+      font-size: 2rem;
+    }
+
+    .tool-cta {
+      text-align: center;
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background: var(--cream);
+      border-radius: 12px;
+    }
+    .tool-cta p { color: var(--text-light); font-size: 0.9rem; margin-bottom: 0.75rem; }
+    .tool-cta a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.5rem;
+      background: var(--green);
+      color: var(--white);
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    .tool-cta a:hover { background: var(--green-dark); }
+
+    .tool-info {
+      max-width: 700px;
+      margin: 0 auto 4rem;
+      padding: 0 1.5rem;
+    }
+    .tool-info h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.5rem;
+      color: var(--green-dark);
+      margin-bottom: 1rem;
+    }
+    .tool-info p {
+      color: var(--text-light);
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+
+    .tool-footer {
+      background: var(--green-dark);
+      color: rgba(255,255,255,0.6);
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.85rem;
+    }
+    .tool-footer a { color: var(--gold-light); }
+
+    @media (max-width: 600px) {
+      .tool-hero h1 { font-size: 1.6rem; }
+      .result-grid { grid-template-columns: 1fr; }
+      .result-card.highlight { grid-column: auto; }
+      .tool-card { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="tool-header">
+    <div class="tool-header-inner">
+      <a href="../index.html">
+        <img src="../logo.png" alt="Kanoz" width="28" height="28">
+        Kanoz Bio Energy
+      </a>
+      <nav>
+        <a href="../index.html#contact">Get Quote</a>
+        <a href="../portal.html">PelletOps</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="tool-hero">
+    <h1>Coal to Pellet Converter</h1>
+    <p>Enter your current coal usage and see exactly how much biomass pellet you need, what it'll cost, and how much you'll save.</p>
+  </section>
+
+  <main class="tool-main">
+    <div class="tool-card">
+      <div class="tool-form-group">
+        <label for="coalTons">Monthly Coal Consumption (Tons)</label>
+        <div class="hint">How many tons of coal your plant uses per month</div>
+        <input type="number" id="coalTons" value="100" min="1" max="50000" placeholder="e.g. 100">
+      </div>
+      <div class="tool-form-group">
+        <label for="coalGCV">Coal GCV (Kcal/kg)</label>
+        <div class="hint">Gross calorific value of your current coal supply</div>
+        <input type="number" id="coalGCV" value="4000" min="2000" max="7000" placeholder="e.g. 4000">
+      </div>
+      <div class="tool-form-group">
+        <label for="coalPrice">Coal Price per Ton (&#8377;)</label>
+        <div class="hint">Current procurement cost per ton including transport</div>
+        <input type="number" id="coalPrice" value="12000" min="1000" max="50000" placeholder="e.g. 12000">
+      </div>
+      <div class="tool-form-group">
+        <label for="pelletGCV">Biomass Pellet GCV (Kcal/kg)</label>
+        <div class="hint">Kanoz pellets: 3,400+ Kcal/kg</div>
+        <input type="number" id="pelletGCV" value="3400" min="2000" max="5000" placeholder="e.g. 3400">
+      </div>
+      <div class="tool-form-group">
+        <label for="pelletPrice">Pellet Price per Ton (&#8377;)</label>
+        <div class="hint">Current market rate: &#8377;7,500 – &#8377;9,000/ton</div>
+        <input type="number" id="pelletPrice" value="8500" min="1000" max="30000" placeholder="e.g. 8500">
+      </div>
+
+      <div class="tool-results">
+        <h3>Your Results</h3>
+        <div class="result-grid">
+          <div class="result-card highlight">
+            <div class="result-label">Annual Savings</div>
+            <div class="result-value" id="resSavings">&#8377;0</div>
+          </div>
+          <div class="result-card">
+            <div class="result-label">Pellets Required (Monthly)</div>
+            <div class="result-value" id="resPelletTons">0 T</div>
+          </div>
+          <div class="result-card">
+            <div class="result-label">Monthly Coal Cost</div>
+            <div class="result-value" id="resCoalCost">&#8377;0</div>
+          </div>
+          <div class="result-card">
+            <div class="result-label">Monthly Pellet Cost</div>
+            <div class="result-value" id="resPelletCost">&#8377;0</div>
+          </div>
+          <div class="result-card">
+            <div class="result-label">CO2 Saved (Annual)</div>
+            <div class="result-value" id="resCO2">0 T</div>
+          </div>
+          <div class="result-card">
+            <div class="result-label">Ash Reduction</div>
+            <div class="result-value" id="resAsh">0%</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tool-cta">
+        <p>Ready to make the switch? Get a custom quote from Kanoz Bio Energy.</p>
+        <a href="../index.html#contact">Get a Free Quote &rarr;</a>
+      </div>
+    </div>
+  </main>
+
+  <section class="tool-info">
+    <h2>How This Calculator Works</h2>
+    <p>This tool calculates the equivalent tonnage of biomass pellets needed to replace your current coal usage, based on the calorific values (GCV) of both fuels. The formula is simple: <strong>Pellet Tons = Coal Tons × (Coal GCV / Pellet GCV)</strong>.</p>
+    <p>Cost savings are calculated by comparing your annual coal expenditure against the equivalent pellet expenditure. CO2 savings use the standard factor of 2.4 tons of CO2 avoided per ton of coal replaced. Ash reduction assumes average Indian coal ash content of 35% vs biomass pellet ash content of 5%.</p>
+    <p>These are estimates — actual results depend on your specific boiler efficiency, coal quality, and operating conditions. Contact us for a detailed, personalized assessment.</p>
+  </section>
+
+  <footer class="tool-footer">
+    <p>Free tool by <a href="../index.html">Kanoz Bio Energy</a> &middot; <a href="../portal.html">PelletOps</a> &middot; <a href="freight-calculator.html">Freight Calculator</a></p>
+  </footer>
+
+  <script>
+  (function() {
+    var fields = ['coalTons', 'coalGCV', 'coalPrice', 'pelletGCV', 'pelletPrice'];
+
+    function calculate() {
+      var coalTons = parseFloat(document.getElementById('coalTons').value) || 0;
+      var coalGCV = parseFloat(document.getElementById('coalGCV').value) || 0;
+      var coalPrice = parseFloat(document.getElementById('coalPrice').value) || 0;
+      var pelletGCV = parseFloat(document.getElementById('pelletGCV').value) || 1;
+      var pelletPrice = parseFloat(document.getElementById('pelletPrice').value) || 0;
+
+      var pelletTons = Math.round(coalTons * (coalGCV / pelletGCV));
+      var monthlyCoalCost = coalTons * coalPrice;
+      var monthlyPelletCost = pelletTons * pelletPrice;
+      var annualSavings = (monthlyCoalCost - monthlyPelletCost) * 12;
+      var annualCO2 = Math.round(coalTons * 2.4 * 12);
+      var ashReduction = Math.round((1 - 5 / 35) * 100);
+
+      document.getElementById('resPelletTons').textContent = pelletTons.toLocaleString('en-IN') + ' T';
+      document.getElementById('resCoalCost').textContent = '\u20B9' + monthlyCoalCost.toLocaleString('en-IN');
+      document.getElementById('resPelletCost').textContent = '\u20B9' + monthlyPelletCost.toLocaleString('en-IN');
+      document.getElementById('resSavings').textContent = '\u20B9' + Math.max(0, annualSavings).toLocaleString('en-IN');
+      document.getElementById('resCO2').textContent = annualCO2.toLocaleString('en-IN') + ' T';
+      document.getElementById('resAsh').textContent = ashReduction + '%';
+    }
+
+    fields.forEach(function(id) {
+      document.getElementById(id).addEventListener('input', calculate);
+    });
+
+    calculate();
+  })();
+  </script>
+
+</body>
+</html>
