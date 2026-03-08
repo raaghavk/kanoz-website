@@ -23,7 +23,6 @@
   <link rel="manifest" href="manifest.json">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="dns-prefetch" href="https://wa.me">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
   <!-- Structured Data -->
@@ -34,8 +33,6 @@
     "name": "Kanoz Bio Energy",
     "description": "Leading manufacturer of premium biomass pellets from agricultural waste in India.",
     "url": "https://kanoz.in",
-    "telephone": "+919839788886",
-    "email": "info@kanoz.in",
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "IN"
@@ -140,7 +137,6 @@
       --white: #ffffff;
       --text: #2c2c2c;
       --text-light: #595c4a;
-      --whatsapp: #25D366;
       --error: #d32f2f;
     }
 
@@ -368,12 +364,6 @@
     }
     .btn-outline:hover { background: var(--green); color: var(--white); }
     .btn-outline:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
-    .btn-whatsapp {
-      background: var(--whatsapp);
-      color: var(--white);
-    }
-    .btn-whatsapp:hover { background: #1da851; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(37,211,102,0.3); }
-    .btn-whatsapp:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
     .hero-visual {
       display: flex;
       justify-content: center;
@@ -853,25 +843,6 @@
       font-weight: 500;
     }
     .contact-detail a:hover { color: var(--green-light); }
-    .contact-whatsapp {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-top: 1rem;
-      padding: 0.875rem 2rem;
-      background: var(--whatsapp);
-      color: var(--white);
-      border-radius: 12px;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
-    }
-    .contact-whatsapp:hover { background: #1da851; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(37,211,102,0.3); }
-    .contact-whatsapp svg {
-      width: 22px;
-      height: 22px;
-      fill: currentColor;
-    }
     .contact-form {
       background: var(--white);
       border-radius: 16px;
@@ -1040,38 +1011,6 @@
       gap: 1rem;
     }
     .footer-bottom p { font-size: 0.85rem; }
-
-    /* === WHATSAPP FLOATING BUTTON === */
-    .whatsapp-float {
-      position: fixed;
-      bottom: max(24px, env(safe-area-inset-bottom));
-      right: max(24px, env(safe-area-inset-right));
-      z-index: 99;
-      width: 60px;
-      height: 60px;
-      background: var(--whatsapp);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
-      transition: transform 0.2s, box-shadow 0.2s;
-      cursor: pointer;
-    }
-    .whatsapp-float:hover {
-      transform: scale(1.1);
-      box-shadow: 0 6px 30px rgba(37,211,102,0.35);
-    }
-    .whatsapp-float:focus-visible {
-      transform: scale(1.1);
-      outline: 2px solid var(--gold);
-      outline-offset: 2px;
-    }
-    .whatsapp-float svg {
-      width: 32px;
-      height: 32px;
-      fill: white;
-    }
 
     /* === SCROLL OFFSET FOR FIXED HEADER === */
     section[id] { scroll-margin-top: 80px; }
@@ -1625,9 +1564,6 @@
       <!-- Bottom highlight -->
       <ellipse cx="32" cy="48" rx="14" ry="5" fill="#8b6340" opacity="0.5"/>
     </symbol>
-    <symbol id="icon-whatsapp" viewBox="0 0 24 24">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-    </symbol>
   </svg>
 
   <!-- Skip Navigation (Accessibility) -->
@@ -1677,10 +1613,6 @@
         <p data-i18n="hero_desc">We manufacture premium biomass pellets from agricultural waste, providing eco-friendly fuel alternatives for industries, power plants, and commercial heating across India.</p>
         <div class="hero-btns">
           <a href="#contact" class="btn btn-primary" data-i18n="hero_cta">Get a Quote &rarr;</a>
-          <a href="https://wa.me/919839788886?text=Hi%2C%20I%20want%20to%20enquire%20about%20biomass%20pellets" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
-            <svg width="20" height="20" fill="currentColor" aria-hidden="true"><use href="#icon-whatsapp"/></svg>
-            <span data-i18n="hero_whatsapp">WhatsApp Us</span>
-          </a>
         </div>
       </div>
       <div class="hero-visual">
@@ -2099,30 +2031,12 @@
         <h2 data-i18n="contact_title">Let's Talk Energy</h2>
         <p data-i18n="contact_desc">Whether you need bulk biomass pellets or want to explore sustainable fuel options, we're here to help. Reach out and our team will get back to you within 24 hours.</p>
         <div class="contact-detail">
-          <div class="contact-detail-icon" aria-hidden="true">&#x1F4DE;</div>
-          <div>
-            <h3>Phone</h3>
-            <a href="tel:+919839788886">+91 98397 88886</a>
-          </div>
-        </div>
-        <div class="contact-detail">
-          <div class="contact-detail-icon" aria-hidden="true">&#x2709;</div>
-          <div>
-            <h3>Email</h3>
-            <a href="mailto:info@kanoz.in">info@kanoz.in</a>
-          </div>
-        </div>
-        <div class="contact-detail">
           <div class="contact-detail-icon" aria-hidden="true">&#x1F4CD;</div>
           <div>
             <h3>Location</h3>
             <p>India</p>
           </div>
         </div>
-        <a href="https://wa.me/919839788886?text=Hi%2C%20I%20want%20to%20enquire%20about%20biomass%20pellets" target="_blank" rel="noopener noreferrer" class="contact-whatsapp">
-          <svg width="20" height="20" aria-hidden="true"><use href="#icon-whatsapp"/></svg>
-          <span data-i18n="contact_whatsapp">Chat on WhatsApp</span>
-        </a>
       </div>
       <div class="contact-form">
         <h3 data-i18n="contact_form_title">Request a Quote</h3>
@@ -2200,11 +2114,8 @@
       <div class="footer-col">
         <h4>Get in Touch</h4>
         <ul>
-          <li><a href="tel:+919839788886">+91 98397 88886</a></li>
-          <li><a href="mailto:info@kanoz.in">info@kanoz.in</a></li>
           <li><a href="#contact">Request a Quote</a></li>
           <li><a href="portal.html">PelletOps</a></li>
-          <li><a href="https://wa.me/919839788886" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
         </ul>
       </div>
     </div>
@@ -2214,10 +2125,6 @@
     </div>
   </footer>
 
-  <!-- FLOATING WHATSAPP BUTTON -->
-  <a href="https://wa.me/919839788886?text=Hi%2C%20I%20want%20to%20enquire%20about%20biomass%20pellets" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat on WhatsApp">
-    <svg width="32" height="32" aria-hidden="true"><use href="#icon-whatsapp"/></svg>
-  </a>
 
   <!-- COOKIE CONSENT BANNER -->
   <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie consent">
@@ -2470,12 +2377,12 @@
         } else {
           submitBtn.disabled = false;
           submitBtn.textContent = 'Send Enquiry \u2192';
-          alert('Something went wrong. Please try again or contact us via WhatsApp.');
+          alert('Something went wrong. Please try again.');
         }
       }).catch(function() {
         submitBtn.disabled = false;
         submitBtn.textContent = 'Send Enquiry \u2192';
-        alert('Network error. Please try again or contact us via WhatsApp.');
+        alert('Network error. Please try again.');
       });
     });
 
@@ -2495,7 +2402,6 @@
         hero_title: '\u0938\u094D\u0935\u091A\u094D\u091B <em>\u092C\u093E\u092F\u094B\u092E\u093E\u0938</em> \u090A\u0930\u094D\u091C\u093E \u0938\u0947 \u0909\u0926\u094D\u092F\u094B\u0917 \u0915\u094B \u0936\u0915\u094D\u0924\u093F',
         hero_desc: '\u0939\u092E \u0915\u0943\u0937\u093F \u0905\u092A\u0936\u093F\u0937\u094D\u091F \u0938\u0947 \u092A\u094D\u0930\u0940\u092E\u093F\u092F\u092E \u092C\u093E\u092F\u094B\u092E\u093E\u0938 \u092A\u0947\u0932\u0947\u091F \u092C\u0928\u093E\u0924\u0947 \u0939\u0948\u0902, \u091C\u094B \u092D\u093E\u0930\u0924 \u092D\u0930 \u092E\u0947\u0902 \u0909\u0926\u094D\u092F\u094B\u0917\u094B\u0902, \u092C\u093F\u091C\u0932\u0940 \u0938\u0902\u092F\u0902\u0924\u094D\u0930\u094B\u0902 \u0914\u0930 \u0935\u094D\u092F\u093E\u092A\u093E\u0930\u093F\u0915 \u0939\u0940\u091F\u093F\u0902\u0917 \u0915\u0947 \u0932\u093F\u090F \u092A\u0930\u094D\u092F\u093E\u0935\u0930\u0923 \u0905\u0928\u0941\u0915\u0942\u0932 \u0908\u0902\u0927\u0928 \u0935\u093F\u0915\u0932\u094D\u092A \u092A\u094D\u0930\u0926\u093E\u0928 \u0915\u0930\u0924\u0947 \u0939\u0948\u0902\u0964',
         hero_cta: '\u0915\u094B\u091F\u0947\u0936\u0928 \u092A\u093E\u090F\u0902 \u2192',
-        hero_whatsapp: '\u0935\u094D\u0939\u093E\u091F\u094D\u0938\u090F\u092A \u0915\u0930\u0947\u0902',
         hero_card_title: '\u092C\u093E\u092F\u094B\u092E\u093E\u0938 \u092A\u0947\u0932\u0947\u091F',
         hero_card_desc: '\u0938\u094D\u0925\u093E\u092F\u0940 \u0915\u0943\u0937\u093F \u0905\u0935\u0936\u0947\u0937\u094B\u0902 \u0938\u0947 \u092C\u0928\u0947 \u0909\u091A\u094D\u091A-\u0915\u0948\u0932\u094B\u0930\u0940, \u0915\u092E-\u0930\u093E\u0916 \u092A\u0947\u0932\u0947\u091F',
         // About
@@ -2598,7 +2504,6 @@
         // Contact
         contact_title: '\u090A\u0930\u094D\u091C\u093E \u0915\u0947 \u092C\u093E\u0930\u0947 \u092E\u0947\u0902 \u092C\u093E\u0924 \u0915\u0930\u0947\u0902',
         contact_desc: '\u091A\u093E\u0939\u0947 \u0906\u092A\u0915\u094B \u0925\u094B\u0915 \u092E\u0947\u0902 \u092C\u093E\u092F\u094B\u092E\u093E\u0938 \u092A\u0947\u0932\u0947\u091F \u091A\u093E\u0939\u093F\u090F \u092F\u093E \u0938\u094D\u0925\u093E\u092F\u0940 \u0908\u0902\u0927\u0928 \u0935\u093F\u0915\u0932\u094D\u092A \u091C\u093E\u0928\u0928\u093E \u091A\u093E\u0939\u0924\u0947 \u0939\u094B\u0902, \u0939\u092E \u092E\u0926\u0926 \u0915\u0947 \u0932\u093F\u090F \u092F\u0939\u093E\u0901 \u0939\u0948\u0902\u0964 \u0939\u092E\u093E\u0930\u0940 \u091F\u0940\u092E 24 \u0918\u0902\u091F\u0947 \u092E\u0947\u0902 \u0906\u092A\u0938\u0947 \u0938\u0902\u092A\u0930\u094D\u0915 \u0915\u0930\u0947\u0917\u0940\u0964',
-        contact_whatsapp: '\u0935\u094D\u0939\u093E\u091F\u094D\u0938\u090F\u092A \u092A\u0930 \u092C\u093E\u0924 \u0915\u0930\u0947\u0902',
         contact_form_title: '\u0915\u094B\u091F\u0947\u0936\u0928 \u0915\u0947 \u0932\u093F\u090F \u0905\u0928\u0941\u0930\u094B\u0927',
         form_name: '\u092A\u0942\u0930\u093E \u0928\u093E\u092E *',
         form_company: '\u0915\u0902\u092A\u0928\u0940 \u0915\u093E \u0928\u093E\u092E',
