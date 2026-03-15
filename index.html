@@ -1302,12 +1302,17 @@
     }
     .blog-thumb {
       height: 180px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 4rem;
+      overflow: hidden;
       background: linear-gradient(135deg, var(--green-dark), var(--green));
     }
+    .blog-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .blog-card:hover .blog-thumb img { transform: scale(1.05); }
     .blog-body {
       padding: 1.5rem;
       flex: 1;
@@ -1900,31 +1905,37 @@
       <p data-i18n="blog_desc">Stay informed about biomass energy, sustainability practices, and industry trends.</p>
     </div>
     <div class="blog-grid">
-      <a href="blog.html#biomass-vs-coal" class="blog-card animate-on-scroll">
-        <div class="blog-thumb"><svg width="40" height="40" viewBox="0 0 64 64"><use href="#icon-pellet"/></svg></div>
+      <a href="blog.html#brick-kiln-biomass" class="blog-card animate-on-scroll">
+        <div class="blog-thumb">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/02/A_brick_kiln_and_manufactured_bricks_in_Tinsukia_district%2C_Assam.jpg" alt="Brick kiln in Assam, India" loading="lazy">
+        </div>
         <div class="blog-body">
-          <span class="blog-tag" data-i18n="blog_tag_guide">Guide</span>
-          <h3 data-i18n="blog1_title">Biomass Pellets vs Coal: A Complete Comparison</h3>
-          <p data-i18n="blog1_desc">Discover why industries are switching from coal to biomass pellets. We compare cost, emissions, efficiency, and long-term sustainability.</p>
-          <span class="blog-read-more" data-i18n="blog_readmore">Read More &rarr;</span>
+          <span class="blog-tag">Industry Insight</span>
+          <h3>Why Brick Kilns Are Switching to Biomass Pellets in 2026</h3>
+          <p>With rising coal costs, tightening CPCB emission norms, and carbon credit opportunities, 2026 is a turning point for kiln operators across India.</p>
+          <span class="blog-read-more">Read More &rarr;</span>
         </div>
       </a>
-      <a href="blog.html#textile-case-study" class="blog-card animate-on-scroll">
-        <div class="blog-thumb">&#x1F3ED;</div>
+      <a href="blog.html#food-processing-adopting-biomass-fuel" class="blog-card animate-on-scroll">
+        <div class="blog-thumb">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Sri_Krishna_Rice_Mill_-_Indian_National_Highway_34_-_Habibpur_-_Ranaghat_-_Nadia_2013-03-23_6984.JPG" alt="Rice mill in India" loading="lazy">
+        </div>
         <div class="blog-body">
-          <span class="blog-tag" data-i18n="blog_tag_case">Case Study</span>
-          <h3 data-i18n="blog2_title">How a Textile Unit Cut Fuel Costs by 35%</h3>
-          <p data-i18n="blog2_desc">A real-world case study of a textile manufacturer who switched to Kanoz biomass pellets and transformed their energy economics.</p>
-          <span class="blog-read-more" data-i18n="blog_readmore">Read More &rarr;</span>
+          <span class="blog-tag">Industry Insight</span>
+          <h3>Food Processing Industry's Shift to Biomass Fuel</h3>
+          <p>India's food processing sector is one of the most energy-intensive industries. Here's how biomass is changing the economics of industrial heat.</p>
+          <span class="blog-read-more">Read More &rarr;</span>
         </div>
       </a>
-      <a href="blog.html#biomass-energy-policy" class="blog-card animate-on-scroll">
-        <div class="blog-thumb">&#x1F30D;</div>
+      <a href="blog.html#biomass-india-net-zero-2070" class="blog-card animate-on-scroll">
+        <div class="blog-thumb">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Green_energy%2Cwindmills_-_panoramio.jpg" alt="Renewable energy windmills" loading="lazy">
+        </div>
         <div class="blog-body">
-          <span class="blog-tag" data-i18n="blog_tag_insight">Industry Insight</span>
-          <h3 data-i18n="blog3_title">India's Biomass Energy Policy: What You Need to Know</h3>
-          <p data-i18n="blog3_desc">An overview of government incentives, carbon credit opportunities, and regulations driving biomass adoption in Indian industry.</p>
-          <span class="blog-read-more" data-i18n="blog_readmore">Read More &rarr;</span>
+          <span class="blog-tag">Policy</span>
+          <h3>Biomass and India's Net Zero 2070 Target</h3>
+          <p>India has committed to net zero emissions by 2070. Biomass energy plays a direct role in that roadmap — here's how the pieces fit together.</p>
+          <span class="blog-read-more">Read More &rarr;</span>
         </div>
       </a>
     </div>
