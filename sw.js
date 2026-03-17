@@ -1,8 +1,11 @@
-var CACHE_NAME = 'kanoz-v2';
+var CACHE_NAME = 'kanoz-v3';
 var ASSETS = [
   '/',
   '/index.html',
   '/blog.html',
+  '/portal.html',
+  '/tools/coal-to-pellet.html',
+  '/tools/freight-calculator.html',
   '/logo.png',
   '/manifest.json'
 ];

@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Kanoz Bio Energy | Biomass Pellet Manufacturer</title>
@@ -396,7 +399,39 @@
       align-items: center;
       justify-content: center;
       font-size: 2.5rem;
+      overflow: hidden;
     }
+    /* Realistic pellet pile using CSS */
+    .pellet-pile {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+    .pellet-pile span {
+      position: absolute;
+      border-radius: 50px;
+      background: linear-gradient(180deg, #e0b48a 0%, #c4956a 40%, #a67a50 100%);
+      box-shadow: inset 0 -2px 3px rgba(0,0,0,0.15), inset 0 1px 2px rgba(255,255,255,0.2);
+    }
+    .pellet-pile span::after {
+      content: '';
+      position: absolute;
+      right: -1px;
+      top: 15%;
+      width: 30%;
+      height: 70%;
+      border-radius: 50%;
+      background: radial-gradient(ellipse, #d4a373 30%, #a67a50 100%);
+    }
+    .pellet-pile span:nth-child(1) { width: 40px; height: 10px; top: 12px; left: 8px; transform: rotate(-8deg); }
+    .pellet-pile span:nth-child(2) { width: 36px; height: 9px; top: 16px; left: 30px; transform: rotate(12deg); }
+    .pellet-pile span:nth-child(3) { width: 42px; height: 10px; top: 26px; left: 4px; transform: rotate(5deg); }
+    .pellet-pile span:nth-child(4) { width: 38px; height: 10px; top: 24px; left: 34px; transform: rotate(-10deg); }
+    .pellet-pile span:nth-child(5) { width: 44px; height: 11px; top: 36px; left: 10px; transform: rotate(-3deg); background: linear-gradient(180deg, #d4a373 0%, #b8875c 40%, #8b6340 100%); }
+    .pellet-pile span:nth-child(6) { width: 34px; height: 9px; top: 38px; left: 38px; transform: rotate(15deg); }
+    .pellet-pile span:nth-child(7) { width: 40px; height: 11px; top: 48px; left: 6px; transform: rotate(8deg); background: linear-gradient(180deg, #c4956a 0%, #a67a50 40%, #8b6340 100%); }
+    .pellet-pile span:nth-child(8) { width: 36px; height: 10px; top: 50px; left: 32px; transform: rotate(-5deg); }
+    .pellet-pile span:nth-child(9) { width: 38px; height: 10px; top: 60px; left: 18px; transform: rotate(2deg); }
     .hero-card h3 {
       font-family: 'Playfair Display', Georgia, serif;
       color: var(--green-dark);
@@ -1525,63 +1560,6 @@
 </head>
 <body>
 
-  <!-- SVG Sprite (reusable icons) -->
-  <svg xmlns="http://www.w3.org/2000/svg" style="display:none;position:absolute;width:0;height:0;overflow:hidden">
-    <symbol id="icon-pellet" viewBox="0 0 64 64">
-      <defs>
-        <linearGradient id="pelletGrad" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#d4a373"/>
-          <stop offset="100%" stop-color="#a67a50"/>
-        </linearGradient>
-        <linearGradient id="pelletGrad2" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#c4956a"/>
-          <stop offset="100%" stop-color="#8b6340"/>
-        </linearGradient>
-        <linearGradient id="pelletEnd" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#e0b48a"/>
-          <stop offset="100%" stop-color="#b8875c"/>
-        </linearGradient>
-      </defs>
-      <!-- Shadow -->
-      <ellipse cx="32" cy="58" rx="22" ry="4" fill="rgba(0,0,0,0.1)"/>
-      <!-- Back pellet (horizontal cylinder) -->
-      <rect x="12" y="8" width="40" height="10" rx="5" fill="url(#pelletGrad2)"/>
-      <circle cx="52" cy="13" r="5" fill="url(#pelletEnd)"/>
-      <circle cx="12" cy="13" r="5" fill="#8b6340"/>
-      <!-- Texture lines on back pellet -->
-      <line x1="16" y1="10" x2="48" y2="10" stroke="#9a7048" stroke-width="0.5" opacity="0.4"/>
-      <line x1="14" y1="13" x2="50" y2="13" stroke="#9a7048" stroke-width="0.5" opacity="0.3"/>
-      <line x1="16" y1="16" x2="48" y2="16" stroke="#9a7048" stroke-width="0.5" opacity="0.4"/>
-      <!-- Middle-left pellet (angled) -->
-      <g transform="rotate(-15, 24, 28)">
-        <rect x="4" y="23" width="40" height="10" rx="5" fill="url(#pelletGrad)"/>
-        <circle cx="44" cy="28" r="5" fill="url(#pelletEnd)"/>
-        <circle cx="4" cy="28" r="5" fill="#a67a50"/>
-        <line x1="8" y1="25" x2="40" y2="25" stroke="#b8875c" stroke-width="0.5" opacity="0.4"/>
-        <line x1="6" y1="28" x2="42" y2="28" stroke="#b8875c" stroke-width="0.5" opacity="0.3"/>
-      </g>
-      <!-- Middle-right pellet (angled other way) -->
-      <g transform="rotate(12, 40, 30)">
-        <rect x="20" y="25" width="36" height="10" rx="5" fill="url(#pelletGrad2)"/>
-        <circle cx="56" cy="30" r="5" fill="url(#pelletEnd)"/>
-        <circle cx="20" cy="30" r="5" fill="#8b6340"/>
-        <line x1="24" y1="27" x2="52" y2="27" stroke="#9a7048" stroke-width="0.5" opacity="0.4"/>
-        <line x1="22" y1="30" x2="54" y2="30" stroke="#9a7048" stroke-width="0.5" opacity="0.3"/>
-      </g>
-      <!-- Front pellet (horizontal, slightly angled) -->
-      <g transform="rotate(-5, 28, 44)">
-        <rect x="6" y="39" width="44" height="11" rx="5.5" fill="url(#pelletGrad)"/>
-        <circle cx="50" cy="44.5" r="5.5" fill="url(#pelletEnd)"/>
-        <circle cx="6" cy="44.5" r="5.5" fill="#a67a50"/>
-        <line x1="10" y1="41" x2="46" y2="41" stroke="#b8875c" stroke-width="0.5" opacity="0.4"/>
-        <line x1="8" y1="44.5" x2="48" y2="44.5" stroke="#b8875c" stroke-width="0.5" opacity="0.3"/>
-        <line x1="10" y1="48" x2="46" y2="48" stroke="#b8875c" stroke-width="0.5" opacity="0.4"/>
-        <!-- Highlight on front pellet -->
-        <rect x="14" y="40" width="28" height="3" rx="1.5" fill="rgba(255,255,255,0.15)"/>
-      </g>
-    </symbol>
-  </svg>
-
   <!-- Skip Navigation (Accessibility) -->
   <a href="#main-content" class="skip-nav">Skip to main content</a>
 
@@ -1633,7 +1611,7 @@
       </div>
       <div class="hero-visual">
         <div class="hero-card">
-          <div class="hero-icon" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 64 64"><use href="#icon-pellet"/></svg></div>
+          <div class="hero-icon" aria-hidden="true"><div class="pellet-pile"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div>
           <h3 data-i18n="hero_card_title">Biomass Pellets</h3>
           <p data-i18n="hero_card_desc">High-calorific, low-ash pellets made from sustainable agricultural residues</p>
           <div class="hero-stats">
@@ -1901,7 +1879,7 @@
     </div>
     <div class="blog-grid">
       <a href="blog.html#biomass-vs-coal" class="blog-card animate-on-scroll">
-        <div class="blog-thumb"><svg width="40" height="40" viewBox="0 0 64 64"><use href="#icon-pellet"/></svg></div>
+        <div class="blog-thumb"><div class="pellet-pile" style="width:60px;height:60px"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div>
         <div class="blog-body">
           <span class="blog-tag" data-i18n="blog_tag_guide">Guide</span>
           <h3 data-i18n="blog1_title">Biomass Pellets vs Coal: A Complete Comparison</h3>
