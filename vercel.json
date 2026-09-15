@@ -1,7 +1,55 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "redirects": [
-    { "source": "/demo", "destination": "https://demo-bio-pellets.vercel.app/login", "permanent": false },
-    { "source": "/demo/", "destination": "https://demo-bio-pellets.vercel.app/login", "permanent": false }
+  "headers": [
+    {
+      "source": "/pelletops-demo/assets/app.part(.*)",
+      "headers": [
+        { "key": "Content-Type", "value": "text/javascript; charset=utf-8" },
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    }
+  ],
+  "rewrites": [
+    { "source": "/demo", "destination": "/pelletops-demo/index.html" },
+    { "source": "/demo/", "destination": "/pelletops-demo/index.html" },
+
+    { "source": "/login", "destination": "/pelletops-demo/index.html" },
+    { "source": "/home", "destination": "/pelletops-demo/index.html" },
+    { "source": "/more", "destination": "/pelletops-demo/index.html" },
+    { "source": "/plant", "destination": "/pelletops-demo/index.html" },
+    { "source": "/plant/:path*", "destination": "/pelletops-demo/index.html" },
+    { "source": "/admin", "destination": "/pelletops-demo/index.html" },
+    { "source": "/admin/:path*", "destination": "/pelletops-demo/index.html" },
+    { "source": "/finance", "destination": "/pelletops-demo/index.html" },
+    { "source": "/finance/:path*", "destination": "/pelletops-demo/index.html" },
+    { "source": "/insights", "destination": "/pelletops-demo/index.html" },
+    { "source": "/chat", "destination": "/pelletops-demo/index.html" },
+    { "source": "/settings", "destination": "/pelletops-demo/index.html" },
+
+    { "source": "/shifts", "destination": "/pelletops-demo/index.html" },
+    { "source": "/shifts/:path*", "destination": "/pelletops-demo/index.html" },
+    { "source": "/dispatch", "destination": "/pelletops-demo/index.html" },
+    { "source": "/dispatch/:path*", "destination": "/pelletops-demo/index.html" },
+    { "source": "/purchases", "destination": "/pelletops-demo/index.html" },
+    { "source": "/purchases/:path*", "destination": "/pelletops-demo/index.html" },
+    { "source": "/stock", "destination": "/pelletops-demo/index.html" },
+    { "source": "/stock/:path*", "destination": "/pelletops-demo/index.html" },
+    { "source": "/tasks", "destination": "/pelletops-demo/index.html" },
+    { "source": "/tasks/:path*", "destination": "/pelletops-demo/index.html" },
+    { "source": "/attendance", "destination": "/pelletops-demo/index.html" },
+    { "source": "/attendance/:path*", "destination": "/pelletops-demo/index.html" },
+
+    { "source": "/suppliers", "destination": "/pelletops-demo/index.html" },
+    { "source": "/suppliers/:path*", "destination": "/pelletops-demo/index.html" },
+    { "source": "/customers", "destination": "/pelletops-demo/index.html" },
+    { "source": "/customers/:path*", "destination": "/pelletops-demo/index.html" },
+    { "source": "/transporters", "destination": "/pelletops-demo/index.html" },
+    { "source": "/transporters/:path*", "destination": "/pelletops-demo/index.html" },
+    { "source": "/transfers", "destination": "/pelletops-demo/index.html" },
+    { "source": "/transfers/:path*", "destination": "/pelletops-demo/index.html" },
+    { "source": "/spares", "destination": "/pelletops-demo/index.html" },
+    { "source": "/spares/:path*", "destination": "/pelletops-demo/index.html" },
+    { "source": "/assets", "destination": "/pelletops-demo/index.html" },
+    { "source": "/assets/:path*", "destination": "/pelletops-demo/index.html" }
   ]
 }
