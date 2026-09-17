@@ -1,7 +1,7 @@
 {
-  "name": "Demo Bio Pellets",
-  "short_name": "Demo Pellets",
-  "description": "Sample biomass pellet plant operations app for prospect sales tours.",
+  "name": "PelletOps Demo",
+  "short_name": "PelletOps",
+  "description": "Public demo of biomass pellet plant operations — sample data only.",
   "start_url": "/demo",
   "display": "standalone",
   "background_color": "#fefae0",
