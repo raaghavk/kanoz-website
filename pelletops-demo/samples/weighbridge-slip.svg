@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="640" viewBox="0 0 480 640">
+  <rect width="480" height="640" fill="#fefae0"/>
+  <rect x="24" y="24" width="432" height="592" fill="#fff" stroke="#1b4332" stroke-width="2"/>
+  <text x="240" y="70" text-anchor="middle" font-family="Inter,sans-serif" font-size="20" font-weight="700" fill="#1b4332">Weighbridge slip (sample)</text>
+  <text x="48" y="120" font-family="Inter,sans-serif" font-size="14" fill="#2c2c2c">Serial: 104221</text>
+  <text x="48" y="150" font-family="Inter,sans-serif" font-size="14" fill="#2c2c2c">Vehicle: UP32 AB 4421</text>
+  <text x="48" y="180" font-family="Inter,sans-serif" font-size="14" fill="#2c2c2c">Net weight: 12400 kg</text>
+  <text x="48" y="210" font-family="Inter,sans-serif" font-size="14" fill="#2c2c2c">Time: 09:40</text>
+  <text x="240" y="580" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="#8a8d7a">PelletOps public demo  not a live ticket</text>
+</svg>
